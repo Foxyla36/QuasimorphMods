@@ -83,6 +83,7 @@ namespace AugmentationsExpanded
         internal const string KeyHandRecipeOld    = "craft_hand_required";
         internal const string KeyRankRestriction  = "rank_restriction";
         internal const string KeyMultiSlotLoss    = "multislot_amputation_loss";
+        internal const string KeyVAClipping      = "enable_va_clipping";
         internal const string KeyMinRank          = "smasher_min_rank";
         internal const string KeyNachtMinRank     = "nacht_min_rank";
         internal const string KeyScoutMinRank     = "scout22_min_rank";
@@ -199,6 +200,7 @@ namespace AugmentationsExpanded
         internal static bool   _handFootRecipe  = true;
         internal static bool   _rankRestriction = false;
         internal static bool   _multiSlotLoss   = false;
+        internal static bool   _vaClipping      = false;
         internal static int    _minRank         = DefaultMinRank;
         internal static int    _nMinRank        = NachtDefaultMinRank;
         internal static int    _scMinRank       = Scout22DefaultMinRank;
@@ -250,6 +252,8 @@ namespace AugmentationsExpanded
         {
             try { LoadSettings(); }
             catch (Exception e) { Debug.LogError("[AugmentationsExpanded] LoadSettings: " + e); }
+            // The optional bridge may receive the config hook before this class does.
+            VisibleAugments.ModMain.RefreshClippingPolicy();
 
             string path = context == null ? null : context.ModContentPath;
 
@@ -682,6 +686,8 @@ namespace AugmentationsExpanded
             {
                 if (config != null)
                 {
+                    if (config.TryGetValue(KeyVAClipping, out var clipping) && clipping != null)
+                        _vaClipping = Convert.ToBoolean(clipping);
                     object f;
                     if (config.TryGetValue(KeyFaction, out f) && f != null)
                         _faction = f.ToString();
@@ -828,6 +834,7 @@ namespace AugmentationsExpanded
                 }
 
                 ConfigMenu.RefreshFields();
+                VisibleAugments.ModMain.RefreshClippingPolicy();
 
                 bool applied = ApplyToChip();
                 ApplySpawnToggle();
@@ -959,6 +966,7 @@ namespace AugmentationsExpanded
                     var k = line.Substring(0, i).Trim().Trim('"');
                     var v = line.Substring(i + 1).Trim().Trim('"');
                     if (k == KeyFaction && v.Length > 0) _faction = v;
+                    else if (k == KeyVAClipping) _vaClipping = v.Equals("true", StringComparison.OrdinalIgnoreCase);
                     else if (k == KeyTech && int.TryParse(v, out var n)) _techLevel = n;
                     else if (k == KeyBoxFaction && v.Length > 0) _boxFaction = v;
                     else if (k == KeyBoxTech && int.TryParse(v, out var bn)) _boxTech = bn;
@@ -1048,6 +1056,7 @@ namespace AugmentationsExpanded
                 Directory.CreateDirectory(ConfigDir);
                 File.WriteAllText(ConfigFile,
                     "{\n"
+                  + "  \"" + KeyVAClipping + "\": " + (_vaClipping ? "true" : "false") + ",\n"
                   + "  \"" + KeyFaction    + "\": \"" + _faction    + "\",\n"
                   + "  \"" + KeyTech       + "\": "   + _techLevel  + ",\n"
                   + "  \"" + KeyBoxFaction + "\": \"" + _boxFaction + "\",\n"

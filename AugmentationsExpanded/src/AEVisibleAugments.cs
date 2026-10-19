@@ -45,6 +45,10 @@ public static class ModMain
     private static IList _vaGroups;
     private static IDictionary _vaAugIdToGroup, _vaPrefabs, _vaGeneratedSkins;
     private static readonly Dictionary<int, long> SkinFlags = new Dictionary<int, long>();
+    private static readonly VisibleAugmentClipping Clipping = new VisibleAugmentClipping();
+    private static bool? _appliedClipping;
+    private static CreatureUIIcon _previewIcon;
+    private static Mercenary _previewMercenary;
 
     private static void Log(string m) => Debug.Log("[" + Id + "] " + m);
     private static void Err(string m) => Debug.LogError("[" + Id + "] " + m);
@@ -112,6 +116,7 @@ public static class ModMain
         if (!VisibleAugmentsEnabled || _failed || !_patchedVa || _vaGroups == null || _vaGroups.Count == 0) return;
         LoadOwnContent();
         if (Injected.Count == 0 || !Injected.All(g => _vaGroups.Contains(g))) Inject(when);
+        RefreshClippingPolicy();
     }
 
     private static void DisableAfterFailure(Exception ex)
@@ -121,6 +126,8 @@ public static class ModMain
         try { new Harmony(HarmonyId).UnpatchAll(HarmonyId); }
         catch (Exception cleanup) { Err("Could not fully remove optional patches: " + cleanup.Message); }
         _patchedVa = false;
+        try { Clipping.Restore(); }
+        catch (Exception cleanup) { Err("Could not restore VA clothing rules: " + cleanup.Message); }
         try { RemoveInjectedGroups(); }
         catch (Exception cleanup) { Err("Could not fully remove optional groups: " + cleanup.Message); }
         Err("Optional visuals disabled for this session; AE gameplay remains active: " + ex);
@@ -264,6 +271,9 @@ public static class ModMain
             HideLeggings = n["hideIfLeggingsEquipped"].AsBool, HideBoots = n["hideIfBootsEquipped"].AsBool,
             HideArmor = n["hideIfArmorEquipped"].AsBool, HideHelmet = n["hideIfHelmetEquipped"].AsBool,
         };
+        // Transparent skin pixels still leave the original head in the UI pixelizer's geometry pass.
+        // Remove that geometry as well, so only the replacement head contributes to the silhouette.
+        if (g.Slot == "head" && !g.HideRegions.Contains("head")) g.HideRegions.Add("head");
         foreach (JSONNode p in n["prefabs"].AsArray)
         {
             if (p.IsString) { g.Prefabs.Add(new PrefabSpec { Name = p.Value }); continue; }
@@ -337,6 +347,8 @@ public static class ModMain
         PatchCtx(_vaPlugin.GetNestedType("CreatureUIIconPatch", Any)?.GetMethod("Postfix", Any));
         PatchCtx(_vaPlugin.GetNestedType("CorpseDecoyUpdateVisualsPatch", Any)?.GetMethod("Postfix", Any));
         PatchCtx(_vaPlugin.GetNestedType("CorpseStorageRefreshVisualPatch", Any)?.GetMethod("Postfix", Any));
+        harmony.Patch(_vaPlugin.GetNestedType("CreatureUIIconPatch", Any).GetMethod("Postfix", Any),
+            postfix: new HarmonyMethod(typeof(ModMain), nameof(AfterPreview)));
 
         MethodInfo eqHash = _vaPlugin.GetMethod("ComputeEquipmentHash", Any);
         if (eqHash != null) harmony.Patch(eqHash, postfix: new HarmonyMethod(typeof(ModMain), nameof(AfterEquipmentHash)));
@@ -374,6 +386,30 @@ public static class ModMain
     }
 
     public static Exception CtxClear(Exception __exception) { _ctx = null; return __exception; }
+
+    public static void AfterPreview(CreatureUIIcon __0, Mercenary __1)
+    {
+        _previewIcon = __0;
+        _previewMercenary = __1;
+    }
+
+    internal static void RefreshClippingPolicy()
+    {
+        if (!VisibleAugmentsEnabled || !_loaded || _vaGroups == null || Injected.Count == 0) return;
+        bool allowClipping = AugmentationsExpandedMod._vaClipping;
+        if (_appliedClipping == allowClipping) return;
+        try
+        {
+            Clipping.Apply(_vaGroups, PieceBone, allowClipping);
+            _appliedClipping = allowClipping;
+            // VA compares these hashes each update. Clearing them also refreshes pieces when
+            // only a per-prefab clothing rule changes and the group's skin-mask flag is unchanged.
+            (_vaPlugin.GetField("_equipmentHash", Any)?.GetValue(null) as IDictionary)?.Clear();
+            if (_previewIcon != null && _previewIcon.isActiveAndEnabled && _previewMercenary != null)
+                _previewIcon.Initialize(_previewMercenary);
+        }
+        catch (Exception ex) { Err("Could not refresh VA clothing visibility: " + ex); }
+    }
 
     public static void AfterEquipmentHash(Creature creature, ref int __result)
     {
@@ -501,7 +537,9 @@ public static class ModMain
         {
             GameObject item = items[i];
             if (item == null || item.name.StartsWith("Aug")) continue;
-            if (!item.GetComponentsInChildren<ItemBone>(true).Any(b => bones.Contains(b.TargetBoneId))) continue;
+            // Body equipment stays visible in both modes: it either covers the augment or
+            // overlaps it. Only the established replacement-head/headgear behavior suppresses gear.
+            if (!item.GetComponentsInChildren<ItemBone>(true).Any(b => VisibleAugmentClipping.IsHead(b.TargetBoneId) && bones.Contains(b.TargetBoneId))) continue;
             foreach (Renderer r in item.GetComponentsInChildren<Renderer>(true))
                 if (r.sharedMaterial != null) { materials?.Remove(r.sharedMaterial); UnityEngine.Object.Destroy(r.sharedMaterial); }
             foreach (MeshRenderer r in item.GetComponentsInChildren<MeshRenderer>(true)) renderers?.Remove(r);
@@ -525,6 +563,7 @@ public static class ModMain
         if (!ResolveVa()) { Log("Visible Augments not loaded yet (" + when + "); will retry."); return; }
 
         RemoveInjectedGroups();
+        _appliedClipping = null;
         if (_vaGroups.Count == 0) { Log("Visible Augments has no groups yet (" + when + "); will retry."); return; }
 
         // Allocate actual free bits, including bit 63 (negative when stored in VA's signed long)
@@ -585,7 +624,7 @@ public static class ModMain
     // A piece hides worn equipment only on the bone it is attached to, and only if its augment lists that bone.
     private static void RegisterSuppression(string piece, string bone, List<string> suppress)
     {
-        if (bone == null || !suppress.Contains(bone)) return;
+        if (!VisibleAugmentClipping.IsHead(bone) || !suppress.Contains(bone)) return;
         if (!SuppressByPiece.TryGetValue(piece, out var list)) SuppressByPiece[piece] = list = new List<string>();
         if (!list.Contains(bone)) list.Add(bone);
     }

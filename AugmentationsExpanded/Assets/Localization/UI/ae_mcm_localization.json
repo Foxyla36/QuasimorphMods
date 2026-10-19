@@ -756,6 +756,32 @@
         "Japanese": "",
         "ChineseSimp": ""
       },
+      "ae.cfg.vaclipping.label": {
+        "EnglishUS": "Enable VA clipping",
+        "Russian": "",
+        "German": "",
+        "French": "",
+        "Spanish": "",
+        "Polish": "",
+        "Turkish": "",
+        "BrazilianPortugal": "",
+        "Korean": "",
+        "Japanese": "",
+        "ChineseSimp": ""
+      },
+      "ae.cfg.vaclipping.tip": {
+        "EnglishUS": "Requires Visible Augments.\n\nOff: worn body armour, leggings, and boots are hidden in order to display the augment visuals.\nOn: restore Visible Augments' original clothing rules, allowing augments to overlap equipped armour.\nApplies to both vanilla and AE visible augments.",
+        "Russian": "",
+        "German": "",
+        "French": "",
+        "Spanish": "",
+        "Polish": "",
+        "Turkish": "",
+        "BrazilianPortugal": "",
+        "Korean": "",
+        "Japanese": "",
+        "ChineseSimp": ""
+      },
       "ae.cfg.header.general": {
         "EnglishUS": "GENERAL SETS TOGGLES",
         "Russian": "",

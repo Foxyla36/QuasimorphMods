@@ -100,6 +100,8 @@ namespace AugmentationsExpanded
             _restartNote = new ConfigValue("__ae_restart_note", RestartNote(), Mod.ConfigHeader);
 
             _generalFields.Clear();
+            _generalFields.Add(new ConfigValue(Mod.KeyVAClipping, Mod._vaClipping, Mod.GeneralHeader, false,
+                L("ae.cfg.vaclipping.tip"), "ae.cfg.vaclipping.label"));
             _generalFields.Add(new ConfigValue(
                 Mod.KeyHandFootRecipe, Mod._handFootRecipe, Mod.GeneralHeader, true,
                 L("ae.cfg.handfootrecipe.tip"), "ae.cfg.handfootrecipe.label"));

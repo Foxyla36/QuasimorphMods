@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <Compile Include="AEVisibleAugments.cs" />
+    <Compile Include="VisibleAugmentClipping.cs" />
     <Compile Include="AugmentationsExpandedMod.cs" />
     <Compile Include="SmasherWoundSlotIcons.cs" />
     <Compile Include="SmasherSprites.cs" />
