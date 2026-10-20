@@ -133,7 +133,7 @@
         "ChineseSimp": "SCOUT-22 套装开关"
       },
       "ae.cfg.set.toggle.tip": {
-        "EnglishUS": "On: the {SET} set (augmentations, chip, crate) is allowed to spawn in the save. Off: the set is no longer allowed to spawn in the save.\n\nToggling this option will only affect missions generated after the toggle has been turned on or off. Toggling the set off does not remove the items from the save, it only removes their ability to spawn. If turned off, next time the game is restarted the set's settings will vanish. Turning it on and restarting will make them come back.",
+        "EnglishUS": "ON{D:ON}: the {SET} set (augmentations, chip and crate) can spawn in your save. While the set is OFF, its settings are hidden after the next restart. Turn it ON and restart the game to get them back.\nOFF{D:OFF}: the set no longer spawns. Items you already have stay in your save.\n\nRewards of missions already on the map do not change. Enemies and loot follow this setting in every mission you enter after the restart.",
         "Russian": "",
         "German": "",
         "French": "",
@@ -146,7 +146,7 @@
         "ChineseSimp": "开启：{SET} 套装（义体、芯片、箱子）可以在此存档中生成。关闭：该套装不再在此存档中生成。\n\n此选项只影响切换之后生成的任务。关闭套装不会移除存档中已有的物品，只会阻止它们生成。关闭后，下次重启游戏时该套装的设置会隐藏；重新开启并重启后会恢复。"
       },
       "ae.cfg.set.toggle.nochip.tip": {
-        "EnglishUS": "On: the {SET} set (augmentations, crate) is allowed to spawn in the save. Off: the set is no longer allowed to spawn in the save.\n\nToggling this option will only affect missions generated after the toggle has been turned on or off. Toggling the set off does not remove the items from the save, it only removes their ability to spawn. If turned off, next time the game is restarted the set's settings will vanish. Turning it on and restarting will make them come back.",
+        "EnglishUS": "ON{D:ON}: the {SET} set (augmentations and crate) can spawn in your save. While the set is OFF, its settings are hidden after the next restart. Turn it ON and restart the game to get them back.\nOFF{D:OFF}: the set no longer spawns. Items you already have stay in your save.\n\nRewards of missions already on the map do not change. Enemies and loot follow this setting in every mission you enter after the restart.",
         "Russian": "",
         "German": "",
         "French": "",
@@ -172,7 +172,7 @@
         "ChineseSimp": "M.E.R.C. 生成"
       },
       "ae.cfg.merc.toggle.tip": {
-        "EnglishUS": "On: enables spawn of Metabolic Energy Replacement Core (M.E.R.C.) in Dilthey TL3",
+        "EnglishUS": "ON{D:ON}: the Metabolic Energy Replacement Core (M.E.R.C.) can spawn from tech level 3 on Common, Worker, Miner, Security and Warden enemies and as loot. Dilthey gives it as a reward and sells it from tech level 3.\nOFF{D:OFF}: it does not spawn and is not given as a reward or sold. Its recipe can still be unlocked from an augmentation chip.",
         "Russian": "",
         "German": "",
         "French": "",
@@ -198,7 +198,7 @@
         "ChineseSimp": "义体科技等级"
       },
       "ae.cfg.augtech.tip": {
-        "EnglishUS": "Tech level of the nine augmentations of this set. This is what decides when the pieces can start showing up in missions: on enemies, in containers and in the loot on the ground. It is separate from the chip, so the pieces keep spawning even when the chip faction is none.",
+        "EnglishUS": "1 to 10{D:*}: the higher the level, the later the pieces start to show up in missions, on enemies, in containers and on the ground.",
         "Russian": "",
         "German": "",
         "French": "",
@@ -211,7 +211,7 @@
         "ChineseSimp": "该套装九件义体的科技等级。它决定这些部件何时开始在任务中出现：敌人身上、容器中以及地上的战利品。它与芯片分开设置，因此即使芯片阵营为 none，部件仍会继续生成。"
       },
       "ae.cfg.augtech.nochip.tip": {
-        "EnglishUS": "Tech level of the nine augmentations of this set. This is what decides when the pieces can start showing up in missions: on enemies, in containers and in the loot on the ground.",
+        "EnglishUS": "1 to 10{D:*}: the higher the level, the later the pieces start to show up in missions, on enemies, in containers and on the ground.",
         "Russian": "",
         "German": "",
         "French": "",
@@ -237,7 +237,7 @@
         "ChineseSimp": "箱子阵营"
       },
       "ae.cfg.cratefaction.tip": {
-        "EnglishUS": "Faction that gives the crate as a mission reward. Pick none to remove it. The crate is a container: take it apart and it drops pieces of this set. It is never found lying around and never sold in a station, a mission reward is the only way to get one.",
+        "EnglishUS": "Any faction{D:*}: that faction gives the crate of this set as a mission reward.\nnone{D:none}: the crate is never given as a reward.\n\nYou can take the crate apart to get pieces of this set. It is never found on the ground or sold in a station. A mission reward is the only way to get it.",
         "Russian": "",
         "German": "",
         "French": "",
@@ -263,7 +263,7 @@
         "ChineseSimp": "箱子科技等级"
       },
       "ae.cfg.cratetech.tip": {
-        "EnglishUS": "Crate tech level. The higher it is, the later the crate shows up in the chosen techtree as a reward. If the selected faction is none, it will not be rewarded after a mission.",
+        "EnglishUS": "1 to 10{D:*}: the higher the level, the later the crate shows up as a reward in the tech tree of the crate faction.\n\nIf the crate faction is none, the crate is never given as a reward.",
         "Russian": "",
         "German": "",
         "French": "",
@@ -289,7 +289,7 @@
         "ChineseSimp": "可制作芯片"
       },
       "ae.cfg.craftchip.tip": {
-        "EnglishUS": "On: you can craft {SET}'s chip in the HIS Magnum. Off: the chip is uncraftable and can only be found as a reward or in a mission.",
+        "EnglishUS": "ON{D:ON}: you can craft the {SET} chip in the HIS Magnum.\nOFF{D:OFF}: you cannot craft the chip. You can still get it from its faction, as a mission reward or in its stations, or find it in missions.",
         "Russian": "",
         "German": "",
         "French": "",
@@ -315,7 +315,7 @@
         "ChineseSimp": "芯片阵营"
       },
       "ae.cfg.chipfaction.tip": {
-        "EnglishUS": "Faction that hands out the chip as a mission reward. Pick none to keep it out of the reward tables.",
+        "EnglishUS": "Any faction{D:*}: that faction gives the chip of this set as a mission reward and sells it in its stations. The chip can also be found as loot in missions.\nnone{D:none}: the chip is never given as a reward and does not spawn at all.",
         "Russian": "",
         "German": "",
         "French": "",
@@ -341,7 +341,7 @@
         "ChineseSimp": "芯片科技等级"
       },
       "ae.cfg.chiptech.tip": {
-        "EnglishUS": "Chip tech level. The higher it is, the later the chip shows up in the chosen techtree as a reward. If the selected faction is none, the chip is not rewarded after a mission and does not spawn at all.",
+        "EnglishUS": "1 to 10{D:*}: the higher the level, the later the chip shows up as a reward, in the stations of the chip faction and as loot in missions.\n\nIf the chip faction is none, the chip is never given as a reward and does not spawn at all.",
         "Russian": "",
         "German": "",
         "French": "",
@@ -367,7 +367,7 @@
         "ChineseSimp": "偏好阵营"
       },
       "ae.cfg.piecefaction.tip": {
-        "EnglishUS": "Faction whose enemies will carry the nine pieces of this set more often, on top of the tags the set already has. Only the preferred faction can be edited: the base tags stay regardless. Pick none to keep the set on its own tags alone, with no preferred faction. The tags this set is specifically associated with are:",
+        "EnglishUS": "Any faction{D:*}: in missions against that faction, its enemies can carry the pieces of this set and the pieces can be found as loot. This is on top of the base tags.\nnone{D:none}: no preferred faction. The set only uses its base tags.\n\nThe base tags cannot be changed. The base tags of this set are",
         "Russian": "",
         "German": "",
         "French": "",
@@ -484,7 +484,7 @@
         "ChineseSimp": "(Arm Grenade Launcher) RGL-40 Reprisal 生成"
       },
       "ae.cfg.gunarm.gl.toggle.tip": {
-        "EnglishUS": "On: enables spawn of the (Arm Grenade Launcher) RGL-40 Reprisal on PMC enemies and in RealWare TL4",
+        "EnglishUS": "ON{D:ON}: the (Arm Grenade Launcher) RGL-40 Reprisal can spawn from tech level 4 on PMC enemies and in missions against RealWare. RealWare gives it as a reward and sells it from tech level 4.\nOFF{D:OFF}: it does not spawn and is not given as a reward or sold. Its recipe can still be unlocked from an augmentation chip.",
         "Russian": "",
         "German": "",
         "French": "",
@@ -510,7 +510,7 @@
         "ChineseSimp": "(Arm Blade) AB-60 Mantis Blade 生成"
       },
       "ae.cfg.gunarm.mantis.toggle.tip": {
-        "EnglishUS": "On: enables spawn of the (Arm Blade) AB-60 Mantis Blade on PMC enemies and in Tianming TL2",
+        "EnglishUS": "ON{D:ON}: the (Arm Blade) AB-60 Mantis Blade can spawn from tech level 2 on PMC enemies and in missions against Tianming. Tianming gives it as a reward and sells it from tech level 2.\nOFF{D:OFF}: it does not spawn and is not given as a reward or sold. Its recipe can still be unlocked from an augmentation chip.",
         "Russian": "",
         "German": "",
         "French": "",
@@ -536,7 +536,7 @@
         "ChineseSimp": "(Arm Discthrower) RT-30D Sawmill 生成"
       },
       "ae.cfg.gunarm.disc.toggle.tip": {
-        "EnglishUS": "On: enables spawn of the (Arm Discthrower) RT-30D Sawmill on PMC enemies and in Tianming, Coreward MG and Civil Resistance TL3",
+        "EnglishUS": "ON{D:ON}: the (Arm Discthrower) RT-30D Sawmill can spawn from tech level 3 on PMC enemies and in missions against Tianming, CoreWard and CResistance. These factions give it as a reward and sell it from tech level 3.\nOFF{D:OFF}: it does not spawn and is not given as a reward or sold. Its recipe can still be unlocked from an augmentation chip.",
         "Russian": "",
         "German": "",
         "French": "",
@@ -562,7 +562,7 @@
         "ChineseSimp": "(Arm Shotgun) Dual-12G Sommation 生成"
       },
       "ae.cfg.gunarm.shotgun.toggle.tip": {
-        "EnglishUS": "On: enables spawn of the (Arm Shotgun) Dual-12G Sommation on PMC enemies and in RealWare and Franche-Comte PS TL3",
+        "EnglishUS": "ON{D:ON}: the (Arm Shotgun) Dual-12G Sommation can spawn from tech level 3 on PMC enemies and in missions against RealWare and FrancheComte. These factions give it as a reward and sell it from tech level 3.\nOFF{D:OFF}: it does not spawn and is not given as a reward or sold. Its recipe can still be unlocked from an augmentation chip.",
         "Russian": "",
         "German": "",
         "French": "",
@@ -588,7 +588,7 @@
         "ChineseSimp": "(Arm Taser) D-50KV S.T.I.N.G. 生成"
       },
       "ae.cfg.gunarm.taser.toggle.tip": {
-        "EnglishUS": "On: enables spawn of the (Arm Taser) D-50KV S.T.I.N.G. on PMC enemies and in Dilthey and Franche-Comte PS TL3",
+        "EnglishUS": "ON{D:ON}: the (Arm Taser) D-50KV S.T.I.N.G. can spawn from tech level 3 on PMC enemies and in missions against Dilthey and FrancheComte. These factions give it as a reward and sell it from tech level 3.\nOFF{D:OFF}: it does not spawn and is not given as a reward or sold. Its recipe can still be unlocked from an augmentation chip.",
         "Russian": "",
         "German": "",
         "French": "",
@@ -679,7 +679,7 @@
         "ChineseSimp": ""
       },
       "ae.cfg.uhmg.toggle.tip": {
-        "EnglishUS": "On: enables spawn of the (Arm+Chest) UHMG O'Dakka on Military, PMC and Merc enemies, and in Planetbridge TL6, Tianming TL6 and RealWare TL7",
+        "EnglishUS": "ON{D:ON}: the (Arm+Chest) UHMG O'Dakka can spawn from tech level 6 on Military, PMC and Merc enemies and in missions against PlanetBridge, Tianming and RealWare. PlanetBridge and Tianming give it as a reward and sell it from tech level 6, RealWare from tech level 7.\nOFF{D:OFF}: it does not spawn and is not given as a reward or sold. Its recipe can still be unlocked from an augmentation chip.",
         "Russian": "",
         "German": "",
         "French": "",
@@ -692,7 +692,7 @@
         "ChineseSimp": ""
       },
       "ae.cfg.gunarm.mode.label": {
-        "EnglishUS": "Gun arm mode",
+        "EnglishUS": "Special weapon arm mode",
         "Russian": "",
         "German": "",
         "French": "",
@@ -705,7 +705,7 @@
         "ChineseSimp": "枪械手臂模式"
       },
       "ae.cfg.gunarm.mode.tip": {
-        "EnglishUS": "How the gun arms of this mod work. Vanilla: the arm blocks the primary weapon slot, like the vanilla weapon arms. Extra slot: the arm blocks the primary weapon slot and opens the third weapon slot. Bare hands only: no slot is blocked or added, the arm only replaces your bare hands weapon.\n\nArms that are already installed switch mode when the save is loaded. A weapon in the primary slot is moved to the backpack or vest when the slot gets blocked, and the switch waits until there is room for it.\n\n(Arm+Chest) UHMG O'Dakka is not affected: it always blocks the primary weapon slot and replaces your bare hands weapon, like the vanilla weapon arms.",
+        "EnglishUS": "Vanilla{D:Vanilla}: the arm blocks the primary weapon slot, like the vanilla weapon arms.\nExtra slot{D:Extra slot}: the arm blocks the primary weapon slot and opens the third weapon slot.\nBare hands only{D:Bare hands only}: no slot is blocked or added. The arm only replaces your bare hands weapon.\n\nArms already installed switch mode when the save is loaded. If the primary slot gets blocked, or the third slot closes, its weapon moves to the backpack or vest. If they are full, it goes to the ship cargo, or to the ground during a mission.\n\nAffected items (tagged as Special Weapon Arm)",
         "Russian": "",
         "German": "",
         "French": "",
@@ -770,7 +770,7 @@
         "ChineseSimp": ""
       },
       "ae.cfg.vaclipping.tip": {
-        "EnglishUS": "Requires Visible Augments.\n\nOff: worn body armour, leggings, and boots are hidden in order to display the augment visuals.\nOn: restore Visible Augments' original clothing rules, allowing augments to overlap equipped armour.\nApplies to both vanilla and AE visible augments.",
+        "EnglishUS": "Requires Visible Augments.\n\nON{D:ON}: the original Visible Augments rules. Some augment visuals stay visible over the armour you wear and can clip through it.\nOFF{D:OFF}: augment visuals on the body, arms, legs and feet are hidden while you wear the body armour, leggings or boots that cover them.\n\nApplies to both vanilla and AE visible augments. Head visuals are not affected.",
         "Russian": "",
         "German": "",
         "French": "",
@@ -783,7 +783,7 @@
         "ChineseSimp": ""
       },
       "ae.cfg.header.general": {
-        "EnglishUS": "GENERAL SETS TOGGLES",
+        "EnglishUS": "GENERAL SET&SETLESS TOGGLES",
         "Russian": "",
         "German": "",
         "French": "",
@@ -809,7 +809,7 @@
         "ChineseSimp": ""
       },
       "ae.cfg.handfootrecipe.tip": {
-        "EnglishUS": "On: crafting the arm of a set (shoulder and arm in one piece) needs the hand of the same set, and crafting the leg (thigh and foot in one piece) needs the foot of the same set, like the vanilla limbs. Off: the hand and the foot are removed from those recipes, so the arm and the leg are crafted from parts only.\n\nApplies to every set that can be crafted: Adam Smasher, Nachtreiher, SCOUT-22 and NEMESIS. ANDRAS cannot be crafted.",
+        "EnglishUS": "ON{D:ON}: the crafting recipe of the full arm of a set (shoulder and arm in one piece) needs the hand of the same set, and the crafting recipe of the full leg (thigh and foot in one piece) needs the foot of the same set, like the vanilla limbs.\nOFF{D:OFF}: the hand and the foot are removed from those crafting recipes. The arm and the leg are crafted from parts only.",
         "Russian": "",
         "German": "",
         "French": "",
@@ -835,7 +835,7 @@
         "ChineseSimp": ""
       },
       "ae.cfg.rankrestriction.tip": {
-        "EnglishUS": "On: your clones can install the pieces of a set only once they reach the Minimum clone rank chosen in that set's section. Until then the Augment command of the piece is greyed out, and its tooltip shows the rank it needs. Off: any clone can install any piece, and the Minimum clone rank of the sets is ignored.\n\nOnly your clones are affected: enemies keep spawning with the pieces as before. Pieces already installed are not removed.",
+        "EnglishUS": "ON{D:ON}: a clone can install the pieces of a set only after it reaches the Minimum clone rank chosen in that set's section. Until then the Augment command is greyed out, and the tooltip of the piece shows the rank it needs.\nOFF{D:OFF}: any clone can install any piece. The Minimum clone rank of the sets is ignored.\n\nOnly your clones are affected. Enemies still spawn with the pieces. Pieces already installed are not removed.",
         "Russian": "",
         "German": "",
         "French": "",
@@ -861,7 +861,7 @@
         "ChineseSimp": ""
       },
       "ae.cfg.multislotloss.tip": {
-        "EnglishUS": "On: vanilla behaviour. If a clone loses one wound slot of a multi-woundslot augmentation to an amputation, the whole augmentation is destroyed at the end of the mission, and the implants on its other wound slots go back to the cargo.\nOff (default): at the end of the mission the amputated wound slot grows back and the augmentation stays installed. The implants that were on the amputated wound slot are lost, since they fell to the ground or were destroyed with it; the implants on the other wound slots of the augmentation stay installed. The clone still needs the usual healing time for the amputation.\n\nOnly the items tagged as Multi-WoundSlot are affected:",
+        "EnglishUS": "What happens at the end of a mission when a clone loses one wound slot of a Multi-WoundSlot augmentation to an amputation.\n\nON{D:ON}: vanilla behaviour. The whole augmentation is destroyed, and the implants on its other wound slots go back to the cargo.\nOFF{D:OFF}: the amputated wound slot grows back and the augmentation stays installed. The implants on the amputated wound slot are lost. The implants on the other wound slots stay installed. The clone still needs the usual healing time for the amputation.\n\nAffected items (tagged as Multi-WoundSlot)",
         "Russian": "",
         "German": "",
         "French": "",
@@ -899,8 +899,21 @@
         "Japanese": "",
         "ChineseSimp": ""
       },
+      "ae.cfg.default": {
+        "EnglishUS": "default",
+        "Russian": "",
+        "German": "",
+        "French": "",
+        "Spanish": "",
+        "Polish": "",
+        "Turkish": "",
+        "BrazilianPortugal": "",
+        "Korean": "",
+        "Japanese": "",
+        "ChineseSimp": ""
+      },
       "ae.cfg.minrank.tip": {
-        "EnglishUS": "Lowest rank a clone needs to install the pieces of the {SET} set. It only takes effect when Clone rank restriction is on in GENERAL SETS TOGGLES. The ranks are read from the game, so ranks added by other mods are listed too.",
+        "EnglishUS": "Any rank{D:*}: clones of this rank or higher can install the pieces of the {SET} set.\n\nWorks only when Clone rank restriction is ON in GENERAL SET&SETLESS TOGGLES.",
         "Russian": "",
         "German": "",
         "French": "",
@@ -926,7 +939,7 @@
         "ChineseSimp": ""
       },
       "ae.cfg.pmc.tip": {
-        "EnglishUS": "On: the nine pieces of the {SET} set can also spawn on enemies with the PMC tag (PMC soldiers, heavy PMC, assassins and bounty hunters), on top of the tags and the preferred faction the set already has. Off: those enemies only carry the pieces when another tag of the set matches them.\n\nToggling this option will only affect missions generated after the change.",
+        "EnglishUS": "ON{D:ON}: the {SET} pieces can also spawn on enemies that use the PMC tag, such as PMC soldiers, assassins and bounty hunters. This is on top of the tags and the preferred faction of the set.\nOFF{D:OFF}: these enemies only carry the pieces if another tag of the set matches them.",
         "Russian": "",
         "German": "",
         "French": "",
@@ -1017,7 +1030,7 @@
         "ChineseSimp": ""
       },
       "ae.icons.adaptive.tip": {
-        "EnglishUS": "On: with an icon pack, the inventory size of an item follows its art: an icon up to 24 pixels wide takes 1 cell, a wider one takes 2. Off (default): every item keeps its standard size whatever the art, 2x1 for the set pieces, the gun arms and the crates, 1x1 for M.E.R.C. and the chips. Items drawn with the default art always keep their standard size.\n\nItems already in your save keep the size they had when you got them: an augment takes the new size only after you install it on a clone and remove it again, because the removed piece is a new copy. Crates and chips you already own keep their old size. After the restart, new drops, crafts and rewards take the new size.\n\nThe game must be restarted for this option to take effect.",
+        "EnglishUS": "ON{D:ON}: the inventory size of items drawn with an icon pack follows the art. An icon up to 24 pixels wide takes 1 cell, a wider one takes 2 cells.\nOFF{D:OFF}: every item keeps its standard size, 1x1 for M.E.R.C. and the chips and 2x1 for every other augmentation and the crates.\n\nItems with the default art always keep their standard size. Items already in your save keep their old size. An augment takes the new size only after you install it on a clone and remove it again, and crates and chips you already own never change. New drops, crafts and rewards use the new size. Restart the game to apply this option.",
         "Russian": "",
         "German": "",
         "French": "",
@@ -1056,7 +1069,7 @@
         "ChineseSimp": ""
       },
       "ae.icons.items.set.tip": {
-        "EnglishUS": "Textures of the nine pieces and of the crate of {NAME}: inventory icon, ground icon and ground shadow. With Adaptive inventory size on, the inventory size follows the icon pack art (see that option at the top).",
+        "EnglishUS": "Inventory icon, ground icon and ground shadow of the nine pieces and the crate of {NAME}. With Adaptive inventory size ON, the inventory size follows the art.",
         "Russian": "",
         "German": "",
         "French": "",
@@ -1069,7 +1082,7 @@
         "ChineseSimp": ""
       },
       "ae.icons.items.item.tip": {
-        "EnglishUS": "Textures of {NAME}: inventory icon, ground icon and ground shadow. With Adaptive inventory size on, the inventory size follows the icon pack art (see that option at the top).",
+        "EnglishUS": "Inventory icon, ground icon and ground shadow of {NAME}. With Adaptive inventory size ON, the inventory size follows the art.",
         "Russian": "",
         "German": "",
         "French": "",
@@ -1095,7 +1108,7 @@
         "ChineseSimp": ""
       },
       "ae.icons.woundslots.tip": {
-        "EnglishUS": "Body part images of {NAME} on the augmentation and health screens, in all four states: normal, wounded, fixated and amputated.",
+        "EnglishUS": "Body part images of {NAME} on the augmentation and health screens, in all four states (normal, wounded, fixated and amputated).",
         "Russian": "",
         "German": "",
         "French": "",
@@ -1121,7 +1134,7 @@
         "ChineseSimp": ""
       },
       "ae.icons.chip.tip": {
-        "EnglishUS": "Textures of the chip of {NAME}: inventory icon, ground icon and ground shadow. With Adaptive inventory size on, the inventory size follows the icon pack art (see that option at the top).",
+        "EnglishUS": "Inventory icon, ground icon and ground shadow of the chip of {NAME}. With Adaptive inventory size ON, the inventory size follows the art.",
         "Russian": "",
         "German": "",
         "French": "",
@@ -1147,7 +1160,7 @@
         "ChineseSimp": ""
       },
       "ae.icons.weapon.set.tip": {
-        "EnglishUS": "Inventory icon of the fist that the arm and the hand of {NAME} put in the hand slot, shown there and in the current weapon panel. With Default - Foxyla36 the fist keeps the vanilla icon it uses now.",
+        "EnglishUS": "Inventory icon of the fist that the arm and the hand of {NAME} put in the hand slot. It shows there and in the current weapon panel.",
         "Russian": "",
         "German": "",
         "French": "",
@@ -1160,7 +1173,7 @@
         "ChineseSimp": ""
       },
       "ae.icons.weapon.item.tip": {
-        "EnglishUS": "Inventory icon of the weapon that {NAME} puts in the hand slot, shown there and in the current weapon panel.",
+        "EnglishUS": "Inventory icon of the weapon that {NAME} puts in the hand slot. It shows there and in the current weapon panel.",
         "Russian": "",
         "German": "",
         "French": "",
@@ -1173,7 +1186,7 @@
         "ChineseSimp": ""
       },
       "ae.icons.common.tip": {
-        "EnglishUS": "Default - Foxyla36 is the art used now. A Custom - {author} entry only shows up when that icon pack has art for this entry, and any file the pack lacks keeps the default art.\n\nThe new icons are applied after a restart.",
+        "EnglishUS": "Default - Foxyla36 is, in fact, the default of the mod. Icons missing from the chosen pack fall back to the default ones. The new icons are applied after a restart.",
         "Russian": "",
         "German": "",
         "French": "",
@@ -1225,7 +1238,7 @@
         "ChineseSimp": ""
       },
       "ae.cfg.set.toggle.nocrate.tip": {
-        "EnglishUS": "On: the {SET} set (augmentation, chip) is allowed to spawn in the save. Off: the set is no longer allowed to spawn in the save.\n\nToggling this option will only affect missions generated after the toggle has been turned on or off. Toggling the set off does not remove the items from the save, it only removes their ability to spawn. If turned off, next time the game is restarted the set's settings will vanish. Turning it on and restarting will make them come back.",
+        "EnglishUS": "ON{D:ON}: the {SET} set (augmentation and chip) can spawn in your save. While the set is OFF, its settings are hidden after the next restart. Turn it ON and restart the game to get them back.\nOFF{D:OFF}: the set no longer spawns. Items you already have stay in your save.\n\nRewards of missions already on the map do not change. Enemies and loot follow this setting in every mission you enter after the restart.",
         "Russian": "",
         "German": "",
         "French": "",
@@ -1238,7 +1251,7 @@
         "ChineseSimp": ""
       },
       "ae.cfg.augtech.single.tip": {
-        "EnglishUS": "Tech level of the augmentation. This is what decides when it can start showing up in missions: on enemies, in containers and in the loot on the ground, and from which tech level its reward faction hands it out. It is separate from the chip, so the augmentation keeps spawning even when the chip faction is none.",
+        "EnglishUS": "1 to 10{D:*}: the higher the level, the later the augmentation starts to show up in missions (on enemies, in containers and on the ground) and as a reward from its reward faction.",
         "Russian": "",
         "German": "",
         "French": "",
@@ -1264,7 +1277,33 @@
         "ChineseSimp": ""
       },
       "ae.cfg.rewardfaction.tip": {
-        "EnglishUS": "Faction that hands out the augmentation as a mission reward, from the augmentation's tech level. It takes the place of a crate, which this set does not have. Pick none to keep it out of the reward tables.",
+        "EnglishUS": "Any faction{D:*}: that faction gives the augmentation as a mission reward, starting from the tech level of the augmentation.\nnone{D:none}: the augmentation is never given as a reward.\n\nThis set has no crate, so this takes its place.",
+        "Russian": "",
+        "German": "",
+        "French": "",
+        "Spanish": "",
+        "Polish": "",
+        "Turkish": "",
+        "BrazilianPortugal": "",
+        "Korean": "",
+        "Japanese": "",
+        "ChineseSimp": ""
+      },
+      "ae.tooltip.specialweaponarm": {
+        "EnglishUS": "This item is tagged as Special Weapon Arm",
+        "Russian": "",
+        "German": "",
+        "French": "",
+        "Spanish": "",
+        "Polish": "",
+        "Turkish": "",
+        "BrazilianPortugal": "",
+        "Korean": "",
+        "Japanese": "",
+        "ChineseSimp": ""
+      },
+      "ae.cfg.opi.chip.note": {
+        "EnglishUS": "The OP-I chip is the Pirated Augmentation Disk. Its pool holds the crafting recipes of every augmentation of the mod that can be crafted. Each disk unlocks one of them at random.",
         "Russian": "",
         "German": "",
         "French": "",

@@ -38,6 +38,7 @@
     <Compile Include="SmasherExtraSlot.cs" />
     <Compile Include="SmasherLongStats.cs" />
     <Compile Include="SmasherMultiSlot.cs" />
+    <Compile Include="SmasherSpecialArm.cs" />
     <Compile Include="SmasherGunArms.cs" />
     <Compile Include="SmasherUhmg.cs" />
     <Compile Include="SmasherRanks.cs" />

@@ -18,6 +18,7 @@
       "AE_GLShoulder"
     ],
     "TooltipIconTag": "aug_type_arm",
+    "ae_special_weapon_arm": "On",
     "Disassembly": [
       {
         "ItemId": "weapon_parts",

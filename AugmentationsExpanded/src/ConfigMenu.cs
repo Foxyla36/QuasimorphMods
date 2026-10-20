@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using MGSC;
 using ModConfigMenu;
 using ModConfigMenu.Contracts;
@@ -15,6 +16,8 @@ namespace AugmentationsExpanded
     {
         private const string RestartColor = "#FF0000";
         private const string IconsInfoHeader = "ae.icons.header.info";
+
+        private static readonly Regex DefaultMark = new Regex(@"\{D:([^}]*)\}");
 
         private static List<IConfigValue> _config;
         private static IConfigValue _configNote;
@@ -49,15 +52,23 @@ namespace AugmentationsExpanded
         /// Config Menu, the factions, the clone ranks, the icon packs and the localized texts.
         /// Output: Nothing is returned. Both panels are registered in MCM with their save
         /// callbacks; throws when MCM is missing or its API changed. A failure of the icons panel
-        /// alone is logged and leaves the settings panel in place.
+        /// alone is logged and leaves the settings panel in place. Before registering, the default
+        /// marks of every tooltip are resolved (see MarkDefaults).
         /// AI-generated documentation, written to help external users understand the mod.
         /// </remarks>
         internal static void Register()
         {
-            ModConfigMenuAPI.RegisterModConfig(Mod.ModName, BuildConfig(), Mod.OnConfigSaved);
+            List<IConfigValue> config = BuildConfig();
+            MarkDefaults(config);
+            ModConfigMenuAPI.RegisterModConfig(Mod.ModName, config, Mod.OnConfigSaved);
             RefreshFields();
 
-            try { ModConfigMenuAPI.RegisterModConfig(Mod.IconsModName, BuildIconsConfig(), Mod.OnIconsSaved); }
+            try
+            {
+                List<IConfigValue> icons = BuildIconsConfig();
+                MarkDefaults(icons);
+                ModConfigMenuAPI.RegisterModConfig(Mod.IconsModName, icons, Mod.OnIconsSaved);
+            }
             catch (Exception e)
             {
                 Debug.LogError("[AugmentationsExpanded] icons panel not registered: " + e);
@@ -113,7 +124,7 @@ namespace AugmentationsExpanded
                 MultiSlotTooltip(), "ae.cfg.multislotloss.label"));
             _generalFields.Add(new DropdownConfig(
                 SmasherGunArms.KeyMode, SmasherGunArms.Mode, Mod.GeneralHeader, SmasherGunArms.ModeVanilla,
-                L(SmasherGunArms.ModeTipKey), SmasherGunArms.ModeLabelKey,
+                SpecialArmTooltip(), SmasherGunArms.ModeLabelKey,
                 SmasherGunArms.Modes.Cast<object>().ToList()));
 
             _setToggle = new ConfigValue(
@@ -321,14 +332,14 @@ namespace AugmentationsExpanded
                 L("ae.cfg.rewardfaction.tip"), "ae.cfg.rewardfaction.label", new List<object>(factions)));
             _opiFields.Add(new ConfigValue(
                 Mod.KeyOpiCraftChip, Mod._opCraftChip, Mod.OpiHeader, Mod.OpiDefaultCraftChip,
-                CraftChipTooltip("ae.cfg.setname.opi"),
+                CraftChipTooltip("ae.cfg.setname.opi") + OpiChipNote(),
                 "ae.cfg.craftchip.label"));
             _opiFields.Add(new DropdownConfig(
                 Mod.KeyOpiFaction, Mod._opFaction, Mod.OpiHeader, Mod.OpiDefaultFaction,
-                TipChipFaction, "ae.cfg.chipfaction.label", new List<object>(factions)));
+                TipChipFaction + OpiChipNote(), "ae.cfg.chipfaction.label", new List<object>(factions)));
             _opiFields.Add(new DropdownConfig(
                 Mod.KeyOpiTech, Mod._opTech, Mod.OpiHeader, Mod.OpiDefaultTech,
-                TipChipTech, "ae.cfg.chiptech.label", new List<object>(techLevels)));
+                TipChipTech + OpiChipNote(), "ae.cfg.chiptech.label", new List<object>(techLevels)));
 
             _config = new List<IConfigValue>();
             Fill(true);
@@ -584,6 +595,102 @@ namespace AugmentationsExpanded
             foreach (string id in SmasherAugmentations.MultiSlotIds) names.Add("- " + L(SmasherGunArms.McmNameKeyOf(id)));
             return L("ae.cfg.multislotloss.tip") + "\n"
                  + (names.Count == 0 ? L("ae.cfg.multislotloss.none") : string.Join("\n", names.ToArray()));
+        }
+
+        /// <summary>
+        /// Resolves the default marks in the tooltips of a panel, using the default value that
+        /// each field already gives MCM. Must run while the list still holds every field, before
+        /// RefreshFields leaves out those of the sets that are off.
+        /// </summary>
+        /// <param name="values">The fields of a panel. Null entries and fields without a tooltip
+        /// are skipped.</param>
+        /// <remarks>
+        /// Input: The parameter and the localized word for "default".
+        /// Output: Nothing is returned. Replaces the tooltip property of the fields whose text has
+        /// a mark.
+        /// AI-generated documentation, written to help external users understand the mod.
+        /// </remarks>
+        private static void MarkDefaults(IEnumerable<IConfigValue> values)
+        {
+            foreach (IConfigValue v in values)
+            {
+                if (v == null || v.Properties == null) continue;
+                int at = v.Properties.FindIndex(p => p.Key == "tooltip");
+                if (at < 0 || !(v.Properties[at].Value is string tip) || tip.IndexOf("{D:", StringComparison.Ordinal) < 0)
+                    continue;
+                MetaData def = v.Properties.Find(p => p.Key == "default");
+                v.Properties[at] = new MetaData("tooltip", MarkDefault(tip, def == null ? null : def.Value));
+            }
+        }
+
+        /// <summary>
+        /// Resolves the default marks of one tooltip. An option line is written as
+        /// "Option{D:value}: ..." and gets " (default)" when the field's default is that value;
+        /// a switch is ON for true and OFF for false. A line that stands for a range of values,
+        /// such as "1 to 10" or "Any faction", is written with {D:*} and gets " (default X)"
+        /// with the default value, unless another mark of the text already names it. Every mark
+        /// that does not match is removed.
+        /// </summary>
+        /// <param name="tip">The tooltip text with its marks.</param>
+        /// <param name="def">The default value of the field, e.g. true, 7, "RealWare" or "Vanilla".
+        /// Null removes every mark.</param>
+        /// <returns>The tooltip with the marks replaced, e.g. "ON (default): ...".</returns>
+        /// <remarks>
+        /// Input: The parameters and the localized word for "default".
+        /// Output: Only the return value.
+        /// AI-generated documentation, written to help external users understand the mod.
+        /// </remarks>
+        private static string MarkDefault(string tip, object def)
+        {
+            string value = def is bool b ? (b ? "ON" : "OFF") : (def == null ? string.Empty : def.ToString());
+            bool named = false;
+            foreach (Match m in DefaultMark.Matches(tip))
+                if (m.Groups[1].Value != "*" && string.Equals(m.Groups[1].Value, value, StringComparison.OrdinalIgnoreCase))
+                    named = true;
+            string word = L("ae.cfg.default");
+            return DefaultMark.Replace(tip, m =>
+            {
+                string option = m.Groups[1].Value;
+                if (value.Length == 0) return string.Empty;
+                if (option == "*") return named ? string.Empty : " (" + word + " " + value + ")";
+                return string.Equals(option, value, StringComparison.OrdinalIgnoreCase) ? " (" + word + ")" : string.Empty;
+            });
+        }
+
+        /// <summary>
+        /// Tooltip of the special weapon arm mode dropdown (ae.cfg.gunarm.mode.label), ending with
+        /// the names of the augmentations tagged as Special Weapon Arm, one per line, like the list
+        /// of the Multi-WoundSlot switch.
+        /// </summary>
+        /// <returns>The localized tooltip followed by the list, e.g. "... (tagged as Special Weapon
+        /// Arm)\n- (Arm Grenade Launcher) RGL-40 Reprisal".</returns>
+        /// <remarks>
+        /// Input: The localized texts and the tags read from the augmentation json files.
+        /// Output: Only the return value.
+        /// AI-generated documentation, written to help external users understand the mod.
+        /// </remarks>
+        private static string SpecialArmTooltip()
+        {
+            var names = new List<string>();
+            foreach (string id in SmasherAugmentations.SpecialArmIds) names.Add("- " + L(SmasherGunArms.McmNameKeyOf(id)));
+            return L(SmasherGunArms.ModeTipKey) + "\n"
+                 + (names.Count == 0 ? L("ae.cfg.multislotloss.none") : string.Join("\n", names.ToArray()));
+        }
+
+        /// <summary>
+        /// The note added at the end of the three chip tooltips of the OP-I section: the OP-I chip
+        /// is the Pirated Augmentation Disk, whose pool holds the recipes of every augmentation of
+        /// the mod that can be crafted.
+        /// </summary>
+        /// <returns>A blank line followed by the localized note (ae.cfg.opi.chip.note).</returns>
+        /// <remarks>
+        /// Input: No parameters. Reads the game's text tables.
+        /// Output: Only the return value.
+        /// AI-generated documentation, written to help external users understand the mod.
+        /// </remarks>
+        private static string OpiChipNote()
+        {
+            return "\n\n" + L("ae.cfg.opi.chip.note");
         }
 
         /// <summary>

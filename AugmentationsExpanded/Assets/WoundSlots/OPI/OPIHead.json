@@ -31,6 +31,7 @@
       "more_dmg_mult": 0.1,
       "critchance_reduce": 0.1,
       "ranged_accuracy": 0.05,
+      "fov_angle": 0.1,
       "firearm_range": 2,
       "perk_cooldown": -0.1,
       "sprint_accuracy_mult": -0.1

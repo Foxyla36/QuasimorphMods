@@ -16,8 +16,9 @@ namespace AugmentationsExpanded
         /// Ids of the clone ranks in promotion order, read once from the game's perks: every perk
         /// of type Rank, vanilla or added by another mod, ordered by following NextPerkId from the
         /// first rank (the one no other rank points to). Ranks outside the chain are appended,
-        /// sorted by the number in "rank_N". The position in this list is the rank number shown
-        /// in the Mod Config Menu, so rank_0 is 0.
+        /// sorted by the number in "rank_N". The position in this list is the rank number saved in
+        /// config.json, so rank_0 is 0; the Mod Config Menu and the tooltips show it plus one, as
+        /// the game's character panel does (rank_0 is 1 - Rookie).
         /// </summary>
         /// <returns>The perk ids, e.g. ["rank_0", ..., "rank_5"]. Never null or empty: when the
         /// perks cannot be read the six vanilla ids are returned, and the read is tried again on
@@ -131,10 +132,12 @@ namespace AugmentationsExpanded
 
         /// <summary>
         /// Text of a rank in the dropdown, "{number} - {name}", with the name in the current
-        /// language and its first letter in upper case.
+        /// language and its first letter in upper case. The number counts from 1, like the rank
+        /// level in the game's character panel.
         /// </summary>
-        /// <param name="number">A rank number; clamped to the ranks that exist.</param>
-        /// <returns>The text, e.g. "0 - Rookie" or "5 - Commander". The perk id stands in for a
+        /// <param name="number">A rank number, 0 for the first rank; clamped to the ranks that
+        /// exist.</param>
+        /// <returns>The text, e.g. "1 - Rookie" or "6 - Commander". The perk id stands in for a
         /// missing name.</returns>
         /// <remarks>
         /// Input: The parameter, the rank list and the game's text tables.
@@ -149,13 +152,13 @@ namespace AugmentationsExpanded
             string name = Localization.Get(key);
             if (string.IsNullOrEmpty(name) || name == key) name = id;
             else name = char.ToUpperInvariant(name[0]) + name.Substring(1);
-            return n + " - " + name;
+            return (n + 1) + " - " + name;
         }
 
         /// <summary>
         /// Every rank as dropdown text, in order, for the Mod Config Menu.
         /// </summary>
-        /// <returns>The texts, e.g. ["0 - Rookie", "1 - Private", ...]. Never empty.</returns>
+        /// <returns>The texts, e.g. ["1 - Rookie", "2 - Private", ...]. Never empty.</returns>
         /// <remarks>
         /// Input: No parameters. Reads the rank list and the game's text tables.
         /// Output: Only the return value.
@@ -169,13 +172,14 @@ namespace AugmentationsExpanded
         }
 
         /// <summary>
-        /// Rank number of a value saved by the Mod Config Menu or read from config.json: the
-        /// leading digits of the text, so both "4 - Colonel" and "4" give 4.
+        /// Rank number of a value saved by the Mod Config Menu or read from config.json, from the
+        /// leading digits of the text. A dropdown entry counts from 1 (see Label) and a bare
+        /// number from config.json counts from 0, so both "5 - Colonel" and "4" give 4.
         /// </summary>
         /// <param name="value">The saved value. Null or text without leading digits is
         /// accepted.</param>
         /// <param name="fallback">Number returned when no digits are found.</param>
-        /// <returns>The rank number, or fallback.</returns>
+        /// <returns>The rank number, 0 for the first rank, or fallback.</returns>
         /// <remarks>
         /// Input: The parameters only.
         /// Output: Only the return value.
@@ -188,7 +192,8 @@ namespace AugmentationsExpanded
             int end = 0;
             while (end < s.Length && char.IsDigit(s[end])) end++;
             int n;
-            return end > 0 && int.TryParse(s.Substring(0, end), out n) ? n : fallback;
+            if (end == 0 || !int.TryParse(s.Substring(0, end), out n)) return fallback;
+            return end < s.Length ? n - 1 : n;
         }
 
         /// <summary>

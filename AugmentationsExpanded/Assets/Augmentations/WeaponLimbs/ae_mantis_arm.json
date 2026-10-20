@@ -18,6 +18,7 @@
       "AE_MantisShoulder"
     ],
     "TooltipIconTag": "aug_type_arm",
+    "ae_special_weapon_arm": "On",
     "Disassembly": [
       {
         "ItemId": "pierce_parts",

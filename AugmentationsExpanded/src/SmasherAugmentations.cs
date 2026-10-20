@@ -24,10 +24,13 @@ namespace AugmentationsExpanded
 
         private static readonly List<string> _multiSlot = new List<string>();
 
+        private static readonly List<string> _specialArms = new List<string>();
+
         public const string PmcTag = "PMC";
 
         public const string LongStatsKey = "ae_kill_long_stats";
         public const string MultiSlotKey = "ae_lose_augmentation_on_amputate";
+        public const string SpecialArmKey = "ae_special_weapon_arm";
 
         public const string SetSmasher     = "Smasher";
         public const string SetNachtreiher = "Nachtreiher";
@@ -375,6 +378,35 @@ namespace AugmentationsExpanded
         public static IEnumerable<string> MultiSlotIds { get { return _multiSlot; } }
 
         /// <summary>
+        /// Whether an augmentation is tagged as Special Weapon Arm (Data.ae_special_weapon_arm
+        /// set to "On" in its json): a weapon arm of the mod whose primary slot block follows the
+        /// special weapon arm mode of the Mod Config Menu (see SmasherGunArms).
+        /// </summary>
+        /// <param name="id">Item id, e.g. "ae_gl_arm". Null is accepted.</param>
+        /// <returns>True for a tagged augmentation loaded by the mod; false otherwise, also for
+        /// every vanilla item.</returns>
+        /// <remarks>
+        /// Input: The parameter and the tags remembered while loading.
+        /// Output: Only the return value.
+        /// AI-generated documentation, written to help external users understand the mod.
+        /// </remarks>
+        public static bool IsSpecialArm(string id)
+        {
+            return id != null && _specialArms.Contains(id);
+        }
+
+        /// <summary>
+        /// The augmentations tagged as Special Weapon Arm, in the order they were loaded. Used for
+        /// the list in the tooltip of the special weapon arm mode.
+        /// </summary>
+        /// <remarks>
+        /// Input: The tags remembered while loading.
+        /// Output: The ids, e.g. "ae_gl_arm". Empty before the augmentations are loaded.
+        /// AI-generated documentation, written to help external users understand the mod.
+        /// </remarks>
+        public static IEnumerable<string> SpecialArmIds { get { return _specialArms; } }
+
+        /// <summary>
         /// Sets the tech level of every piece of a set. It decides from which tech level the pieces
         /// can appear in missions and is shown on their tooltip. Crafting ignores it.
         /// </summary>
@@ -552,6 +584,7 @@ namespace AugmentationsExpanded
                 else Debug.LogWarning("[AugmentationsExpanded] " + id + ": " + MultiSlotKey
                                     + " ignored, the augmentation has a single wound slot.");
             }
+            if (SmasherJson.IsOn(data[SpecialArmKey])) _specialArms.Add(id);
             Debug.Log("[AugmentationsExpanded] + " + id + "  set=" + (set.Length == 0 ? "-" : set)
                     + "  TL" + rec.TechLevel
                     + "  " + rec.InventoryWidthSize + "x1  slot=["

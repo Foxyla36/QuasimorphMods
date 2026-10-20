@@ -18,7 +18,6 @@
     },
     "ImplicitBonusEffects": {
       "immune_poison": 1,
-      "wound_immune_poison": 1,
       "status_immune_poisonEffect": 1,
       "food_calories": -0.8,
       "resist_pierce": 8,

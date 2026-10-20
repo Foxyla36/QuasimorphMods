@@ -231,8 +231,9 @@ namespace AugmentationsExpanded
         /// and the UHMG to the vanilla augmentation chip, applies the chip, crate, PMC and reward
         /// settings, unlocks the chip conversion recipes, applies the spawn switches and patches
         /// the game for the clone rank restriction, the hidden effect lists (ae_kill_long_stats),
-        /// the Multi-WoundSlot augmentations (ae_lose_augmentation_on_amputate) and the weapon
-        /// crit bonus (ae_crit_chance_bonus). Every step has its own try/catch, so a failing step
+        /// the Multi-WoundSlot augmentations (ae_lose_augmentation_on_amputate), the tooltip line
+        /// of the Special Weapon Arms (ae_special_weapon_arm) and the weapon crit bonus
+        /// (ae_crit_chance_bonus). Every step has its own try/catch, so a failing step
         /// does not skip the others.
         /// </summary>
         /// <param name="context">The context given by the game. Its ModContentPath must be the
@@ -325,6 +326,9 @@ namespace AugmentationsExpanded
 
             try { SmasherMultiSlot.Patch(); }
             catch (Exception e) { Debug.LogError("[AugmentationsExpanded] multi-wound slot augmentations: " + e); }
+
+            try { SmasherSpecialArm.Patch(); }
+            catch (Exception e) { Debug.LogError("[AugmentationsExpanded] special weapon arm tag: " + e); }
 
             try { SmasherWeapons.PatchCritBonus(); }
             catch (Exception e) { Debug.LogError("[AugmentationsExpanded] weapon crit bonus: " + e); }
