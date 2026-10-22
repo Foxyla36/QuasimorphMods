@@ -1,0 +1,42 @@
+{
+  "RecordType": "MGSC.AugmentationRecord",
+  "Data": {
+    "Id": "ae_sniper_head",
+    "Categories": [
+      "Agent",
+      "Specops",
+      "Merc",
+      "RealWare",
+      "FrancheComte"
+    ],
+    "TechLevel": 5,
+    "Price": 900.0,
+    "Weight": 1.0,
+    "InventoryWidthSize": 2,
+    "ItemClass": "CyberneticAug",
+    "CanPutInVest": false,
+    "AugmentationClass": "Body",
+    "WoundSlotIds": [
+      "AE_SniperHead"
+    ],
+    "TooltipIconTag": "aug_type_head",
+    "Disassembly": [
+      {
+        "ItemId": "circuit_board",
+        "Count": 1
+      },
+      {
+        "ItemId": "glass",
+        "Count": 2
+      },
+      {
+        "ItemId": "microelectronics_parts",
+        "Count": 1
+      },
+      {
+        "ItemId": "weapon_parts",
+        "Count": 1
+      }
+    ]
+  }
+}

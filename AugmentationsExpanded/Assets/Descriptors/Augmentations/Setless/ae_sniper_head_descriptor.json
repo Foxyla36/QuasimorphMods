@@ -1,0 +1,11 @@
+{
+  "RecordType": "QM_ImporterAPI.Templates.Descriptors.CustomAugmentationDescriptor",
+  "Data": {
+    "ItemId": "ae_sniper_head",
+    "ImageProperties": {
+      "IconSpriteIdOrPath": "Images/Augmentations/generic_arm_container_14_inv.png",
+      "SmallIconSpriteIdOrPath": "Images/Augmentations/generic_arm_container_14_floor.png",
+      "ShadowOnFloorSpriteIdOrPath": "Images/Augmentations/generic_arm_container_shadow.png"
+    }
+  }
+}

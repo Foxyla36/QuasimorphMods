@@ -1,0 +1,10 @@
+{
+  "RecordType": "MGSC.FireModeRecord",
+  "Data": {
+    "Id": "ae_ecannon_burst_1",
+    "CloneFrom": "launcher_mars_1",
+    "AmmoPerShot": 6,
+    "Accuracy": 0.15,
+    "ScatterAngle": 3.5
+  }
+}

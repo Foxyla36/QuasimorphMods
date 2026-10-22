@@ -1,0 +1,57 @@
+{
+  "RecordType": "MGSC.WoundSlotRecord",
+  "Data": {
+    "Id": "AE_ChainShotgunArm",
+    "SlotType": "Arm",
+    "NatureType": "cyborg",
+    "SlotWeight": 8.0,
+    "CoreEffects": {
+      "accuracy_reduce": -0.15
+    },
+    "AmputationCoreEffects": {
+      "arm_slot_unavailable": 0,
+      "accuracy_reduce": -0.3
+    },
+    "ImplicitBonusEffects": {
+      "resist_blunt": 8,
+      "resist_pierce": 6,
+      "resist_lacer": 6
+    },
+    "ImplicitPenaltyEffects": {
+      "max_health": -5,
+      "arm_slot_unavailable": 1,
+      "dodge_reduce": -0.1,
+      "melee_accuracy": -0.2
+    },
+    "IgnoreEffects": [
+      "run_unavailable",
+      "food_unavailable",
+      "dot_dmg",
+      "apoint_dmg",
+      "move_dmg",
+      "eat_dmg",
+      "vomiting",
+      "los_reduce"
+    ],
+    "IgnoreStatusEffects": [
+      "infectionEffect",
+      "poisonEffect"
+    ],
+    "AmputatedDrop": [
+      {
+        "Item1": 1.0,
+        "Item2": "weapon_parts"
+      },
+      {
+        "Item1": 1.0,
+        "Item2": "spring"
+      }
+    ],
+    "AdditionalAmputation": [],
+    "IsGroundAffected": false,
+    "BareHandWeapon": "ae_nature_chainshotgun",
+    "ImplantSocketsDefault": 1,
+    "ImplantSocketsMin": 1,
+    "ImplantSocketsMax": 1
+  }
+}

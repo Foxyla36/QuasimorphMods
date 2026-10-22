@@ -1,0 +1,42 @@
+{
+  "RecordType": "MGSC.WeaponRecord",
+  "Data": {
+    "Id": "ae_nature_ecannon_arm",
+    "IsImplicit": true,
+    "Unbreakable": true,
+    "HideModel": true,
+    "Categories": [],
+    "Price": 0,
+    "Weight": 0,
+    "InventoryWidthSize": 2,
+    "CloneFrom": "civ_plasma_assault_1",
+    "WeaponClass": "RocketLauncher",
+    "Traits": [
+      "overheat"
+    ],
+    "RequiredAmmo": "BatteryCells",
+    "DefaultAmmoId": "battery_basic_ammo",
+    "OverrideAmmo": [
+      "implicted_ae_ecannon_lance",
+      "implicted_ae_ecannon_burst"
+    ],
+    "Firemodes": [
+      "ae_ecannon_lance_1",
+      "ae_ecannon_burst_1"
+    ],
+    "MagazineCapacity": 24,
+    "MinRandomAmmoCount": 12,
+    "ReloadDuration": 5,
+    "Range": 6,
+    "Falloff": 0.2,
+    "BonusAccuracy": 0.3,
+    "BonusScatterAngle": -0.5,
+    "TechLevel": 7,
+    "Damage": {
+      "minDmg": 44,
+      "maxDmg": 60,
+      "critChance": 0.0,
+      "critDmg": 2.0
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "RecordType": "MGSC.ItemProduceReceipt",
+  "Data": {
+    "Id": "",
+    "OutputItem": "medic_chip",
+    "RequiredItems": [
+      {
+        "ItemId": "augment_chip",
+        "Count": 1
+      },
+      {
+        "ItemId": "medical_components",
+        "Count": 1
+      },
+      {
+        "ItemId": "circuit_board",
+        "Count": 1
+      }
+    ],
+    "ProduceTimeInHours": 24.0,
+    "ModifyStartCost": 1,
+    "ModifyStep": 1.05,
+    "ModifyItemsGrades": null,
+    "ModifyLevelLimit": 0
+  }
+}

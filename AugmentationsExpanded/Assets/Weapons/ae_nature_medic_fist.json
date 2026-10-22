@@ -1,0 +1,23 @@
+{
+  "RecordType": "MGSC.WeaponRecord",
+  "Data": {
+    "Id": "ae_nature_medic_fist",
+    "CloneFrom": "nature_cyborg_fist",
+    "IsImplicit": true,
+    "WeaponClass": "Unarmed",
+    "Categories": [
+      "none"
+    ],
+    "Traits": [],
+    "Firemodes": [
+      "punch_1"
+    ],
+    "BonusAccuracy": 0.4,
+    "Damage": {
+      "minDmg": 14,
+      "maxDmg": 18,
+      "critChance": 0.0,
+      "critDmg": 1.5
+    }
+  }
+}

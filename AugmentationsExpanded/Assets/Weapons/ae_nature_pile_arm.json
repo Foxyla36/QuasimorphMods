@@ -1,0 +1,38 @@
+{
+  "RecordType": "MGSC.WeaponRecord",
+  "Data": {
+    "Id": "ae_nature_pile_arm",
+    "IsImplicit": true,
+    "Unbreakable": true,
+    "HideModel": true,
+    "Categories": [],
+    "Price": 0,
+    "Weight": 0,
+    "InventoryWidthSize": 2,
+    "CloneFrom": "tia_blade_1",
+    "WeaponClass": "Fist",
+    "Traits": [
+      "extra_knockback"
+    ],
+    "DefaultAmmoId": "implicted_ae_pile_quick",
+    "OverrideAmmo": [
+      "none",
+      "implicted_ae_pile_charged"
+    ],
+    "Firemodes": [
+      "ae_pile_quick_1",
+      "ae_pile_charged_1"
+    ],
+    "MagazineCapacity": 0,
+    "ReloadDuration": 1,
+    "BonusAccuracy": 0.0,
+    "TechLevel": 6,
+    "Damage": {
+      "minDmg": 66,
+      "maxDmg": 110,
+      "critChance": 0.0,
+      "critDmg": 1.5
+    },
+    "SoundFrom": "civ_powerfist_1"
+  }
+}

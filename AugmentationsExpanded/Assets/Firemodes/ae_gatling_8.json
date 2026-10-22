@@ -1,0 +1,8 @@
+{
+  "RecordType": "MGSC.FireModeRecord",
+  "Data": {
+    "Id": "ae_gatling_8",
+    "CloneFrom": "pistol_8",
+    "ScatterAngle": 6.5
+  }
+}

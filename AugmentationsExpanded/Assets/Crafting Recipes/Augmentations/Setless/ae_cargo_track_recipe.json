@@ -1,0 +1,34 @@
+{
+  "RecordType": "MGSC.ItemProduceReceipt",
+  "Data": {
+    "Id": "",
+    "OutputItem": "ae_cargo_track",
+    "RequiredItems": [
+      {
+        "ItemId": "metal_tread",
+        "Count": 2
+      },
+      {
+        "ItemId": "rubber",
+        "Count": 2
+      },
+      {
+        "ItemId": "hydraulic_pump",
+        "Count": 1
+      },
+      {
+        "ItemId": "spring",
+        "Count": 1
+      },
+      {
+        "ItemId": "armor_plates",
+        "Count": 1
+      }
+    ],
+    "ProduceTimeInHours": 48.0,
+    "ModifyStartCost": 1,
+    "ModifyStep": 1.05,
+    "ModifyItemsGrades": null,
+    "ModifyLevelLimit": 0
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "RecordType": "MGSC.WoundSlotRecord",
+  "Data": {
+    "Id": "MedicShoulder",
+    "SlotType": "Shoulder",
+    "NatureType": "cyborg",
+    "SlotWeight": 12.0,
+    "CoreEffects": {
+      "scatter_angle": 0.6
+    },
+    "AmputationCoreEffects": {
+      "arm_slot_unavailable": 0,
+      "scatter_angle": 1.2
+    },
+    "ImplicitBonusEffects": {
+      "reload_duration": -1,
+      "melee_accuracy": 0.15,
+      "implant_drop_chance": 0.1,
+      "critchance_reduce": 0.1,
+      "resist_blunt": 4,
+      "resist_pierce": 4,
+      "resist_lacer": 4,
+      "resist_fire": 2,
+      "resist_poison": 2
+    },
+    "ImplicitPenaltyEffects": {
+      "max_health": -2,
+      "scatter_angle": 0.05
+    },
+    "IgnoreEffects": [
+      "run_unavailable",
+      "food_unavailable",
+      "dot_dmg",
+      "apoint_dmg",
+      "move_dmg",
+      "eat_dmg",
+      "vomiting",
+      "los_reduce"
+    ],
+    "IgnoreStatusEffects": [
+      "infectionEffect",
+      "poisonEffect"
+    ],
+    "AmputatedDrop": [
+      {
+        "Item1": 2.0,
+        "Item2": "medic_hand"
+      },
+      {
+        "Item1": 1.0,
+        "Item2": "medical_components"
+      },
+      {
+        "Item1": 1.0,
+        "Item2": "circuit_board"
+      },
+      {
+        "Item1": 1.0,
+        "Item2": "metal_tread"
+      }
+    ],
+    "AdditionalAmputation": [
+      "Arm"
+    ],
+    "IsGroundAffected": false,
+    "BareHandWeapon": "",
+    "ImplantSocketsDefault": 1,
+    "ImplantSocketsMin": 1,
+    "ImplantSocketsMax": 1
+  }
+}

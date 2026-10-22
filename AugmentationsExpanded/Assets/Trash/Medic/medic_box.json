@@ -1,0 +1,53 @@
+{
+  "RecordType": "MGSC.TrashRecord",
+  "Data": {
+    "Id": "medic_box",
+    "Categories": [],
+    "TechLevel": 5,
+    "Price": 2000.0,
+    "Weight": 2.4,
+    "InventoryWidthSize": 2,
+    "ItemClass": "MilitaryBarter",
+    "CanPutInVest": false,
+    "MaxStack": 1,
+    "SubType": "Container",
+    "Disassembly": [
+      {
+        "ItemId": "medic_head",
+        "Count": 1
+      },
+      {
+        "ItemId": "medic_chest",
+        "Count": 1
+      },
+      {
+        "ItemId": "medic_guts",
+        "Count": 1
+      },
+      {
+        "ItemId": "medic_stomach",
+        "Count": 1
+      },
+      {
+        "ItemId": "medic_hand",
+        "Count": 1
+      },
+      {
+        "ItemId": "medic_wrist",
+        "Count": 1
+      },
+      {
+        "ItemId": "medic_leg",
+        "Count": 1
+      },
+      {
+        "ItemId": "medic_knee",
+        "Count": 1
+      },
+      {
+        "ItemId": "medic_feet",
+        "Count": 1
+      }
+    ]
+  }
+}

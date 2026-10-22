@@ -1,0 +1,45 @@
+{
+  "RecordType": "MGSC.AugmentationRecord",
+  "Data": {
+    "Id": "ae_chainshotgun",
+    "Categories": [
+      "Security",
+      "SWAT",
+      "Merc",
+      "FrancheComte",
+      "ChurchRevelation"
+    ],
+    "TechLevel": 7,
+    "Price": 1700.0,
+    "Weight": 4.5,
+    "InventoryWidthSize": 2,
+    "ItemClass": "CyberneticAug",
+    "CanPutInVest": false,
+    "AugmentationClass": "Ranged",
+    "WoundSlotIds": [
+      "AE_ChainShotgunArm",
+      "AE_ChainShotgunShoulder",
+      "AE_ChainShotgunChest"
+    ],
+    "TooltipIconTag": "aug_type_arm",
+    "ae_lose_augmentation_on_amputate": "On",
+    "Disassembly": [
+      {
+        "ItemId": "weapon_parts",
+        "Count": 2
+      },
+      {
+        "ItemId": "spring",
+        "Count": 2
+      },
+      {
+        "ItemId": "metal_tread",
+        "Count": 1
+      },
+      {
+        "ItemId": "armor_plates",
+        "Count": 1
+      }
+    ]
+  }
+}

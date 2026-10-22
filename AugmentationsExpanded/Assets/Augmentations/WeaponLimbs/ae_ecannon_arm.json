@@ -1,0 +1,43 @@
+{
+  "RecordType": "MGSC.AugmentationRecord",
+  "Data": {
+    "Id": "ae_ecannon_arm",
+    "Categories": [
+      "Military",
+      "PMC",
+      "Merc",
+      "SBN",
+      "Dilthey"
+    ],
+    "TechLevel": 7,
+    "Price": 1500.0,
+    "Weight": 2.6,
+    "InventoryWidthSize": 2,
+    "ItemClass": "CyberneticAug",
+    "CanPutInVest": false,
+    "AugmentationClass": "Ranged",
+    "WoundSlotIds": [
+      "AE_ECannonArm",
+      "AE_ECannonShoulder"
+    ],
+    "TooltipIconTag": "aug_type_arm",
+    "Disassembly": [
+      {
+        "ItemId": "capacitor_parts",
+        "Count": 2
+      },
+      {
+        "ItemId": "circuit_board",
+        "Count": 1
+      },
+      {
+        "ItemId": "lens",
+        "Count": 1
+      },
+      {
+        "ItemId": "ceramite_plates",
+        "Count": 1
+      }
+    ]
+  }
+}

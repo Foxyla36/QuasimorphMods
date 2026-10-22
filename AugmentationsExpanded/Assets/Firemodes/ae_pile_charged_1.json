@@ -1,0 +1,9 @@
+{
+  "RecordType": "MGSC.FireModeRecord",
+  "Data": {
+    "Id": "ae_pile_charged_1",
+    "CloneFrom": "smash_1",
+    "Accuracy": -0.25,
+    "DamageMult": 1.82
+  }
+}

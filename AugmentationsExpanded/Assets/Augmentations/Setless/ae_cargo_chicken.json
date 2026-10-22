@@ -1,0 +1,48 @@
+{
+  "RecordType": "MGSC.AugmentationRecord",
+  "Data": {
+    "Id": "ae_cargo_chicken",
+    "Categories": [
+      "Worker",
+      "Security",
+      "Grasshopper",
+      "Dilthey"
+    ],
+    "TechLevel": 4,
+    "Price": 1300.0,
+    "Weight": 5.0,
+    "InventoryWidthSize": 2,
+    "ItemClass": "CyberneticAug",
+    "CanPutInVest": false,
+    "AugmentationClass": "Body",
+    "WoundSlotIds": [
+      "AE_CargoChickenThigh",
+      "AE_CargoChickenKnee",
+      "AE_CargoChickenFeet"
+    ],
+    "TooltipIconTag": "aug_type_leg",
+    "ae_lose_augmentation_on_amputate": "On",
+    "Disassembly": [
+      {
+        "ItemId": "hydraulic_pump",
+        "Count": 1
+      },
+      {
+        "ItemId": "spring",
+        "Count": 2
+      },
+      {
+        "ItemId": "rod_parts",
+        "Count": 1
+      },
+      {
+        "ItemId": "metal_tread",
+        "Count": 1
+      },
+      {
+        "ItemId": "blunt_parts",
+        "Count": 1
+      }
+    ]
+  }
+}

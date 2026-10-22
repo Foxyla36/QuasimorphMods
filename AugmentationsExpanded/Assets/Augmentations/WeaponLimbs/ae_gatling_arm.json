@@ -1,0 +1,43 @@
+{
+  "RecordType": "MGSC.AugmentationRecord",
+  "Data": {
+    "Id": "ae_gatling_arm",
+    "Categories": [
+      "Military",
+      "PMC",
+      "Merc",
+      "CoreWard",
+      "Grasshopper"
+    ],
+    "TechLevel": 5,
+    "Price": 1100.0,
+    "Weight": 2.4,
+    "InventoryWidthSize": 2,
+    "ItemClass": "CyberneticAug",
+    "CanPutInVest": false,
+    "AugmentationClass": "Ranged",
+    "WoundSlotIds": [
+      "AE_GatlingArm",
+      "AE_GatlingShoulder"
+    ],
+    "TooltipIconTag": "aug_type_arm",
+    "Disassembly": [
+      {
+        "ItemId": "weapon_parts",
+        "Count": 2
+      },
+      {
+        "ItemId": "spring",
+        "Count": 1
+      },
+      {
+        "ItemId": "rubber",
+        "Count": 1
+      },
+      {
+        "ItemId": "metal_tread",
+        "Count": 1
+      }
+    ]
+  }
+}

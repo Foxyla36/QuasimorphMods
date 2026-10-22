@@ -1,0 +1,40 @@
+{
+  "RecordType": "MGSC.WeaponRecord",
+  "Data": {
+    "Id": "ae_nature_chainshotgun",
+    "IsImplicit": true,
+    "Unbreakable": true,
+    "HideModel": true,
+    "Categories": [],
+    "Price": 0,
+    "Weight": 0,
+    "InventoryWidthSize": 2,
+    "CloneFrom": "trucker_shotgun_3",
+    "WeaponClass": "Shotgun",
+    "Traits": [
+      "ramp_up",
+      "suppressive_fire"
+    ],
+    "RequiredAmmo": "Shells",
+    "DefaultAmmoId": "shotgun_shrapnel_ammo",
+    "OverrideAmmo": [],
+    "Firemodes": [
+      "ae_chain_3",
+      "ae_chain_5"
+    ],
+    "MagazineCapacity": 200,
+    "MinRandomAmmoCount": 120,
+    "ReloadDuration": 16,
+    "Range": 4,
+    "Falloff": 0.25,
+    "BonusAccuracy": 0.1,
+    "BonusScatterAngle": 1.2,
+    "TechLevel": 7,
+    "Damage": {
+      "minDmg": 40,
+      "maxDmg": 66,
+      "critChance": 0.0,
+      "critDmg": 1.65
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "RecordType": "MGSC.FireModeRecord",
+  "Data": {
+    "Id": "ae_ecannon_lance_1",
+    "CloneFrom": "beam_1",
+    "AmmoPerShot": 2,
+    "Accuracy": 0.45,
+    "ScatterAngle": 1.5,
+    "DamageMult": 1.1
+  }
+}

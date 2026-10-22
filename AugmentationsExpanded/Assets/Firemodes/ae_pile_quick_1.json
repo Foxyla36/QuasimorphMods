@@ -1,0 +1,8 @@
+{
+  "RecordType": "MGSC.FireModeRecord",
+  "Data": {
+    "Id": "ae_pile_quick_1",
+    "CloneFrom": "punch_1",
+    "Accuracy": 0.15
+  }
+}

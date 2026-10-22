@@ -1,0 +1,8 @@
+{
+  "RecordType": "MGSC.AmmoRecord",
+  "Data": {
+    "Id": "implicted_ae_ecannon_burst",
+    "CloneFrom": "implicted_plasma_flak",
+    "DmgCritChance": 0.06
+  }
+}

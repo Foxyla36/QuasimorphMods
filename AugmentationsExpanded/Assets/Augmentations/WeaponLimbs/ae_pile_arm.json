@@ -1,0 +1,43 @@
+{
+  "RecordType": "MGSC.AugmentationRecord",
+  "Data": {
+    "Id": "ae_pile_arm",
+    "Categories": [
+      "Military",
+      "PMC",
+      "Merc",
+      "PlanetBridge",
+      "CoreWard"
+    ],
+    "TechLevel": 6,
+    "Price": 1300.0,
+    "Weight": 2.2,
+    "InventoryWidthSize": 2,
+    "ItemClass": "CyberneticAug",
+    "CanPutInVest": false,
+    "AugmentationClass": "Melee",
+    "WoundSlotIds": [
+      "AE_PileArm",
+      "AE_PileShoulder"
+    ],
+    "TooltipIconTag": "aug_type_arm",
+    "Disassembly": [
+      {
+        "ItemId": "hydraulic_pump",
+        "Count": 1
+      },
+      {
+        "ItemId": "spring",
+        "Count": 1
+      },
+      {
+        "ItemId": "weapon_parts",
+        "Count": 1
+      },
+      {
+        "ItemId": "ceramite_plates",
+        "Count": 1
+      }
+    ]
+  }
+}

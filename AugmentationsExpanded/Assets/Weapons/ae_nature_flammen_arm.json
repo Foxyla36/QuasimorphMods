@@ -1,0 +1,38 @@
+{
+  "RecordType": "MGSC.WeaponRecord",
+  "Data": {
+    "Id": "ae_nature_flammen_arm",
+    "IsImplicit": true,
+    "Unbreakable": true,
+    "HideModel": true,
+    "Categories": [],
+    "Price": 0,
+    "Weight": 0,
+    "InventoryWidthSize": 2,
+    "CloneFrom": "worker_flamethrower_1",
+    "WeaponClass": "Flamethrower",
+    "Traits": [],
+    "RequiredAmmo": "Gas",
+    "DefaultAmmoId": "gas_ammo",
+    "OverrideAmmo": [
+      "implicted_flamethrower"
+    ],
+    "Firemodes": [
+      "flamethrower_1"
+    ],
+    "MagazineCapacity": 100,
+    "MinRandomAmmoCount": 50,
+    "ReloadDuration": 6,
+    "Range": 5,
+    "Falloff": 1.0,
+    "BonusAccuracy": 0.7,
+    "BonusScatterAngle": 2.0,
+    "TechLevel": 4,
+    "Damage": {
+      "minDmg": 28,
+      "maxDmg": 72,
+      "critChance": 0.0,
+      "critDmg": 1.3
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "RecordType": "MGSC.WoundSlotRecord",
+  "Data": {
+    "Id": "AE_FlammenArm",
+    "SlotType": "Arm",
+    "NatureType": "cyborg",
+    "SlotWeight": 8.0,
+    "CoreEffects": {
+      "accuracy_reduce": -0.15
+    },
+    "AmputationCoreEffects": {
+      "arm_slot_unavailable": 0,
+      "accuracy_reduce": -0.3
+    },
+    "ImplicitBonusEffects": {
+      "resist_blunt": 5,
+      "resist_fire": 20
+    },
+    "ImplicitPenaltyEffects": {
+      "max_health": -5,
+      "arm_slot_unavailable": 1,
+      "dodge_reduce": -0.1,
+      "melee_accuracy": -0.2,
+      "resist_pierce": -5
+    },
+    "IgnoreEffects": [
+      "run_unavailable",
+      "food_unavailable",
+      "dot_dmg",
+      "apoint_dmg",
+      "move_dmg",
+      "eat_dmg",
+      "vomiting",
+      "los_reduce"
+    ],
+    "IgnoreStatusEffects": [
+      "infectionEffect",
+      "poisonEffect"
+    ],
+    "AmputatedDrop": [
+      {
+        "Item1": 1.0,
+        "Item2": "rod_parts"
+      },
+      {
+        "Item1": 1.0,
+        "Item2": "metal_tread"
+      }
+    ],
+    "AdditionalAmputation": [],
+    "IsGroundAffected": false,
+    "BareHandWeapon": "ae_nature_flammen_arm",
+    "ImplantSocketsDefault": 1,
+    "ImplantSocketsMin": 1,
+    "ImplantSocketsMax": 1
+  }
+}

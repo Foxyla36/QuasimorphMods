@@ -1,0 +1,36 @@
+{
+  "RecordType": "MGSC.AugmentationRecord",
+  "Data": {
+    "Id": "medic_feet",
+    "Categories": [
+      "Medical",
+      "Science",
+      "Tianming"
+    ],
+    "TechLevel": 4,
+    "Price": 600.0,
+    "Weight": 0.7,
+    "InventoryWidthSize": 2,
+    "ItemClass": "CyberneticAug",
+    "CanPutInVest": false,
+    "AugmentationClass": "Body",
+    "WoundSlotIds": [
+      "MedicFeet"
+    ],
+    "TooltipIconTag": "aug_type_foot",
+    "Disassembly": [
+      {
+        "ItemId": "medical_components",
+        "Count": 1
+      },
+      {
+        "ItemId": "circuit_board",
+        "Count": 1
+      },
+      {
+        "ItemId": "metal_tread",
+        "Count": 1
+      }
+    ]
+  }
+}

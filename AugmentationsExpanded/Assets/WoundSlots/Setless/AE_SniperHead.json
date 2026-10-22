@@ -1,0 +1,68 @@
+{
+  "RecordType": "MGSC.WoundSlotRecord",
+  "Data": {
+    "Id": "AE_SniperHead",
+    "SlotType": "Head",
+    "NatureType": "cyborg",
+    "SlotWeight": 12.0,
+    "CoreEffects": {
+      "los_reduce": -2,
+      "accuracy_reduce": -0.15
+    },
+    "AmputationCoreEffects": {
+      "food_unavailable": 0,
+      "los_reduce": -99,
+      "accuracy_reduce": -0.3
+    },
+    "ImplicitBonusEffects": {
+      "los_reduce": 3,
+      "firearm_range": 2,
+      "ranged_accuracy": 0.15,
+      "falloff_bonus": -0.15,
+      "spotted_radius": 1
+    },
+    "ImplicitPenaltyEffects": {
+      "fov_angle": -0.5,
+      "max_health": -10,
+      "resist_shock": -25
+    },
+    "IgnoreEffects": [
+      "run_unavailable",
+      "income_dmg",
+      "dot_dmg",
+      "apoint_dmg",
+      "move_dmg",
+      "eat_dmg",
+      "vomiting",
+      "scatter_angle"
+    ],
+    "IgnoreStatusEffects": [
+      "infectionEffect",
+      "poisonEffect"
+    ],
+    "AmputatedDrop": [
+      {
+        "Item1": 2.0,
+        "Item2": "ae_sniper_head"
+      },
+      {
+        "Item1": 1.0,
+        "Item2": "circuit_board"
+      },
+      {
+        "Item1": 1.0,
+        "Item2": "glass"
+      },
+      {
+        "Item1": 1.0,
+        "Item2": "weapon_parts"
+      }
+    ],
+    "AdditionalAmputation": [],
+    "IsGroundAffected": false,
+    "BareHandWeapon": "",
+    "ImplantSocketsDefault": 1,
+    "ImplantSocketsMin": 1,
+    "ImplantSocketsMax": 1
+  }
+}

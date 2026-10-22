@@ -1,0 +1,11 @@
+{
+  "RecordType": "QM_ImporterAPI.Templates.Descriptors.CustomDatadiskDescriptor",
+  "Data": {
+    "ItemId": "medic_chip",
+    "ImageProperties": {
+      "IconSpriteIdOrPath": "Images/Datadisks/medic_chip_inv.png",
+      "SmallIconSpriteIdOrPath": "Images/Datadisks/medic_chip_floor.png",
+      "ShadowOnFloorSpriteIdOrPath": "Images/Datadisks/medic_chip_shadow.png"
+    }
+  }
+}

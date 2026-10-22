@@ -1,0 +1,35 @@
+{
+  "RecordType": "MGSC.DatadiskRecord",
+  "Data": {
+    "Id": "medic_chip",
+    "Categories": [
+      "Chip",
+      "Science",
+      "Tianming"
+    ],
+    "TechLevel": 4,
+    "Price": 900.0,
+    "Weight": 0.1,
+    "InventoryWidthSize": 1,
+    "ItemClass": "Blueprint",
+    "CanPutInVest": false,
+    "UnlockType": "ProductionItem",
+    "UnlockIds": [
+      "medic_head",
+      "medic_chest",
+      "medic_guts",
+      "medic_stomach",
+      "medic_hand",
+      "medic_wrist",
+      "medic_leg",
+      "medic_knee",
+      "medic_feet"
+    ],
+    "Disassembly": [
+      {
+        "ItemId": "augment_chip",
+        "Count": 1
+      }
+    ]
+  }
+}

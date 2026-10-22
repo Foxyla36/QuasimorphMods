@@ -1,0 +1,71 @@
+{
+  "RecordType": "MGSC.WoundSlotRecord",
+  "Data": {
+    "Id": "MedicBody",
+    "SlotType": "Body",
+    "NatureType": "cyborg",
+    "SlotWeight": 16.0,
+    "CoreEffects": {
+      "more_resist_mult": -0.2
+    },
+    "AmputationCoreEffects": {
+      "more_resist_mult": -0.4
+    },
+    "ImplicitBonusEffects": {
+      "wound_heal_chance": 0.15,
+      "regen_efficacy": 0.2,
+      "income_pain": -0.15,
+      "passive_regen": 1,
+      "wound_chance_mult": -0.05,
+      "status_immune_infectionEffect": 1,
+      "resist_blunt": 6,
+      "resist_pierce": 6,
+      "resist_lacer": 6,
+      "resist_fire": 3,
+      "resist_poison": 3
+    },
+    "ImplicitPenaltyEffects": {
+      "max_health": -5,
+      "resist_shock": -5
+    },
+    "IgnoreEffects": [
+      "run_unavailable",
+      "food_unavailable",
+      "dot_dmg",
+      "apoint_dmg",
+      "move_dmg",
+      "eat_dmg",
+      "vomiting",
+      "los_reduce",
+      "regen_efficacy"
+    ],
+    "IgnoreStatusEffects": [
+      "infectionEffect",
+      "poisonEffect"
+    ],
+    "AmputatedDrop": [
+      {
+        "Item1": 2.0,
+        "Item2": "medic_guts"
+      },
+      {
+        "Item1": 1.0,
+        "Item2": "medical_components"
+      },
+      {
+        "Item1": 1.0,
+        "Item2": "circuit_board"
+      },
+      {
+        "Item1": 1.0,
+        "Item2": "metal_tread"
+      }
+    ],
+    "AdditionalAmputation": [],
+    "IsGroundAffected": false,
+    "BareHandWeapon": "",
+    "ImplantSocketsDefault": 1,
+    "ImplantSocketsMin": 1,
+    "ImplantSocketsMax": 1
+  }
+}

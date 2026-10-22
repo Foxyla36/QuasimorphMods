@@ -227,14 +227,14 @@ namespace AugmentationsExpanded
         /// firemodes, the ammo and the limb weapons that use them, the augmentations, the crates,
         /// the datadisks, the crafting recipes (every output and ingredient must already exist),
         /// the hand and foot ingredient switch, the localization and the wound slot images; every
-        /// sprite follows the icon pack chosen for it. Afterwards it adds M.E.R.C., the gun arms
-        /// and the UHMG to the vanilla augmentation chip, applies the chip, crate, PMC and reward
-        /// settings, unlocks the chip conversion recipes, applies the spawn switches and patches
-        /// the game for the clone rank restriction, the hidden effect lists (ae_kill_long_stats),
-        /// the Multi-WoundSlot augmentations (ae_lose_augmentation_on_amputate), the tooltip line
-        /// of the Special Weapon Arms (ae_special_weapon_arm) and the weapon crit bonus
-        /// (ae_crit_chance_bonus). Every step has its own try/catch, so a failing step
-        /// does not skip the others.
+        /// sprite follows the icon pack chosen for it. Afterwards it adds M.E.R.C., the gun arms,
+        /// the UHMG and the other setless augmentations to the vanilla augmentation chip, applies
+        /// the chip, crate, PMC and reward settings, unlocks the chip conversion recipes, applies
+        /// the spawn switches and patches the game for the clone rank restriction, the hidden
+        /// effect lists (ae_kill_long_stats), the Multi-WoundSlot augmentations
+        /// (ae_lose_augmentation_on_amputate), the tooltip line of the Special Weapon Arms
+        /// (ae_special_weapon_arm) and the weapon crit bonus (ae_crit_chance_bonus). Every step
+        /// has its own try/catch, so a failing step does not skip the others.
         /// </summary>
         /// <param name="context">The context given by the game. Its ModContentPath must be the
         /// folder of this mod. With null, no content is loaded.</param>
@@ -299,6 +299,7 @@ namespace AugmentationsExpanded
                 SmasherAugmentations.AddToChip(VanillaChipId, MercId);
                 SmasherGunArms.AddToChip(VanillaChipId);
                 SmasherUhmg.AddToChip(VanillaChipId);
+                SmasherSetless.AddToChip(VanillaChipId);
             }
             catch (Exception e) { Debug.LogError("[AugmentationsExpanded] chip pool: " + e); }
 
@@ -312,6 +313,7 @@ namespace AugmentationsExpanded
                 SmasherCrafting.AddToStartReceipts(SmasherCrafting.Scout22ChipOutput);
                 SmasherCrafting.AddToStartReceipts(SmasherCrafting.NemesisChipOutput);
                 SmasherCrafting.AddToStartReceipts(SmasherCrafting.OpiChipOutput);
+                SmasherCrafting.AddToStartReceipts(SmasherMedic.ChipId);
             }
             catch (Exception e) { Debug.LogError("[AugmentationsExpanded] starting recipes: " + e); }
 
@@ -336,12 +338,12 @@ namespace AugmentationsExpanded
 
         /// <summary>
         /// Applies every on/off switch to the loaded records: whether each set, M.E.R.C., each
-        /// gun arm and the UHMG can spawn on enemies, the gun arm mode, whether the crates keep
-        /// their loot tags, whether each chip conversion recipe is available (it needs both the
-        /// set switch and the "can craft chip" switch) and whether each chip is added to the map
-        /// containers (only when its set is on and its faction is not "none"). The OP-I chip is
-        /// never added to the map containers: besides its own conversion recipe, off by default,
-        /// it only comes from its faction's rewards.
+        /// gun arm, the UHMG and each other setless augmentation can spawn on enemies, the gun arm
+        /// mode, whether the crates keep their loot tags, whether each chip conversion recipe is
+        /// available (it needs both the set switch and the "can craft chip" switch) and whether
+        /// each chip is added to the map containers (only when its set is on and its faction is not
+        /// "none"). The OP-I chip is never added to the map containers: besides its own conversion
+        /// recipe, off by default, it only comes from its faction's rewards.
         /// </summary>
         /// <remarks>
         /// Input: No parameters. Reads the settings loaded from config.json or saved in the Mod
@@ -363,6 +365,8 @@ namespace AugmentationsExpanded
             SmasherGunArms.ApplySpawn();
             SmasherGunArms.ApplyMode();
             SmasherUhmg.ApplySpawn();
+            SmasherSetless.ApplySpawn();
+            SmasherMedic.ApplySpawn();
             SmasherTrash.SetSpawnEnabled(SmasherAugmentations.SetSmasher, _enabled);
             SmasherTrash.SetSpawnEnabled(SmasherAugmentations.SetNachtreiher, _nacht);
             SmasherTrash.SetSpawnEnabled(SmasherAugmentations.SetScout22, _scout);
@@ -390,9 +394,12 @@ namespace AugmentationsExpanded
                     + " (chip crafting " + (_nemesis && _neCraftChip ? "ON" : "OFF") + ")"
                     + "   OP-I: " + (_opi ? "ON" : "OFF")
                     + " (chip crafting " + (_opi && _opCraftChip ? "ON" : "OFF") + ")"
+                    + "   CMEDIC-32: " + (SmasherMedic.Enabled ? "ON" : "OFF")
+                    + " (chip crafting " + (SmasherMedic.Enabled && SmasherMedic.CraftChip ? "ON" : "OFF") + ")"
                     + "   M.E.R.C.: " + (_merc ? "ON" : "OFF")
                     + "   Gun arms: " + SmasherGunArms.Summary()
-                    + "   UHMG: " + SmasherUhmg.Summary());
+                    + "   UHMG: " + SmasherUhmg.Summary()
+                    + "   Setless: " + SmasherSetless.Summary());
         }
 
         /// <summary>
@@ -407,7 +414,7 @@ namespace AugmentationsExpanded
         /// tables.
         /// AI-generated documentation, written to help external users understand the mod.
         /// </remarks>
-        private static void ApplyMapDrop(string chipId, bool wanted)
+        internal static void ApplyMapDrop(string chipId, bool wanted)
         {
             if (wanted) SmasherMapDrop.Apply(chipId);
             else        SmasherMapDrop.Remove(chipId);
@@ -421,7 +428,7 @@ namespace AugmentationsExpanded
         /// <param name="context">The context given by the game. Not used.</param>
         /// <remarks>
         /// Input: Reads the settings loaded from config.json or saved in the Mod Config Menu.
-        /// Output: Nothing is returned. Adds or removes the five conversion recipes in the starting
+        /// Output: Nothing is returned. Adds or removes the six conversion recipes in the starting
         /// recipes and in the campaign in progress.
         /// AI-generated documentation, written to help external users understand the mod.
         /// </remarks>
@@ -433,6 +440,7 @@ namespace AugmentationsExpanded
             SmasherCrafting.SetEnabled(SmasherCrafting.Scout22ChipOutput, _scout   && _scCraftChip);
             SmasherCrafting.SetEnabled(SmasherCrafting.NemesisChipOutput, _nemesis && _neCraftChip);
             SmasherCrafting.SetEnabled(SmasherCrafting.OpiChipOutput,     _opi     && _opCraftChip);
+            SmasherMedic.ApplyCrafting();
         }
 
         /// <summary>
@@ -563,7 +571,7 @@ namespace AugmentationsExpanded
         /// row, and writes a line in the log.
         /// AI-generated documentation, written to help external users understand the mod.
         /// </remarks>
-        private static bool ApplyChip(string chipId, string faction, int techLevel, bool enabled)
+        internal static bool ApplyChip(string chipId, string faction, int techLevel, bool enabled)
         {
             var chip = FindChip(chipId);
             if (chip == null)
@@ -600,7 +608,7 @@ namespace AugmentationsExpanded
         /// Output: Nothing is returned. Changes the crate's TechLevel and its reward row.
         /// AI-generated documentation, written to help external users understand the mod.
         /// </remarks>
-        private static void ApplyBox(string boxId, string faction, int techLevel, bool enabled)
+        internal static void ApplyBox(string boxId, string faction, int techLevel, bool enabled)
         {
             SmasherTrash.SetTechLevel(boxId, Mathf.Clamp(techLevel, 1, 10));
             SmasherChipDrop.ApplyBox(boxId, faction, techLevel, !enabled || faction == NoFaction);
@@ -609,12 +617,12 @@ namespace AugmentationsExpanded
         /// <summary>
         /// Applies the Mod Config Menu values to the records: the chips, the tech level, preferred
         /// faction and PMC tag of the pieces of every set, the crates, and the reward rows of
-        /// M.E.R.C., of the gun arms and of the UHMG. ANDRAS has no chip because it cannot be
-        /// crafted; OP-I has no crate because it is a single augmentation, so the augmentation
-        /// itself gets the crate's place in its reward faction's equipment table, from its own
-        /// tech level.
+        /// M.E.R.C., of the gun arms, of the UHMG and of the other setless augmentations. ANDRAS
+        /// has no chip because it cannot be crafted; OP-I has no crate because it is a single
+        /// augmentation, so the augmentation itself gets the crate's place in its reward faction's
+        /// equipment table, from its own tech level.
         /// </summary>
-        /// <returns>True when all five chip records exist and were updated; false when at least one
+        /// <returns>True when all six chip records exist and were updated; false when at least one
         /// is missing.</returns>
         /// <remarks>
         /// Input: No parameters. Reads the settings loaded from config.json or saved in the Mod
@@ -662,6 +670,8 @@ namespace AugmentationsExpanded
             SmasherChipDrop.ApplyAugmentation(MercId, MercFaction, MercTech, !_merc);
             SmasherGunArms.ApplyRewards();
             SmasherUhmg.ApplyRewards();
+            SmasherSetless.ApplyRewards();
+            ok &= SmasherMedic.ApplyToChip();
             return ok;
         }
 
@@ -835,6 +845,8 @@ namespace AugmentationsExpanded
 
                     SmasherGunArms.ReadConfig(config);
                     SmasherUhmg.ReadConfig(config);
+                    SmasherSetless.ReadConfig(config);
+                    SmasherMedic.ReadConfig(config);
                 }
 
                 ConfigMenu.RefreshFields();
@@ -866,9 +878,11 @@ namespace AugmentationsExpanded
                                          + " / crate " + _neBoxFaction + " TL" + _neBoxTech : "off")
                              + ".   OP-I: " + (_opi ? _opFaction + " TL" + _opTech
                                              + " / augmentation " + _opRewardFaction + " TL" + _opAugTech : "off")
+                             + ".   CMEDIC-32: " + SmasherMedic.Summary()
                              + ".   M.E.R.C.: " + (_merc ? "on" : "off")
                              + ".   Gun arms: " + SmasherGunArms.Summary()
-                             + ".   UHMG: " + SmasherUhmg.Summary() + ".";
+                             + ".   UHMG: " + SmasherUhmg.Summary()
+                             + ".   Setless: " + SmasherSetless.Summary() + ".";
                 feedback = (!_enabled
                     ? "Smasher set disabled. Chip and crate settings come back after a restart."
                     : "Chip: " + _faction + " TL" + _techLevel
@@ -940,6 +954,7 @@ namespace AugmentationsExpanded
                 case SmasherAugmentations.SetAndras:      return _anMinRank;
                 case SmasherAugmentations.SetNemesis:     return _neMinRank;
                 case SmasherAugmentations.SetOpi:         return _opMinRank;
+                case SmasherAugmentations.SetMedic:       return SmasherMedic.MinRank;
                 default:                                  return -1;
             }
         }
@@ -1031,7 +1046,9 @@ namespace AugmentationsExpanded
                     else if (k == KeyAndrasPmc)  _anPmc = v.Equals("true", StringComparison.OrdinalIgnoreCase);
                     else if (k == KeyNemesisPmc) _nePmc = v.Equals("true", StringComparison.OrdinalIgnoreCase);
                     else if (k == KeyOpiPmc)     _opPmc = v.Equals("true", StringComparison.OrdinalIgnoreCase);
-                    else if (!SmasherGunArms.TryLoad(k, v) && !SmasherUhmg.TryLoad(k, v)) SmasherIcons.TryLoad(k, v);
+                    else if (!SmasherGunArms.TryLoad(k, v) && !SmasherUhmg.TryLoad(k, v)
+                             && !SmasherSetless.TryLoad(k, v) && !SmasherMedic.TryLoad(k, v))
+                        SmasherIcons.TryLoad(k, v);
                 }
             }
             catch (Exception e)
@@ -1042,10 +1059,10 @@ namespace AugmentationsExpanded
 
         /// <summary>
         /// Writes every setting to config.json as flat JSON with one key per line, so LoadSettings
-        /// can read it without a JSON parser and without MCM. The gun arm entries, the UHMG entry
-        /// and then the icons panel entries (adaptive size switch and icon pack choices) come last,
-        /// from SmasherGunArms.ConfigJsonTail, SmasherUhmg.ConfigJsonTail and
-        /// SmasherIcons.ConfigJsonTail.
+        /// can read it without a JSON parser and without MCM. The gun arm entries, the UHMG entry,
+        /// the other setless entries, the CMEDIC-32 entries and then the icons panel entries
+        /// (adaptive size switch and icon pack choices) come last, from the ConfigJsonTail of
+        /// SmasherGunArms, SmasherUhmg, SmasherSetless, SmasherMedic and SmasherIcons.
         /// </summary>
         /// <remarks>
         /// Input: No parameters. Reads the current settings.
@@ -1122,6 +1139,7 @@ namespace AugmentationsExpanded
                   + "  \"" + KeyNemesisPmc          + "\": "   + (_nePmc ? "true" : "false") + ",\n"
                   + "  \"" + KeyOpiPmc              + "\": "   + (_opPmc ? "true" : "false")
                   + SmasherGunArms.ConfigJsonTail() + SmasherUhmg.ConfigJsonTail()
+                  + SmasherSetless.ConfigJsonTail() + SmasherMedic.ConfigJsonTail()
                   + SmasherIcons.ConfigJsonTail() + "\n}\n");
             }
             catch (Exception e)

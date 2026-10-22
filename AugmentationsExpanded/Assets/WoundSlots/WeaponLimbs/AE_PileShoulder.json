@@ -1,0 +1,65 @@
+{
+  "RecordType": "MGSC.WoundSlotRecord",
+  "Data": {
+    "Id": "AE_PileShoulder",
+    "SlotType": "Shoulder",
+    "NatureType": "cyborg",
+    "SlotWeight": 12.0,
+    "CoreEffects": {
+      "scatter_angle": 0.6
+    },
+    "AmputationCoreEffects": {
+      "arm_slot_unavailable": 0,
+      "scatter_angle": 1.2
+    },
+    "ImplicitBonusEffects": {
+      "resist_blunt": 6,
+      "resist_lacer": 4
+    },
+    "ImplicitPenaltyEffects": {
+      "max_health": -5,
+      "scatter_angle": 0.1,
+      "resist_shock": -8
+    },
+    "IgnoreEffects": [
+      "run_unavailable",
+      "food_unavailable",
+      "dot_dmg",
+      "apoint_dmg",
+      "move_dmg",
+      "eat_dmg",
+      "vomiting",
+      "los_reduce"
+    ],
+    "IgnoreStatusEffects": [
+      "infectionEffect",
+      "poisonEffect"
+    ],
+    "AmputatedDrop": [
+      {
+        "Item1": 2.0,
+        "Item2": "ae_pile_arm"
+      },
+      {
+        "Item1": 1.0,
+        "Item2": "hydraulic_pump"
+      },
+      {
+        "Item1": 1.0,
+        "Item2": "spring"
+      },
+      {
+        "Item1": 1.0,
+        "Item2": "weapon_parts"
+      }
+    ],
+    "AdditionalAmputation": [
+      "Arm"
+    ],
+    "IsGroundAffected": false,
+    "BareHandWeapon": "",
+    "ImplantSocketsDefault": 1,
+    "ImplantSocketsMin": 1,
+    "ImplantSocketsMax": 1
+  }
+}

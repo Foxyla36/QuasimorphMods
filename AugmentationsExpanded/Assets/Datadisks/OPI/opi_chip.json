@@ -58,7 +58,25 @@
       "ae_mantis_arm",
       "ae_shotgun_arm",
       "ae_taser_arm",
-      "ae_uhmg"
+      "ae_uhmg",
+      "ae_cargo_track",
+      "ae_cargo_chicken",
+      "ae_sniper_head",
+      "ae_radar_head",
+      "ae_flammen",
+      "ae_chainshotgun",
+      "ae_pile_arm",
+      "ae_gatling_arm",
+      "ae_ecannon_arm",
+      "medic_head",
+      "medic_chest",
+      "medic_guts",
+      "medic_stomach",
+      "medic_hand",
+      "medic_wrist",
+      "medic_leg",
+      "medic_knee",
+      "medic_feet"
     ],
     "Disassembly": [
       {

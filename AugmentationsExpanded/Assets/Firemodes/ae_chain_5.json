@@ -1,0 +1,8 @@
+{
+  "RecordType": "MGSC.FireModeRecord",
+  "Data": {
+    "Id": "ae_chain_5",
+    "CloneFrom": "shotgun_5",
+    "ScatterAngle": 5.2
+  }
+}

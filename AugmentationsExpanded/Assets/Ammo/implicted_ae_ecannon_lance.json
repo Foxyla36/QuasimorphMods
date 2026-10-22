@@ -1,0 +1,13 @@
+{
+  "RecordType": "MGSC.AmmoRecord",
+  "Data": {
+    "Id": "implicted_ae_ecannon_lance",
+    "CloneFrom": "implicted_beam",
+    "DmgCritChance": 0.1,
+    "RangeBonus": -2,
+    "Traits": [
+      "incendiary",
+      "full_piercing"
+    ]
+  }
+}

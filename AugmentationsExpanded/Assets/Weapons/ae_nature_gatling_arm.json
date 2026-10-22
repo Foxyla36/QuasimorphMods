@@ -1,0 +1,40 @@
+{
+  "RecordType": "MGSC.WeaponRecord",
+  "Data": {
+    "Id": "ae_nature_gatling_arm",
+    "IsImplicit": true,
+    "Unbreakable": true,
+    "HideModel": true,
+    "Categories": [],
+    "Price": 0,
+    "Weight": 0,
+    "InventoryWidthSize": 2,
+    "CloneFrom": "cor_hmg_1",
+    "WeaponClass": "Minigun",
+    "Traits": [
+      "ramp_up",
+      "suppressive_fire"
+    ],
+    "RequiredAmmo": "Bullets",
+    "DefaultAmmoId": "small_basic_ammo",
+    "OverrideAmmo": [],
+    "Firemodes": [
+      "ae_gatling_5",
+      "ae_gatling_8"
+    ],
+    "MagazineCapacity": 100,
+    "MinRandomAmmoCount": 60,
+    "ReloadDuration": 10,
+    "Range": 5,
+    "Falloff": 0.21,
+    "BonusAccuracy": 0.25,
+    "BonusScatterAngle": 0.5,
+    "TechLevel": 5,
+    "Damage": {
+      "minDmg": 20,
+      "maxDmg": 34,
+      "critChance": 0.0,
+      "critDmg": 2.0
+    }
+  }
+}

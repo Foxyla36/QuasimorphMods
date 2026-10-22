@@ -1,0 +1,76 @@
+{
+  "RecordType": "MGSC.WoundSlotRecord",
+  "Data": {
+    "Id": "MedicThigh",
+    "SlotType": "Thigh",
+    "NatureType": "cyborg",
+    "SlotWeight": 12.0,
+    "CoreEffects": {
+      "dodge_reduce": -0.09
+    },
+    "AmputationCoreEffects": {
+      "run_unavailable": 0,
+      "dodge_reduce": -0.3
+    },
+    "ImplicitBonusEffects": {
+      "added_ap": 1,
+      "dodge_reduce": 0.05,
+      "wound_chance_mult": -0.05,
+      "resist_blunt": 4,
+      "resist_pierce": 4,
+      "resist_lacer": 4,
+      "resist_fire": 2,
+      "resist_poison": 2
+    },
+    "ImplicitPenaltyEffects": {
+      "max_health": -3,
+      "ranged_accuracy": -0.05,
+      "resist_shock": -5,
+      "scatter_angle": 0.05
+    },
+    "IgnoreEffects": [
+      "food_unavailable",
+      "accuracy_reduce",
+      "dot_dmg",
+      "apoint_dmg",
+      "move_dmg",
+      "eat_dmg",
+      "vomiting",
+      "los_reduce"
+    ],
+    "IgnoreStatusEffects": [
+      "infectionEffect",
+      "poisonEffect"
+    ],
+    "AmputatedDrop": [
+      {
+        "Item1": 2.0,
+        "Item2": "medic_leg"
+      },
+      {
+        "Item1": 1.0,
+        "Item2": "medic_feet"
+      },
+      {
+        "Item1": 1.0,
+        "Item2": "medical_components"
+      },
+      {
+        "Item1": 1.0,
+        "Item2": "circuit_board"
+      },
+      {
+        "Item1": 1.0,
+        "Item2": "metal_tread"
+      }
+    ],
+    "AdditionalAmputation": [
+      "Feet"
+    ],
+    "IsGroundAffected": false,
+    "BareHandWeapon": "",
+    "ImplantSocketsDefault": 1,
+    "ImplantSocketsMin": 1,
+    "ImplantSocketsMax": 1
+  }
+}

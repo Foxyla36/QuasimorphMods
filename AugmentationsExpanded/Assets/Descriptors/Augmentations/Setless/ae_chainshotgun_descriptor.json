@@ -1,0 +1,11 @@
+{
+  "RecordType": "QM_ImporterAPI.Templates.Descriptors.CustomAugmentationDescriptor",
+  "Data": {
+    "ItemId": "ae_chainshotgun",
+    "ImageProperties": {
+      "IconSpriteIdOrPath": "Images/Augmentations/generic_arm_container_11_inv.png",
+      "SmallIconSpriteIdOrPath": "Images/Augmentations/generic_arm_container_11_floor.png",
+      "ShadowOnFloorSpriteIdOrPath": "Images/Augmentations/generic_arm_container_shadow.png"
+    }
+  }
+}

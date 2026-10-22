@@ -1,0 +1,36 @@
+{
+  "RecordType": "MGSC.AugmentationRecord",
+  "Data": {
+    "Id": "medic_knee",
+    "Categories": [
+      "Medical",
+      "Science",
+      "Tianming"
+    ],
+    "TechLevel": 4,
+    "Price": 500.0,
+    "Weight": 0.7,
+    "InventoryWidthSize": 2,
+    "ItemClass": "CyberneticAug",
+    "CanPutInVest": false,
+    "AugmentationClass": "Body",
+    "WoundSlotIds": [
+      "MedicKnee"
+    ],
+    "TooltipIconTag": "aug_type_knee",
+    "Disassembly": [
+      {
+        "ItemId": "medical_components",
+        "Count": 1
+      },
+      {
+        "ItemId": "circuit_board",
+        "Count": 1
+      },
+      {
+        "ItemId": "metal_tread",
+        "Count": 1
+      }
+    ]
+  }
+}

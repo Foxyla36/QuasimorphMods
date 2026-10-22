@@ -1,0 +1,36 @@
+{
+  "RecordType": "MGSC.AugmentationRecord",
+  "Data": {
+    "Id": "medic_wrist",
+    "Categories": [
+      "Medical",
+      "Science",
+      "Tianming"
+    ],
+    "TechLevel": 4,
+    "Price": 700.0,
+    "Weight": 0.8,
+    "InventoryWidthSize": 2,
+    "ItemClass": "CyberneticAug",
+    "CanPutInVest": false,
+    "AugmentationClass": "Body",
+    "WoundSlotIds": [
+      "MedicArm"
+    ],
+    "TooltipIconTag": "aug_type_hand",
+    "Disassembly": [
+      {
+        "ItemId": "medical_components",
+        "Count": 1
+      },
+      {
+        "ItemId": "circuit_board",
+        "Count": 1
+      },
+      {
+        "ItemId": "metal_tread",
+        "Count": 1
+      }
+    ]
+  }
+}

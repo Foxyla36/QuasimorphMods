@@ -1,0 +1,7 @@
+{
+  "RecordType": "MGSC.FireModeRecord",
+  "Data": {
+    "Id": "ae_gatling_5",
+    "CloneFrom": "pistol_5"
+  }
+}

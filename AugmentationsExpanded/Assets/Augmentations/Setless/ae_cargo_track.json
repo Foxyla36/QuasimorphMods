@@ -1,0 +1,50 @@
+{
+  "RecordType": "MGSC.AugmentationRecord",
+  "Data": {
+    "Id": "ae_cargo_track",
+    "Categories": [
+      "Worker",
+      "Miner",
+      "Merc",
+      "PlanetBridge",
+      "CoreWard",
+      "Grasshopper"
+    ],
+    "TechLevel": 4,
+    "Price": 1400.0,
+    "Weight": 6.0,
+    "InventoryWidthSize": 2,
+    "ItemClass": "CyberneticAug",
+    "CanPutInVest": false,
+    "AugmentationClass": "Body",
+    "WoundSlotIds": [
+      "AE_CargoTrackThigh",
+      "AE_CargoTrackKnee",
+      "AE_CargoTrackFeet"
+    ],
+    "TooltipIconTag": "aug_type_leg",
+    "ae_lose_augmentation_on_amputate": "On",
+    "Disassembly": [
+      {
+        "ItemId": "metal_tread",
+        "Count": 2
+      },
+      {
+        "ItemId": "rubber",
+        "Count": 1
+      },
+      {
+        "ItemId": "hydraulic_pump",
+        "Count": 1
+      },
+      {
+        "ItemId": "spring",
+        "Count": 1
+      },
+      {
+        "ItemId": "blunt_parts",
+        "Count": 1
+      }
+    ]
+  }
+}

@@ -1,4 +1,5 @@
 using System;
+using System.Reflection;
 using HarmonyLib;
 using MGSC;
 using UnityEngine;
@@ -11,7 +12,7 @@ namespace AugmentationsExpanded
         private const string TagTextKey = "ae.tooltip.specialweaponarm";
 
         private static bool _patched;
-        private static System.Reflection.FieldInfo _builderFactory;
+        private static FieldInfo _builderFactory;
 
         /// <summary>
         /// Applies, once per launch, the patch that adds the line "This item is tagged as Special

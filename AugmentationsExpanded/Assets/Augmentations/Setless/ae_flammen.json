@@ -1,0 +1,47 @@
+{
+  "RecordType": "MGSC.AugmentationRecord",
+  "Data": {
+    "Id": "ae_flammen",
+    "Categories": [
+      "Miner",
+      "CoreWard",
+      "CResistance"
+    ],
+    "TechLevel": 4,
+    "Price": 1500.0,
+    "Weight": 4.0,
+    "InventoryWidthSize": 2,
+    "ItemClass": "CyberneticAug",
+    "CanPutInVest": false,
+    "AugmentationClass": "Ranged",
+    "WoundSlotIds": [
+      "AE_FlammenArm",
+      "AE_FlammenShoulder",
+      "AE_FlammenChest"
+    ],
+    "TooltipIconTag": "aug_type_arm",
+    "ae_lose_augmentation_on_amputate": "On",
+    "Disassembly": [
+      {
+        "ItemId": "rod_parts",
+        "Count": 1
+      },
+      {
+        "ItemId": "armor_plates",
+        "Count": 1
+      },
+      {
+        "ItemId": "rubber",
+        "Count": 1
+      },
+      {
+        "ItemId": "metal_tread",
+        "Count": 1
+      },
+      {
+        "ItemId": "spring",
+        "Count": 1
+      }
+    ]
+  }
+}

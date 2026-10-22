@@ -134,6 +134,8 @@ namespace AugmentationsExpanded
             foreach (SmasherGunArms.GunArm arm in SmasherGunArms.All)
                 ReconcileBareHandWeapon(cd, inv, arm.ArmSlotId, arm.WeaponId);
             ReconcileBareHandWeapon(cd, inv, SmasherUhmg.ArmSlotId, SmasherUhmg.WeaponId);
+            foreach (SmasherSetless.Item it in SmasherSetless.All)
+                if (it.WeaponId != null) ReconcileBareHandWeapon(cd, inv, it.SlotIds[0], it.WeaponId);
             ReconcileGunArmBlock(cd, inv);
             ReconcileExtraSlot(cd, inv);
         }

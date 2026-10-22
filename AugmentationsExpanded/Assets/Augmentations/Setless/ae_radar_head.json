@@ -1,0 +1,42 @@
+{
+  "RecordType": "MGSC.AugmentationRecord",
+  "Data": {
+    "Id": "ae_radar_head",
+    "Categories": [
+      "Military",
+      "Security",
+      "Merc",
+      "SBN",
+      "Dilthey"
+    ],
+    "TechLevel": 4,
+    "Price": 850.0,
+    "Weight": 1.2,
+    "InventoryWidthSize": 2,
+    "ItemClass": "CyberneticAug",
+    "CanPutInVest": false,
+    "AugmentationClass": "Body",
+    "WoundSlotIds": [
+      "AE_RadarHead"
+    ],
+    "TooltipIconTag": "aug_type_head",
+    "Disassembly": [
+      {
+        "ItemId": "circuit_board",
+        "Count": 2
+      },
+      {
+        "ItemId": "capacitor_parts",
+        "Count": 1
+      },
+      {
+        "ItemId": "microelectronics_parts",
+        "Count": 1
+      },
+      {
+        "ItemId": "metal_tread",
+        "Count": 1
+      }
+    ]
+  }
+}

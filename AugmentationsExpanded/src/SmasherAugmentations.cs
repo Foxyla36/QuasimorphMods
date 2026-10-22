@@ -38,6 +38,7 @@ namespace AugmentationsExpanded
         public const string SetAndras      = "Andras";
         public const string SetNemesis     = "Nemesis";
         public const string SetOpi         = "OPI";
+        public const string SetMedic       = "Medic";
         public const string SetSetless     = "Setless";
 
         /// <summary>

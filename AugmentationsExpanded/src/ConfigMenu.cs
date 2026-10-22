@@ -29,15 +29,18 @@ namespace AugmentationsExpanded
         private static readonly List<IConfigValue> _andrasFields = new List<IConfigValue>();
         private static readonly List<IConfigValue> _nemesisFields = new List<IConfigValue>();
         private static readonly List<IConfigValue> _opiFields = new List<IConfigValue>();
+        private static readonly List<IConfigValue> _medicFields = new List<IConfigValue>();
         private static IConfigValue _setToggle;
         private static IConfigValue _nachtToggle;
         private static IConfigValue _scoutToggle;
         private static IConfigValue _andrasToggle;
         private static IConfigValue _nemesisToggle;
         private static IConfigValue _opiToggle;
+        private static IConfigValue _medicToggle;
         private static IConfigValue _mercToggle;
         private static readonly List<IConfigValue> _gunArmToggles = new List<IConfigValue>();
         private static IConfigValue _uhmgToggle;
+        private static readonly List<IConfigValue> _setlessToggles = new List<IConfigValue>();
 
         /// <summary>
         /// Registers the two Mod Config Menu panels of the mod: "Augmentations Expanded" (the
@@ -78,13 +81,13 @@ namespace AugmentationsExpanded
         /// <summary>
         /// Builds every entry of the settings panel: the MOD CONFIG introduction with the red
         /// restart reminder; the general switches (hand and foot in the recipes, clone rank
-        /// restriction, loss of Multi-WoundSlot augmentations on amputation, gun arm mode); one
-        /// switch per set, per gun arm and for the UHMG; and for each set the minimum clone rank,
-        /// the preferred faction, the tech level of the pieces, the PMC switch, the crate faction
-        /// and tech level, and, except for ANDRAS which has no chip, the chip crafting switch, the
-        /// chip faction and the chip tech level. OP-I, a single augmentation, has no crate: in its
-        /// place it has the reward faction of the augmentation itself, and its chip crafting switch
-        /// is off by default. Labels are passed as localization keys, which MCM translates;
+        /// restriction, loss of Multi-WoundSlot augmentations on amputation, special weapon arm
+        /// mode); one switch per set, per gun arm, for the UHMG and for each other setless
+        /// augmentation; and for each set the minimum clone rank, the preferred faction, the tech
+        /// level of the pieces, the PMC switch, the crate faction and tech level, and, except for
+        /// ANDRAS which has no chip, the chip crafting switch, the chip faction and the chip tech
+        /// level. OP-I, a single augmentation, has no crate: in its place it has the reward faction
+        /// of the augmentation itself, and its chip crafting switch is off by default. Labels are passed as localization keys, which MCM translates;
         /// tooltips are translated here because MCM does not do it.
         /// </summary>
         /// <returns>The list that MCM keeps and draws. It holds every entry, so MCM watches all of
@@ -157,6 +160,11 @@ namespace AugmentationsExpanded
                 SetTooltip("ae.cfg.setname.opi", "ae.cfg.set.toggle.nocrate.tip"),
                 "ae.cfg.opi.toggle.label");
 
+            _medicToggle = new ConfigValue(
+                SmasherMedic.KeyEnabled, SmasherMedic.Enabled, SmasherMedic.Header, true,
+                SetTooltip(SmasherMedic.SetNameKey),
+                SmasherMedic.ToggleLabelKey);
+
             _mercToggle = new ConfigValue(
                 Mod.KeyMerc, Mod._merc, Mod.SetlessHeader, true,
                 L("ae.cfg.merc.toggle.tip"),
@@ -171,6 +179,12 @@ namespace AugmentationsExpanded
             _uhmgToggle = new ConfigValue(
                 SmasherUhmg.ConfigKey, SmasherUhmg.Enabled, Mod.SetlessHeader, true,
                 L(SmasherUhmg.TipKey), SmasherUhmg.LabelKey);
+
+            _setlessToggles.Clear();
+            foreach (SmasherSetless.Item it in SmasherSetless.All)
+                _setlessToggles.Add(new ConfigValue(
+                    it.ConfigKey, it.Enabled, Mod.SetlessHeader, true,
+                    L(it.TipKey), it.LabelKey));
 
             string TipPieceAndras  = PieceFactionTooltip(SmasherAugmentations.SetAndras);
             string TipPieceNemesis = PieceFactionTooltip(SmasherAugmentations.SetNemesis);
@@ -341,6 +355,34 @@ namespace AugmentationsExpanded
                 Mod.KeyOpiTech, Mod._opTech, Mod.OpiHeader, Mod.OpiDefaultTech,
                 TipChipTech + OpiChipNote(), "ae.cfg.chiptech.label", new List<object>(techLevels)));
 
+            _medicFields.Clear();
+            _medicFields.Add(RankDropdown(
+                SmasherMedic.KeyMinRank, SmasherMedic.MinRank, SmasherMedic.Header, SmasherMedic.DefaultMinRank,
+                SmasherMedic.SetNameKey, ranks));
+            _medicFields.Add(new DropdownConfig(
+                SmasherMedic.KeyPieceFaction, SmasherMedic.PieceFaction, SmasherMedic.Header, SmasherMedic.DefaultFaction,
+                PieceFactionTooltip(SmasherAugmentations.SetMedic), "ae.cfg.piecefaction.label", new List<object>(factions)));
+            _medicFields.Add(new DropdownConfig(
+                SmasherMedic.KeyAugTech, SmasherMedic.AugTech, SmasherMedic.Header, SmasherMedic.DefaultAugTech,
+                TipAug, "ae.cfg.augtech.label", new List<object>(techLevels)));
+            _medicFields.Add(PmcToggle(
+                SmasherMedic.KeyPmc, SmasherMedic.Pmc, SmasherMedic.Header, SmasherMedic.DefaultPmc, SmasherMedic.SetNameKey));
+            _medicFields.Add(new DropdownConfig(
+                SmasherMedic.KeyBoxFaction, SmasherMedic.BoxFaction, SmasherMedic.Header, SmasherMedic.DefaultFaction,
+                TipCrateFaction, "ae.cfg.cratefaction.label", new List<object>(factions)));
+            _medicFields.Add(new DropdownConfig(
+                SmasherMedic.KeyBoxTech, SmasherMedic.BoxTech, SmasherMedic.Header, SmasherMedic.DefaultBoxTech,
+                TipCrateTech, "ae.cfg.cratetech.label", new List<object>(techLevels)));
+            _medicFields.Add(new ConfigValue(
+                SmasherMedic.KeyCraftChip, SmasherMedic.CraftChip, SmasherMedic.Header, true,
+                CraftChipTooltip(SmasherMedic.SetNameKey), "ae.cfg.craftchip.label"));
+            _medicFields.Add(new DropdownConfig(
+                SmasherMedic.KeyFaction, SmasherMedic.Faction, SmasherMedic.Header, SmasherMedic.DefaultFaction,
+                TipChipFaction, "ae.cfg.chipfaction.label", new List<object>(factions)));
+            _medicFields.Add(new DropdownConfig(
+                SmasherMedic.KeyTech, SmasherMedic.Tech, SmasherMedic.Header, SmasherMedic.DefaultTech,
+                TipChipTech, "ae.cfg.chiptech.label", new List<object>(techLevels)));
+
             _config = new List<IConfigValue>();
             Fill(true);
             return _config;
@@ -365,7 +407,7 @@ namespace AugmentationsExpanded
 
         /// <summary>
         /// Fills the list that MCM draws, in panel order: introduction and restart reminder,
-        /// general switches, the six sets with their fields, then the setless augments. MCM
+        /// general switches, the seven sets with their fields, then the setless augments. MCM
         /// groups the entries by header in the order the headers first appear, so this order is
         /// the order of the sections on screen.
         /// </summary>
@@ -395,9 +437,12 @@ namespace AugmentationsExpanded
             if (everything || Mod._nemesis) _config.AddRange(_nemesisFields);
             _config.Add(_opiToggle);
             if (everything || Mod._opi) _config.AddRange(_opiFields);
+            _config.Add(_medicToggle);
+            if (everything || SmasherMedic.Enabled) _config.AddRange(_medicFields);
             _config.Add(_mercToggle);
             _config.AddRange(_gunArmToggles);
             _config.Add(_uhmgToggle);
+            _config.AddRange(_setlessToggles);
         }
 
         /// <summary>

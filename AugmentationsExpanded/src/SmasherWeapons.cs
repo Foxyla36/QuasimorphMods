@@ -19,6 +19,11 @@ namespace AugmentationsExpanded
 
         public const string CritBonusKey = "ae_crit_chance_bonus";
 
+        public const string SoundFromKey = "SoundFrom";
+
+        private static readonly string[] SoundFields =
+            { "_attackSoundBanks", "_reloadSoundBanks", "_dryShotSoundBanks", "_failedAttackSoundBanks" };
+
         private static bool _patched;
 
         /// <summary>
@@ -68,7 +73,8 @@ namespace AugmentationsExpanded
         /// <summary>
         /// Creates one weapon as a copy of the vanilla weapon named in CloneFrom, then overrides
         /// the values present in the json. A mod cannot build the visual and audio part of a
-        /// weapon, so the copy keeps the vanilla one. Traits, Categories and Disassembly would stay
+        /// weapon, so the copy keeps the vanilla one; "SoundFrom" takes the sounds of another
+        /// vanilla weapon instead. Traits, Categories and Disassembly would stay
         /// shared with the vanilla weapon, so they are replaced with new lists. Weapons are
         /// implicit by default: they cannot be dropped, swapped or looted. The model is hidden
         /// when the json says "HideModel": true, and the icon is replaced when the weapon has its
@@ -189,6 +195,7 @@ namespace AugmentationsExpanded
 
             if (d["HideModel"].AsBool) HideModel(rec, src);
             SetIcon(rec, src, assetsRoot);
+            if (!string.IsNullOrEmpty(d[SoundFromKey].Value)) SetSounds(rec, src, d[SoundFromKey].Value);
 
             if (d[CritBonusKey] != null && !d[CritBonusKey].IsNull && d[CritBonusKey].AsFloat != 0f)
                 _critBonus[id] = d[CritBonusKey].AsFloat;
@@ -321,6 +328,41 @@ namespace AugmentationsExpanded
                 return;
             }
             SmasherSprites.SetField(own, "_icon", icon);
+        }
+
+        /// <summary>
+        /// Gives the weapon the sounds of another vanilla weapon (attack, reload, miss and failed
+        /// attack), for a weapon copied from one whose sounds do not fit, e.g. the pile bunker
+        /// copied from a blade, which would play the knife sound and nothing on a miss.
+        /// </summary>
+        /// <param name="rec">The weapon record just copied.</param>
+        /// <param name="src">The vanilla weapon record it was copied from.</param>
+        /// <param name="soundFrom">Id of the vanilla weapon whose sounds are used, the json's
+        /// "SoundFrom", e.g. "civ_powerfist_1".</param>
+        /// <remarks>
+        /// Input: The parameters and the visual data of the sound source.
+        /// Output: Nothing is returned. Sets the sound lists of the weapon's own copy of the visual
+        /// data; logs a warning and changes nothing when the source is missing or has no weapon
+        /// visual data.
+        /// AI-generated documentation, written to help external users understand the mod.
+        /// </remarks>
+        private static void SetSounds(WeaponRecord rec, WeaponRecord src, string soundFrom)
+        {
+            WeaponRecord from = Data.Items.GetRecord(soundFrom) == null
+                                ? null : Data.Items.GetSimpleRecord<WeaponRecord>(soundFrom);
+            var fromDesc = from == null ? null : from.ContentDescriptor as WeaponDescriptor;
+            WeaponDescriptor own = fromDesc == null ? null : OwnDescriptor(rec, src);
+            if (own == null)
+            {
+                Debug.LogWarning("[AugmentationsExpanded] " + rec.Id + ": sounds of '" + soundFrom + "' not applied.");
+                return;
+            }
+            foreach (string field in SoundFields)
+            {
+                FieldInfo f = typeof(WeaponDescriptor).GetField(field, BindingFlags.Instance | BindingFlags.NonPublic);
+                if (f != null) f.SetValue(own, f.GetValue(fromDesc));
+                else Debug.LogError("[AugmentationsExpanded] field " + field + " not found on WeaponDescriptor");
+            }
         }
 
         /// <summary>

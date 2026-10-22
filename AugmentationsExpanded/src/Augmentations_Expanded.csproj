@@ -41,6 +41,8 @@
     <Compile Include="SmasherSpecialArm.cs" />
     <Compile Include="SmasherGunArms.cs" />
     <Compile Include="SmasherUhmg.cs" />
+    <Compile Include="SmasherSetless.cs" />
+    <Compile Include="SmasherMedic.cs" />
     <Compile Include="SmasherRanks.cs" />
     <Compile Include="SmasherRankLock.cs" />
     <Compile Include="SmasherIcons.cs" />

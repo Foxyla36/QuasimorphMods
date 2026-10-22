@@ -1,0 +1,12 @@
+{
+  "RecordType": "MGSC.AmmoRecord",
+  "Data": {
+    "Id": "implicted_ae_pile_charged",
+    "CloneFrom": "implicted_combat_knife",
+    "DmgCritChance": 0.35,
+    "Traits": [
+      "armor_pen",
+      "heavy_knockdown"
+    ]
+  }
+}

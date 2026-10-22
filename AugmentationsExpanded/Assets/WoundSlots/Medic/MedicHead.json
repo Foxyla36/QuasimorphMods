@@ -1,0 +1,71 @@
+{
+  "RecordType": "MGSC.WoundSlotRecord",
+  "Data": {
+    "Id": "MedicHead",
+    "SlotType": "Head",
+    "NatureType": "cyborg",
+    "SlotWeight": 12.0,
+    "CoreEffects": {
+      "los_reduce": -2,
+      "accuracy_reduce": -0.15
+    },
+    "AmputationCoreEffects": {
+      "food_unavailable": 0,
+      "los_reduce": -99,
+      "accuracy_reduce": -0.3
+    },
+    "ImplicitBonusEffects": {
+      "spotted_radius": 2,
+      "fov_angle": 0.25,
+      "status_immune_morphineAddiction": 1,
+      "resist_blunt": 3,
+      "resist_pierce": 3,
+      "resist_lacer": 3,
+      "resist_fire": 1,
+      "resist_poison": 1,
+      "income_pain": -0.1
+    },
+    "ImplicitPenaltyEffects": {
+      "max_health": -3,
+      "resist_shock": -10
+    },
+    "IgnoreEffects": [
+      "run_unavailable",
+      "income_dmg",
+      "dot_dmg",
+      "apoint_dmg",
+      "move_dmg",
+      "eat_dmg",
+      "vomiting",
+      "scatter_angle"
+    ],
+    "IgnoreStatusEffects": [
+      "infectionEffect",
+      "poisonEffect"
+    ],
+    "AmputatedDrop": [
+      {
+        "Item1": 2.0,
+        "Item2": "medic_head"
+      },
+      {
+        "Item1": 1.0,
+        "Item2": "medical_components"
+      },
+      {
+        "Item1": 1.0,
+        "Item2": "circuit_board"
+      },
+      {
+        "Item1": 1.0,
+        "Item2": "metal_tread"
+      }
+    ],
+    "AdditionalAmputation": [],
+    "IsGroundAffected": false,
+    "BareHandWeapon": "",
+    "ImplantSocketsDefault": 1,
+    "ImplantSocketsMin": 1,
+    "ImplantSocketsMax": 1
+  }
+}

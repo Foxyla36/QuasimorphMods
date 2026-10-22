@@ -109,6 +109,7 @@ namespace AugmentationsExpanded
                 new Section("andras",  "ae.cfg.header.andras",  "ae.cfg.setname.andras",  SmasherAugmentations.SetAndras),
                 new Section("nemesis", "ae.cfg.header.nemesis", "ae.cfg.setname.nemesis", SmasherAugmentations.SetNemesis),
                 new Section("opi",     "ae.cfg.header.opi",     "ae.cfg.setname.opi",     SmasherAugmentations.SetOpi),
+                new Section("medic",   SmasherMedic.Header,     SmasherMedic.SetNameKey,  SmasherAugmentations.SetMedic),
                 new Section("merc", "item." + AugmentationsExpandedMod.MercId + ".name",
                             "item." + AugmentationsExpandedMod.MercId + ".name", null,
                             new[] { AugmentationsExpandedMod.MercId }, new[] { "AE_Merc" })
@@ -121,6 +122,10 @@ namespace AugmentationsExpanded
                                  new[] { SmasherUhmg.AugId },
                                  new[] { SmasherUhmg.ArmSlotId, SmasherUhmg.ShoulderSlotId, SmasherUhmg.ChestSlotId },
                                  new[] { SmasherUhmg.WeaponId }));
+            foreach (SmasherSetless.Item it in SmasherSetless.All)
+                list.Add(new Section(it.Name, "item." + it.AugId + ".name", "item." + it.AugId + ".name", null,
+                                     new[] { it.AugId }, it.SlotIds,
+                                     it.WeaponId == null ? new string[0] : new[] { it.WeaponId }));
             _sections = list;
             return _sections;
         }

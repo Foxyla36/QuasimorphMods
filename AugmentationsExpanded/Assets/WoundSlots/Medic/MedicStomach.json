@@ -1,0 +1,74 @@
+{
+  "RecordType": "MGSC.WoundSlotRecord",
+  "Data": {
+    "Id": "MedicStomach",
+    "SlotType": "Stomach",
+    "NatureType": "cyborg",
+    "SlotWeight": 9.0,
+    "CoreEffects": {
+      "food_unavailable": 0,
+      "consume_regen": 0,
+      "regen_efficacy": -0.2
+    },
+    "AmputationCoreEffects": {
+      "death": 0,
+      "food_unavailable": 0,
+      "consume_regen": 0,
+      "regen_efficacy": -0.4
+    },
+    "ImplicitBonusEffects": {
+      "wound_heal_chance": 0.15,
+      "regen_efficacy": 0.15,
+      "status_immune_alcoholAddiction": 1,
+      "status_immune_poisonEffect": 1,
+      "resist_blunt": 3,
+      "resist_pierce": 3,
+      "resist_lacer": 3,
+      "resist_fire": 2,
+      "resist_poison": 2
+    },
+    "ImplicitPenaltyEffects": {
+      "max_health": -3
+    },
+    "IgnoreEffects": [
+      "run_unavailable",
+      "accuracy_reduce",
+      "dodge_reduce",
+      "dot_dmg",
+      "apoint_dmg",
+      "move_dmg",
+      "eat_dmg",
+      "vomiting",
+      "los_reduce",
+      "scatter_angle"
+    ],
+    "IgnoreStatusEffects": [
+      "infectionEffect",
+      "poisonEffect"
+    ],
+    "AmputatedDrop": [
+      {
+        "Item1": 2.0,
+        "Item2": "medic_stomach"
+      },
+      {
+        "Item1": 1.0,
+        "Item2": "medical_components"
+      },
+      {
+        "Item1": 1.0,
+        "Item2": "circuit_board"
+      },
+      {
+        "Item1": 1.0,
+        "Item2": "metal_tread"
+      }
+    ],
+    "AdditionalAmputation": [],
+    "IsGroundAffected": false,
+    "BareHandWeapon": "",
+    "ImplantSocketsDefault": 1,
+    "ImplantSocketsMin": 1,
+    "ImplantSocketsMax": 1
+  }
+}
