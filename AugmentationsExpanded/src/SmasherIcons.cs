@@ -158,9 +158,9 @@ namespace AugmentationsExpanded
         /// Every pack is a subfolder of Assets/IconPacks in the mod (packs shipped with it) or of
         /// Quasimorph_ModConfigs/Augmentations_Expanded/IconPacks (packs added by the player, kept
         /// across mod updates), listed with its folder name as it is, e.g. "Vanilla - Foxyla36"
-        /// or "EmoUsedHM01". The packs whose name contains "Foxyla36" come first, then all the
-        /// others; each group keeps the order the folders were read in (the mod's packs, then
-        /// the player's, each in alphabetical order). A pack mirrors Assets/Images
+        /// or "Custom - EmoUsedHM01". The packs whose name contains "Foxyla36" come first, then
+        /// all the others; each group keeps the order the folders were read in (the mod's packs,
+        /// then the player's, each in alphabetical order). A pack mirrors Assets/Images
         /// (Augmentations, Trash, Datadisks, WoundSlots, Weapons) and may hold only some files:
         /// every file it lacks keeps the default art. A name already found is skipped. The second
         /// folder is created when missing, so players can find where to put packs.
