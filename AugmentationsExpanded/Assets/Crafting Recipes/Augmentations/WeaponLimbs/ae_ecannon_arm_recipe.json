@@ -19,6 +19,10 @@
       {
         "ItemId": "ceramite_plates",
         "Count": 1
+      },
+      {
+        "ItemId": "transformer",
+        "Count": 1
       }
     ],
     "ProduceTimeInHours": 36.0,

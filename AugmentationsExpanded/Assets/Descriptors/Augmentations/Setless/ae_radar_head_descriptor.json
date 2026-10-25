@@ -3,8 +3,8 @@
   "Data": {
     "ItemId": "ae_radar_head",
     "ImageProperties": {
-      "IconSpriteIdOrPath": "Images/Augmentations/generic_arm_container_15_inv.png",
-      "SmallIconSpriteIdOrPath": "Images/Augmentations/generic_arm_container_15_floor.png",
+      "IconSpriteIdOrPath": "Images/Augmentations/generic_arm_container_10_inv.png",
+      "SmallIconSpriteIdOrPath": "Images/Augmentations/generic_arm_container_10_floor.png",
       "ShadowOnFloorSpriteIdOrPath": "Images/Augmentations/generic_arm_container_shadow.png"
     }
   }

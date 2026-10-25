@@ -6,14 +6,14 @@
     "RequiredItems": [
       {
         "ItemId": "spring",
-        "Count": 1
-      },
-      {
-        "ItemId": "metal_tread",
-        "Count": 1
+        "Count": 2
       },
       {
         "ItemId": "rubber",
+        "Count": 1
+      },
+      {
+        "ItemId": "plastic",
         "Count": 1
       }
     ],

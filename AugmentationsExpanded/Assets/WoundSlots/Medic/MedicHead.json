@@ -50,7 +50,7 @@
       },
       {
         "Item1": 1.0,
-        "Item2": "medical_components"
+        "Item2": "lens"
       },
       {
         "Item1": 1.0,
@@ -58,7 +58,15 @@
       },
       {
         "Item1": 1.0,
-        "Item2": "metal_tread"
+        "Item2": "medical_components"
+      },
+      {
+        "Item1": 1.0,
+        "Item2": "microelectronics_parts"
+      },
+      {
+        "Item1": 1.0,
+        "Item2": "plastic"
       }
     ],
     "AdditionalAmputation": [],

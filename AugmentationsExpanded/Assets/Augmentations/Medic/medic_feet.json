@@ -20,15 +20,19 @@
     "TooltipIconTag": "aug_type_foot",
     "Disassembly": [
       {
-        "ItemId": "medical_components",
+        "ItemId": "rod_parts",
         "Count": 1
       },
       {
-        "ItemId": "circuit_board",
+        "ItemId": "rubber",
         "Count": 1
       },
       {
-        "ItemId": "metal_tread",
+        "ItemId": "spring",
+        "Count": 1
+      },
+      {
+        "ItemId": "plastic",
         "Count": 1
       }
     ]

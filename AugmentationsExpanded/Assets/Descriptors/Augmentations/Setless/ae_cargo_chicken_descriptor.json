@@ -3,8 +3,8 @@
   "Data": {
     "ItemId": "ae_cargo_chicken",
     "ImageProperties": {
-      "IconSpriteIdOrPath": "Images/Augmentations/generic_arm_container_13_inv.png",
-      "SmallIconSpriteIdOrPath": "Images/Augmentations/generic_arm_container_13_floor.png",
+      "IconSpriteIdOrPath": "Images/Augmentations/generic_arm_container_8_inv.png",
+      "SmallIconSpriteIdOrPath": "Images/Augmentations/generic_arm_container_8_floor.png",
       "ShadowOnFloorSpriteIdOrPath": "Images/Augmentations/generic_arm_container_shadow.png"
     }
   }

@@ -5,19 +5,19 @@
     "OutputItem": "medic_guts",
     "RequiredItems": [
       {
-        "ItemId": "medical_components",
-        "Count": 2
-      },
-      {
-        "ItemId": "circuit_board",
-        "Count": 1
-      },
-      {
         "ItemId": "armor_plates",
         "Count": 1
       },
       {
+        "ItemId": "medical_components",
+        "Count": 2
+      },
+      {
         "ItemId": "rubber",
+        "Count": 1
+      },
+      {
+        "ItemId": "circuit_board",
         "Count": 1
       }
     ],

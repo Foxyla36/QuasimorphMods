@@ -21,14 +21,18 @@
     "Disassembly": [
       {
         "ItemId": "medical_components",
+        "Count": 2
+      },
+      {
+        "ItemId": "plastic",
         "Count": 1
       },
       {
-        "ItemId": "circuit_board",
+        "ItemId": "rubber",
         "Count": 1
       },
       {
-        "ItemId": "metal_tread",
+        "ItemId": "microelectronics_parts",
         "Count": 1
       }
     ]

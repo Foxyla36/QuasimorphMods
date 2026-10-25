@@ -1,0 +1,8 @@
+{
+  "RecordType": "MGSC.FireModeRecord",
+  "Data": {
+    "Id": "ae_flamer_stream_1",
+    "CloneFrom": "flamethrower_1",
+    "ScatterAngle": 1.0
+  }
+}

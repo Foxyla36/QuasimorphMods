@@ -39,7 +39,7 @@
         "Item2": "ae_gatling_arm"
       },
       {
-        "Item1": 1.0,
+        "Item1": 2.0,
         "Item2": "weapon_parts"
       },
       {
@@ -47,8 +47,12 @@
         "Item2": "spring"
       },
       {
+        "Item1": 3.0,
+        "Item2": "blunt_parts"
+      },
+      {
         "Item1": 1.0,
-        "Item2": "rubber"
+        "Item2": "armor_plates"
       }
     ],
     "AdditionalAmputation": [

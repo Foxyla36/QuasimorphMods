@@ -3,8 +3,8 @@
   "Data": {
     "ItemId": "ae_gatling_arm",
     "ImageProperties": {
-      "IconSpriteIdOrPath": "Images/Augmentations/generic_arm_container_8_inv.png",
-      "SmallIconSpriteIdOrPath": "Images/Augmentations/generic_arm_container_8_floor.png",
+      "IconSpriteIdOrPath": "Images/Augmentations/generic_arm_container_7_inv.png",
+      "SmallIconSpriteIdOrPath": "Images/Augmentations/generic_arm_container_7_floor.png",
       "ShadowOnFloorSpriteIdOrPath": "Images/Augmentations/generic_arm_container_shadow.png"
     }
   }

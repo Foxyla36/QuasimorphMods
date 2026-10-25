@@ -5,15 +5,19 @@
     "OutputItem": "medic_wrist",
     "RequiredItems": [
       {
+        "ItemId": "rod_parts",
+        "Count": 1
+      },
+      {
+        "ItemId": "spring",
+        "Count": 1
+      },
+      {
         "ItemId": "medical_components",
         "Count": 1
       },
       {
         "ItemId": "microelectronics_parts",
-        "Count": 1
-      },
-      {
-        "ItemId": "spring",
         "Count": 1
       }
     ],

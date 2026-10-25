@@ -22,7 +22,9 @@
     },
     "ImplicitPenaltyEffects": {
       "max_health": -5,
-      "resist_shock": -9
+      "resist_shock": -9,
+      "wound_chance_mult": 0.05,
+      "no_stealth": 1
     },
     "IgnoreEffects": [
       "food_unavailable",
@@ -41,11 +43,11 @@
     "AmputatedDrop": [
       {
         "Item1": 1.0,
-        "Item2": "metal_tread"
+        "Item2": "spring"
       },
       {
         "Item1": 1.0,
-        "Item2": "rubber"
+        "Item2": "armor_plates"
       }
     ],
     "AdditionalAmputation": [],

@@ -3,7 +3,7 @@
   "Data": {
     "ItemId": "smasher_knee",
     "ImageProperties": {
-      "IconSpriteIdOrPath": "Images/Augmentations/smasher_component_inv.png",
+      "IconSpriteIdOrPath": "Images/Augmentations/smasher_knee_inv.png",
       "SmallIconSpriteIdOrPath": "Images/Augmentations/smasher_component_floor.png",
       "ShadowOnFloorSpriteIdOrPath": "Images/Augmentations/smasher_component_shadow.png"
     }

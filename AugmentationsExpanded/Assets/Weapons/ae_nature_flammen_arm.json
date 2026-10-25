@@ -15,13 +15,15 @@
     "RequiredAmmo": "Gas",
     "DefaultAmmoId": "gas_ammo",
     "OverrideAmmo": [
-      "implicted_flamethrower"
+      "implicted_flamethrower",
+      "implicted_ae_flamer_stream"
     ],
     "Firemodes": [
-      "flamethrower_1"
+      "flamethrower_1",
+      "ae_flamer_stream_1"
     ],
-    "MagazineCapacity": 100,
-    "MinRandomAmmoCount": 50,
+    "MagazineCapacity": 200,
+    "MinRandomAmmoCount": 100,
     "ReloadDuration": 6,
     "Range": 5,
     "Falloff": 1.0,

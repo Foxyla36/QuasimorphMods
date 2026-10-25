@@ -87,8 +87,9 @@ namespace AugmentationsExpanded
         /// level of the pieces, the PMC switch, the crate faction and tech level, and, except for
         /// ANDRAS which has no chip, the chip crafting switch, the chip faction and the chip tech
         /// level. OP-I, a single augmentation, has no crate: in its place it has the reward faction
-        /// of the augmentation itself, and its chip crafting switch is off by default. Labels are passed as localization keys, which MCM translates;
-        /// tooltips are translated here because MCM does not do it.
+        /// of the augmentation itself, and its chip crafting switch is off by default. Labels are
+        /// passed as localization keys, which MCM translates; tooltips are translated here because
+        /// MCM does not do it.
         /// </summary>
         /// <returns>The list that MCM keeps and draws. It holds every entry, so MCM watches all of
         /// them for unsaved changes; RefreshFields then hides the fields of the sets that are off.

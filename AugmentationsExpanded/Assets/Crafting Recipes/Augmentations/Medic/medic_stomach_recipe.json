@@ -9,11 +9,15 @@
         "Count": 2
       },
       {
+        "ItemId": "plastic",
+        "Count": 1
+      },
+      {
         "ItemId": "rubber",
         "Count": 1
       },
       {
-        "ItemId": "circuit_board",
+        "ItemId": "microelectronics_parts",
         "Count": 1
       }
     ],

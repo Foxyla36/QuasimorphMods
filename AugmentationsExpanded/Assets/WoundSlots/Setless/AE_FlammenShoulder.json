@@ -37,12 +37,16 @@
     ],
     "AmputatedDrop": [
       {
-        "Item1": 1.0,
-        "Item2": "rubber"
+        "Item1": 2.0,
+        "Item2": "ae_flammen"
       },
       {
         "Item1": 1.0,
         "Item2": "spring"
+      },
+      {
+        "Item1": 1.0,
+        "Item2": "rusty_plates"
       }
     ],
     "AdditionalAmputation": [

@@ -13,11 +13,11 @@
         "Count": 1
       },
       {
-        "ItemId": "circuit_board",
+        "ItemId": "capacitor_parts",
         "Count": 1
       },
       {
-        "ItemId": "metal_tread",
+        "ItemId": "circuit_board",
         "Count": 1
       }
     ],

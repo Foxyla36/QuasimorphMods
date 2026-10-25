@@ -3,7 +3,7 @@
   "Data": {
     "ItemId": "andras_feet",
     "ImageProperties": {
-      "IconSpriteIdOrPath": "Images/Augmentations/andras_component_inv.png",
+      "IconSpriteIdOrPath": "Images/Augmentations/andras_feet_inv.png",
       "SmallIconSpriteIdOrPath": "Images/Augmentations/andras_component_floor.png",
       "ShadowOnFloorSpriteIdOrPath": "Images/Augmentations/andras_component_shadow.png"
     }

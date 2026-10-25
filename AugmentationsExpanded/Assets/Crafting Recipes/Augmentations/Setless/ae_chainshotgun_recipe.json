@@ -13,11 +13,15 @@
         "Count": 2
       },
       {
-        "ItemId": "metal_tread",
+        "ItemId": "armor_plates",
         "Count": 1
       },
       {
-        "ItemId": "armor_plates",
+        "ItemId": "blunt_parts",
+        "Count": 1
+      },
+      {
+        "ItemId": "ceramite_plates",
         "Count": 1
       }
     ],

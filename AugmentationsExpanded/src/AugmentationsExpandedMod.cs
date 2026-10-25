@@ -234,7 +234,10 @@ namespace AugmentationsExpanded
         /// effect lists (ae_kill_long_stats), the Multi-WoundSlot augmentations
         /// (ae_lose_augmentation_on_amputate), the tooltip line of the Special Weapon Arms
         /// (ae_special_weapon_arm) and the weapon crit bonus (ae_crit_chance_bonus). Every step
-        /// has its own try/catch, so a failing step does not skip the others.
+        /// has its own try/catch, so a failing step does not skip the others. Right after the
+        /// settings are loaded it also refreshes the clothing rule of the Visible Augments pieces,
+        /// since the optional Visible Augments bridge may receive the config hook before this
+        /// class does.
         /// </summary>
         /// <param name="context">The context given by the game. Its ModContentPath must be the
         /// folder of this mod. With null, no content is loaded.</param>
@@ -253,7 +256,6 @@ namespace AugmentationsExpanded
         {
             try { LoadSettings(); }
             catch (Exception e) { Debug.LogError("[AugmentationsExpanded] LoadSettings: " + e); }
-            // The optional bridge may receive the config hook before this class does.
             VisibleAugments.ModMain.RefreshClippingPolicy();
 
             string path = context == null ? null : context.ModContentPath;

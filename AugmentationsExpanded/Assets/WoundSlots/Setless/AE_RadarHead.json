@@ -47,7 +47,7 @@
         "Item2": "ae_radar_head"
       },
       {
-        "Item1": 1.0,
+        "Item1": 2.0,
         "Item2": "circuit_board"
       },
       {
@@ -56,7 +56,11 @@
       },
       {
         "Item1": 1.0,
-        "Item2": "glass"
+        "Item2": "microelectronics_parts"
+      },
+      {
+        "Item1": 1.0,
+        "Item2": "geoscanner_device"
       }
     ],
     "AdditionalAmputation": [],

@@ -49,16 +49,16 @@
         "Item2": "medic_knee"
       },
       {
-        "Item1": 1.0,
-        "Item2": "medical_components"
+        "Item1": 2.0,
+        "Item2": "spring"
       },
       {
         "Item1": 1.0,
-        "Item2": "circuit_board"
+        "Item2": "rubber"
       },
       {
         "Item1": 1.0,
-        "Item2": "metal_tread"
+        "Item2": "plastic"
       }
     ],
     "AdditionalAmputation": [],

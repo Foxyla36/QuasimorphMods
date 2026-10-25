@@ -21,15 +21,23 @@
     "TooltipIconTag": "aug_type_arm",
     "Disassembly": [
       {
+        "ItemId": "medic_wrist",
+        "Count": 1
+      },
+      {
+        "ItemId": "spring",
+        "Count": 1
+      },
+      {
         "ItemId": "medical_components",
         "Count": 1
       },
       {
-        "ItemId": "circuit_board",
+        "ItemId": "capacitor_parts",
         "Count": 1
       },
       {
-        "ItemId": "metal_tread",
+        "ItemId": "armor_plates",
         "Count": 1
       }
     ]

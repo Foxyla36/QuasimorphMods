@@ -20,15 +20,15 @@
     "TooltipIconTag": "aug_type_knee",
     "Disassembly": [
       {
-        "ItemId": "medical_components",
+        "ItemId": "spring",
+        "Count": 2
+      },
+      {
+        "ItemId": "rubber",
         "Count": 1
       },
       {
-        "ItemId": "circuit_board",
-        "Count": 1
-      },
-      {
-        "ItemId": "metal_tread",
+        "ItemId": "plastic",
         "Count": 1
       }
     ]

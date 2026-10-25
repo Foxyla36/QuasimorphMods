@@ -6,7 +6,8 @@
       "Worker",
       "Security",
       "Grasshopper",
-      "Dilthey"
+      "Dilthey",
+      "PlanetBridge"
     ],
     "TechLevel": 4,
     "Price": 1300.0,
@@ -33,14 +34,10 @@
       },
       {
         "ItemId": "rod_parts",
-        "Count": 1
+        "Count": 2
       },
       {
-        "ItemId": "metal_tread",
-        "Count": 1
-      },
-      {
-        "ItemId": "blunt_parts",
+        "ItemId": "armor_plates",
         "Count": 1
       }
     ]

@@ -21,15 +21,23 @@
     "TooltipIconTag": "aug_type_leg",
     "Disassembly": [
       {
-        "ItemId": "medical_components",
+        "ItemId": "medic_feet",
         "Count": 1
       },
       {
-        "ItemId": "circuit_board",
+        "ItemId": "plastic",
         "Count": 1
       },
       {
-        "ItemId": "metal_tread",
+        "ItemId": "rod_parts",
+        "Count": 1
+      },
+      {
+        "ItemId": "rubber",
+        "Count": 1
+      },
+      {
+        "ItemId": "spring",
         "Count": 1
       }
     ]

@@ -25,7 +25,8 @@
       "max_health": -5,
       "no_stealth": 1,
       "resist_shock": -12,
-      "dodge_reduce": -0.05
+      "dodge_reduce": -0.05,
+      "food_calories": 0.05
     },
     "IgnoreEffects": [
       "food_unavailable",
@@ -43,12 +44,8 @@
     ],
     "AmputatedDrop": [
       {
-        "Item1": 1.0,
+        "Item1": 2.0,
         "Item2": "rubber"
-      },
-      {
-        "Item1": 1.0,
-        "Item2": "metal_tread"
       }
     ],
     "AdditionalAmputation": [],

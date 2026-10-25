@@ -23,7 +23,9 @@
     },
     "ImplicitPenaltyEffects": {
       "max_health": -5,
-      "resist_shock": -8
+      "resist_shock": -8,
+      "wound_chance_mult": 0.05,
+      "food_calories": 0.05
     },
     "IgnoreEffects": [
       "food_unavailable",
@@ -48,7 +50,7 @@
       },
       {
         "Item1": 1.0,
-        "Item2": "weapon_parts"
+        "Item2": "rod_parts"
       }
     ],
     "AdditionalAmputation": [],

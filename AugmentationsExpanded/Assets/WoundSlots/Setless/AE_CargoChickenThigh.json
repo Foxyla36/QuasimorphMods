@@ -19,11 +19,14 @@
       "resist_lacer": 6,
       "dodge_reduce": 0.05,
       "items_weight": -0.1,
-      "scatter_angle": -0.05
+      "scatter_angle": -0.05,
+      "melee_throw_range": 1
     },
     "ImplicitPenaltyEffects": {
       "max_health": -5,
-      "resist_shock": -8
+      "resist_shock": -8,
+      "wound_chance_mult": 0.05,
+      "food_calories": 0.05
     },
     "IgnoreEffects": [
       "food_unavailable",
@@ -47,10 +50,6 @@
       {
         "Item1": 1.0,
         "Item2": "hydraulic_pump"
-      },
-      {
-        "Item1": 1.0,
-        "Item2": "spring"
       },
       {
         "Item1": 1.0,

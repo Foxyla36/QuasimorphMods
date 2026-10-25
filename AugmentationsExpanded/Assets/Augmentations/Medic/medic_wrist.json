@@ -20,15 +20,19 @@
     "TooltipIconTag": "aug_type_hand",
     "Disassembly": [
       {
+        "ItemId": "rod_parts",
+        "Count": 1
+      },
+      {
+        "ItemId": "spring",
+        "Count": 1
+      },
+      {
         "ItemId": "medical_components",
         "Count": 1
       },
       {
-        "ItemId": "circuit_board",
-        "Count": 1
-      },
-      {
-        "ItemId": "metal_tread",
+        "ItemId": "microelectronics_parts",
         "Count": 1
       }
     ]

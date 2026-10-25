@@ -14,14 +14,10 @@
       },
       {
         "ItemId": "rod_parts",
-        "Count": 1
+        "Count": 2
       },
       {
         "ItemId": "armor_plates",
-        "Count": 1
-      },
-      {
-        "ItemId": "metal_tread",
         "Count": 1
       }
     ],

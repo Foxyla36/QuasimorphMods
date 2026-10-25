@@ -3,7 +3,7 @@
   "Data": {
     "ItemId": "nemesis_hand",
     "ImageProperties": {
-      "IconSpriteIdOrPath": "Images/Augmentations/nemesis_component_inv.png",
+      "IconSpriteIdOrPath": "Images/Augmentations/nemesis_hand_inv.png",
       "SmallIconSpriteIdOrPath": "Images/Augmentations/nemesis_component_floor.png",
       "ShadowOnFloorSpriteIdOrPath": "Images/Augmentations/nemesis_component_shadow.png"
     }

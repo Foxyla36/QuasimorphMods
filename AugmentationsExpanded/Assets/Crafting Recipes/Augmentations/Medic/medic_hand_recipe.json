@@ -17,7 +17,11 @@
         "Count": 1
       },
       {
-        "ItemId": "metal_tread",
+        "ItemId": "capacitor_parts",
+        "Count": 1
+      },
+      {
+        "ItemId": "armor_plates",
         "Count": 1
       }
     ],

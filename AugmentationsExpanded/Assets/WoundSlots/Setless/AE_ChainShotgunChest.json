@@ -43,16 +43,12 @@
     ],
     "AmputatedDrop": [
       {
-        "Item1": 2.0,
-        "Item2": "ae_chainshotgun"
-      },
-      {
-        "Item1": 1.0,
-        "Item2": "weapon_parts"
-      },
-      {
         "Item1": 1.0,
         "Item2": "armor_plates"
+      },
+      {
+        "Item1": 1.0,
+        "Item2": "ceramite_plates"
       }
     ],
     "AdditionalAmputation": [

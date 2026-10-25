@@ -13,6 +13,15 @@ namespace AugmentationsExpanded
 
         private static readonly Dictionary<string, string> _sets = new Dictionary<string, string>();
 
+        /// <summary>
+        /// The wound slots of this mod registered by RegisterWoundSlots. Used to find the set of
+        /// a fist from the wound slot that uses it as bare hands weapon.
+        /// </summary>
+        /// <remarks>
+        /// Input: The ids remembered while registering.
+        /// Output: The ids, e.g. "NachtArm". Empty before the wound slots are registered.
+        /// AI-generated documentation, written to help external users understand the mod.
+        /// </remarks>
         public static IEnumerable<string> Ids { get { return _slots; } }
 
         /// <summary>

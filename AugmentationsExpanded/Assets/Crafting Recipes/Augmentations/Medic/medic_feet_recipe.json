@@ -5,15 +5,19 @@
     "OutputItem": "medic_feet",
     "RequiredItems": [
       {
+        "ItemId": "rod_parts",
+        "Count": 1
+      },
+      {
         "ItemId": "rubber",
         "Count": 1
       },
       {
-        "ItemId": "metal_tread",
+        "ItemId": "spring",
         "Count": 1
       },
       {
-        "ItemId": "spring",
+        "ItemId": "plastic",
         "Count": 1
       }
     ],

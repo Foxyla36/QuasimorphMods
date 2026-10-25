@@ -5,11 +5,11 @@
     "OutputItem": "medic_head",
     "RequiredItems": [
       {
-        "ItemId": "circuit_board",
+        "ItemId": "lens",
         "Count": 1
       },
       {
-        "ItemId": "glass",
+        "ItemId": "circuit_board",
         "Count": 1
       },
       {
@@ -18,6 +18,10 @@
       },
       {
         "ItemId": "microelectronics_parts",
+        "Count": 1
+      },
+      {
+        "ItemId": "plastic",
         "Count": 1
       }
     ],

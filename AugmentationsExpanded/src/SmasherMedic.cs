@@ -11,6 +11,9 @@ namespace AugmentationsExpanded
     /// live in this class instead of AugmentationsExpandedMod, which calls it at the same points
     /// where it handles the other sets.
     /// </summary>
+    /// <remarks>
+    /// AI-generated documentation, written to help external users understand the mod.
+    /// </remarks>
     internal static class SmasherMedic
     {
         internal const string ChipId         = "medic_chip";

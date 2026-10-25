@@ -6,8 +6,7 @@
       "Military",
       "PMC",
       "Merc",
-      "PlanetBridge",
-      "CoreWard"
+      "UnchainedBelt"
     ],
     "TechLevel": 6,
     "Price": 1300.0,
@@ -24,11 +23,11 @@
     "Disassembly": [
       {
         "ItemId": "hydraulic_pump",
-        "Count": 1
+        "Count": 2
       },
       {
         "ItemId": "spring",
-        "Count": 1
+        "Count": 2
       },
       {
         "ItemId": "weapon_parts",
@@ -36,6 +35,10 @@
       },
       {
         "ItemId": "ceramite_plates",
+        "Count": 1
+      },
+      {
+        "ItemId": "blunt_parts",
         "Count": 1
       }
     ]

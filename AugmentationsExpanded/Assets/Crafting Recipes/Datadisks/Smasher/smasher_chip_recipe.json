@@ -15,6 +15,10 @@
       {
         "ItemId": "microelectronics_parts",
         "Count": 1
+      },
+      {
+        "ItemId": "automap",
+        "Count": 1
       }
     ],
     "ProduceTimeInHours": 24.0,

@@ -42,7 +42,7 @@
         "Item2": "ae_ecannon_arm"
       },
       {
-        "Item1": 1.0,
+        "Item1": 2.0,
         "Item2": "capacitor_parts"
       },
       {
@@ -52,6 +52,14 @@
       {
         "Item1": 1.0,
         "Item2": "lens"
+      },
+      {
+        "Item1": 1.0,
+        "Item2": "ceramite_plates"
+      },
+      {
+        "Item1": 1.0,
+        "Item2": "transformer"
       }
     ],
     "AdditionalAmputation": [

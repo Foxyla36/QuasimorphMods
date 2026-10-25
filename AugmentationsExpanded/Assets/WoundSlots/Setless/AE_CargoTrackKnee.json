@@ -24,7 +24,8 @@
     "ImplicitPenaltyEffects": {
       "max_health": -5,
       "resist_shock": -11,
-      "dodge_reduce": -0.05
+      "dodge_reduce": -0.05,
+      "food_calories": 0.05
     },
     "IgnoreEffects": [
       "food_unavailable",
@@ -45,11 +46,11 @@
     "AmputatedDrop": [
       {
         "Item1": 1.0,
-        "Item2": "metal_tread"
+        "Item2": "armor_plates"
       },
       {
         "Item1": 1.0,
-        "Item2": "weapon_parts"
+        "Item2": "ceramite_plates"
       }
     ],
     "AdditionalAmputation": [],

@@ -3,7 +3,7 @@
   "Data": {
     "ItemId": "medic_hand",
     "ImageProperties": {
-      "IconSpriteIdOrPath": "Images/Augmentations/medic_component_inv.png",
+      "IconSpriteIdOrPath": "Images/Augmentations/medic_hand_inv.png",
       "SmallIconSpriteIdOrPath": "Images/Augmentations/medic_component_floor.png",
       "ShadowOnFloorSpriteIdOrPath": "Images/Augmentations/medic_component_shadow.png"
     }

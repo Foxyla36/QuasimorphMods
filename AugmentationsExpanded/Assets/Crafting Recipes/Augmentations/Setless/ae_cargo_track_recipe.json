@@ -5,16 +5,12 @@
     "OutputItem": "ae_cargo_track",
     "RequiredItems": [
       {
-        "ItemId": "metal_tread",
-        "Count": 2
-      },
-      {
         "ItemId": "rubber",
         "Count": 2
       },
       {
         "ItemId": "hydraulic_pump",
-        "Count": 1
+        "Count": 2
       },
       {
         "ItemId": "spring",
@@ -22,6 +18,10 @@
       },
       {
         "ItemId": "armor_plates",
+        "Count": 1
+      },
+      {
+        "ItemId": "ceramite_plates",
         "Count": 1
       }
     ],

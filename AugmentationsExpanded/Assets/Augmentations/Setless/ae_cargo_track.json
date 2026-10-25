@@ -26,23 +26,23 @@
     "ae_lose_augmentation_on_amputate": "On",
     "Disassembly": [
       {
-        "ItemId": "metal_tread",
+        "ItemId": "rubber",
         "Count": 2
       },
       {
-        "ItemId": "rubber",
-        "Count": 1
-      },
-      {
         "ItemId": "hydraulic_pump",
-        "Count": 1
+        "Count": 2
       },
       {
         "ItemId": "spring",
         "Count": 1
       },
       {
-        "ItemId": "blunt_parts",
+        "ItemId": "armor_plates",
+        "Count": 1
+      },
+      {
+        "ItemId": "ceramite_plates",
         "Count": 1
       }
     ]

@@ -37,6 +37,10 @@
       {
         "ItemId": "ceramite_plates",
         "Count": 1
+      },
+      {
+        "ItemId": "transformer",
+        "Count": 1
       }
     ]
   }

@@ -15,8 +15,8 @@ namespace AugmentationsExpanded
 
         internal const string DefaultId     = "default";
         internal const string DefaultName   = "Default - Foxyla36";
-        internal const string CustomPrefix  = "Custom - ";
-        internal const string NamedMark     = " - ";
+        internal const string LegacyPrefix  = "Custom - ";
+        internal const string FirstAuthor   = "Foxyla36";
         internal const string PackFolder    = "IconPacks";
         internal const string KeyPrefix     = "icons_";
         internal const int    OneCellWidth  = 24;
@@ -89,8 +89,9 @@ namespace AugmentationsExpanded
         private static List<Section> _sections;
 
         /// <summary>
-        /// The sections of the icons panel, in panel order: the six sets (OP-I included), then
-        /// M.E.R.C., the five gun arms and the UHMG.
+        /// The sections of the icons panel, in panel order: the seven sets (OP-I and CMEDIC-32
+        /// included), then M.E.R.C., the five gun arms, the UHMG and the other setless
+        /// augmentations.
         /// </summary>
         /// <returns>The sections. Never null.</returns>
         /// <remarks>
@@ -156,13 +157,13 @@ namespace AugmentationsExpanded
         /// pick per set and per setless item. The art in Assets/Images is "Default - Foxyla36".
         /// Every pack is a subfolder of Assets/IconPacks in the mod (packs shipped with it) or of
         /// Quasimorph_ModConfigs/Augmentations_Expanded/IconPacks (packs added by the player, kept
-        /// across mod updates), named after its author and listed as "Custom - {author}". A pack
-        /// shipped with the mod whose folder name contains " - " is a named pack, e.g. "Vanilla -
-        /// Foxyla36": it is listed with its folder name as it is, before every Custom pack. A pack
-        /// mirrors Assets/Images (Augmentations, Trash, Datadisks, WoundSlots, Weapons) and may
-        /// hold only some files: every file it lacks keeps the default art. A name already found
-        /// is skipped. The second folder is created when missing, so players can find where to
-        /// put packs.
+        /// across mod updates), listed with its folder name as it is, e.g. "Vanilla - Foxyla36"
+        /// or "EmoUsedHM01". The packs whose name contains "Foxyla36" come first, then all the
+        /// others; each group keeps the order the folders were read in (the mod's packs, then
+        /// the player's, each in alphabetical order). A pack mirrors Assets/Images
+        /// (Augmentations, Trash, Datadisks, WoundSlots, Weapons) and may hold only some files:
+        /// every file it lacks keeps the default art. A name already found is skipped. The second
+        /// folder is created when missing, so players can find where to put packs.
         /// </summary>
         /// <param name="modContentPath">Folder of the mod, the one that contains Assets. Null or
         /// empty skips the packs of the mod.</param>
@@ -178,14 +179,21 @@ namespace AugmentationsExpanded
         {
             _families.Clear();
             if (!string.IsNullOrEmpty(modContentPath))
-                AddPacks(Path.Combine(Path.Combine(modContentPath, "Assets"), PackFolder), true);
+                AddPacks(Path.Combine(Path.Combine(modContentPath, "Assets"), PackFolder));
             if (!string.IsNullOrEmpty(userDir))
             {
                 string dir = Path.Combine(userDir, PackFolder);
                 try { Directory.CreateDirectory(dir); }
                 catch (Exception e) { Debug.Log("[AugmentationsExpanded] cannot create " + dir + ": " + e.Message); }
-                AddPacks(dir, false);
+                AddPacks(dir);
             }
+            var first = new List<Family>();
+            var rest = new List<Family>();
+            foreach (Family f in _families)
+                (f.Name.IndexOf(FirstAuthor, StringComparison.OrdinalIgnoreCase) >= 0 ? first : rest).Add(f);
+            _families.Clear();
+            _families.AddRange(first);
+            _families.AddRange(rest);
 
             var names = new List<string>();
             foreach (Family f in _families) names.Add(f.Name);
@@ -195,21 +203,18 @@ namespace AugmentationsExpanded
         }
 
         /// <summary>
-        /// Adds every subfolder of a folder as an icon family. In the mod's own folder the named
-        /// packs (folder name with " - ", e.g. "Vanilla - Foxyla36") come first and keep their
-        /// folder name as entry; every other pack is listed as "Custom - {folder name}".
+        /// Adds every subfolder of a folder as an icon family, in alphabetical order, with the
+        /// folder name as dropdown entry.
         /// </summary>
         /// <param name="dir">Full path of an IconPacks folder. A missing folder adds
         /// nothing.</param>
-        /// <param name="shipped">True for Assets/IconPacks of the mod, the only folder whose
-        /// packs can be named packs; false for the player's folder.</param>
         /// <remarks>
         /// Input: The parameters and the folders on disk.
         /// Output: Nothing is returned. Adds to the family list; a duplicate name is logged and
         /// skipped.
         /// AI-generated documentation, written to help external users understand the mod.
         /// </remarks>
-        private static void AddPacks(string dir, bool shipped)
+        private static void AddPacks(string dir)
         {
             if (!Directory.Exists(dir)) return;
             string[] subs;
@@ -220,21 +225,19 @@ namespace AugmentationsExpanded
                 return;
             }
             Array.Sort(subs, StringComparer.OrdinalIgnoreCase);
-            foreach (bool namedPass in new[] { true, false })
-                foreach (string sub in subs)
+            foreach (string sub in subs)
+            {
+                string name = Path.GetFileName(sub.TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar));
+                if (string.IsNullOrEmpty(name) || name.StartsWith(".")) continue;
+                if (name.Equals(DefaultId, StringComparison.OrdinalIgnoreCase)
+                    || name.Equals(DefaultName, StringComparison.OrdinalIgnoreCase) || Find(name) != null)
                 {
-                    string author = Path.GetFileName(sub.TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar));
-                    if (string.IsNullOrEmpty(author) || author.StartsWith(".")) continue;
-                    bool named = shipped && author.Contains(NamedMark);
-                    if (named != namedPass) continue;
-                    if (author.Equals(DefaultId, StringComparison.OrdinalIgnoreCase) || Find(author) != null)
-                    {
-                        Debug.LogWarning("[AugmentationsExpanded] icon pack " + sub + " skipped: the name "
-                                       + author + " is already used.");
-                        continue;
-                    }
-                    _families.Add(new Family { Id = author, Name = named ? author : CustomPrefix + author, Root = sub });
+                    Debug.LogWarning("[AugmentationsExpanded] icon pack " + sub + " skipped: the name "
+                                   + name + " is already used.");
+                    continue;
                 }
+                _families.Add(new Family { Id = name, Name = name, Root = sub });
+            }
         }
 
         /// <summary>
@@ -305,7 +308,7 @@ namespace AugmentationsExpanded
         /// </summary>
         /// <param name="setFolder">Set folder name, e.g. "Nachtreiher". Null is
         /// accepted.</param>
-        /// <returns>The section, or null when the name is not one of the six sets.</returns>
+        /// <returns>The section, or null when the name is not one of the seven sets.</returns>
         /// <remarks>
         /// Input: The parameter and the section list.
         /// Output: Only the return value.
@@ -547,7 +550,7 @@ namespace AugmentationsExpanded
         /// </summary>
         /// <param name="section">The section.</param>
         /// <param name="kind">The kind of art.</param>
-        /// <returns>The entries, e.g. ["Default - Foxyla36", "Custom - Someone"]. Never
+        /// <returns>The entries, e.g. ["Default - Foxyla36", "Someone"]. Never
         /// empty.</returns>
         /// <remarks>
         /// Input: The parameters, the family list, the remembered paths and the files on disk.
@@ -612,11 +615,11 @@ namespace AugmentationsExpanded
 
         /// <summary>
         /// Reads the choices saved in the icons panel. The panel gives the entry text of each
-        /// dropdown; it is turned back into the family id ("Custom - " dropped; a named pack's
-        /// entry already is its id).
+        /// dropdown, which is the family id itself (the pack's folder name). An entry from older
+        /// versions, "Custom - {folder name}", is still accepted.
         /// </summary>
         /// <param name="config">The panel values keyed by config key, e.g.
-        /// "icons_smasher_items": "Custom - Someone", "adaptive_inventory_size": true. Keys of
+        /// "icons_smasher_items": "Someone", "adaptive_inventory_size": true. Keys of
         /// other panels are ignored.</param>
         /// <remarks>
         /// Input: The parameters only.
@@ -635,7 +638,8 @@ namespace AugmentationsExpanded
                     continue;
                 string v = kv.Value.ToString();
                 if (v == DefaultName) v = DefaultId;
-                else if (v.StartsWith(CustomPrefix, StringComparison.Ordinal)) v = v.Substring(CustomPrefix.Length);
+                else if (Find(v) == null && v.StartsWith(LegacyPrefix, StringComparison.Ordinal))
+                    v = v.Substring(LegacyPrefix.Length);
                 _choice[kv.Key] = v;
             }
         }

@@ -53,15 +53,19 @@
       },
       {
         "Item1": 1.0,
-        "Item2": "medical_components"
+        "Item2": "plastic"
       },
       {
         "Item1": 1.0,
-        "Item2": "circuit_board"
+        "Item2": "rod_parts"
       },
       {
         "Item1": 1.0,
-        "Item2": "metal_tread"
+        "Item2": "rubber"
+      },
+      {
+        "Item1": 1.0,
+        "Item2": "spring"
       }
     ],
     "AdditionalAmputation": [

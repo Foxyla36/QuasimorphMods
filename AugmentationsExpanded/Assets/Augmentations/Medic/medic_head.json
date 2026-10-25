@@ -20,7 +20,7 @@
     "TooltipIconTag": "aug_type_head",
     "Disassembly": [
       {
-        "ItemId": "medical_components",
+        "ItemId": "lens",
         "Count": 1
       },
       {
@@ -28,7 +28,15 @@
         "Count": 1
       },
       {
-        "ItemId": "metal_tread",
+        "ItemId": "medical_components",
+        "Count": 1
+      },
+      {
+        "ItemId": "microelectronics_parts",
+        "Count": 1
+      },
+      {
+        "ItemId": "plastic",
         "Count": 1
       }
     ]

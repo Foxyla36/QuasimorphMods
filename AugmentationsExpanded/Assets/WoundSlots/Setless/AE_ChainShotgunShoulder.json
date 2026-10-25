@@ -35,12 +35,12 @@
     ],
     "AmputatedDrop": [
       {
-        "Item1": 1.0,
-        "Item2": "spring"
+        "Item1": 2.0,
+        "Item2": "ae_chainshotgun"
       },
       {
-        "Item1": 1.0,
-        "Item2": "metal_tread"
+        "Item1": 2.0,
+        "Item2": "spring"
       }
     ],
     "AdditionalAmputation": [

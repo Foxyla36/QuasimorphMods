@@ -17,11 +17,15 @@
         "Count": 1
       },
       {
-        "ItemId": "metal_tread",
+        "ItemId": "spring",
         "Count": 1
       },
       {
-        "ItemId": "spring",
+        "ItemId": "ceramite_plates",
+        "Count": 1
+      },
+      {
+        "ItemId": "rusty_plates",
         "Count": 1
       }
     ],

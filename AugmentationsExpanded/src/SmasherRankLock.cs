@@ -30,7 +30,8 @@ namespace AugmentationsExpanded
         /// piece shows the minimum clone rank. Every patch adds to the game method instead of
         /// replacing it, acts only while the restriction is on, and is applied on its own, so a
         /// game update that renames one method only disables that part. Enemies are never
-        /// affected: they get their augmentations through AugmentationSystem.TryApplyGeneratedAugmentation.
+        /// affected: they get their augmentations through
+        /// AugmentationSystem.TryApplyGeneratedAugmentation.
         /// </summary>
         /// <remarks>
         /// Input: No parameters. Reads the game's methods through reflection.
@@ -118,8 +119,8 @@ namespace AugmentationsExpanded
         /// Minimum rank needed to install an item.
         /// </summary>
         /// <param name="itemId">Item id, e.g. "smasher_head". Null is accepted.</param>
-        /// <returns>The rank number, or -1 when the item is not a piece of one of the six
-        /// sets (OP-I included).</returns>
+        /// <returns>The rank number, or -1 when the item is not a piece of one of the seven
+        /// sets (OP-I and CMEDIC-32 included).</returns>
         /// <remarks>
         /// Input: The parameter, the sets of the mod's items and the rank settings.
         /// Output: Only the return value.

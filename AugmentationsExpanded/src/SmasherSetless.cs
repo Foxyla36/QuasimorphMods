@@ -11,6 +11,9 @@ namespace AugmentationsExpanded
         /// spawn on enemies from the Categories of its json, reward rows in the equipment table of
         /// fixed factions, and its recipe in the vanilla augmentation chip.
         /// </summary>
+        /// <remarks>
+        /// AI-generated documentation, written to help external users understand the mod.
+        /// </remarks>
         internal sealed class Item
         {
             internal readonly string Name;
@@ -31,7 +34,8 @@ namespace AugmentationsExpanded
             /// <param name="slotIds">Its wound slot ids, the hand slot first when it has a
             /// weapon.</param>
             /// <param name="weaponId">Id of the limb weapon it puts in the hand slot, or null.</param>
-            /// <param name="rewards">Faction and tech level of each reward row, e.g. "CoreWard", 4.</param>
+            /// <param name="rewards">Faction and tech level of each reward row, e.g. "CoreWard",
+            /// 4.</param>
             /// <remarks>
             /// Input: The parameters only.
             /// Output: The new object.
@@ -52,7 +56,8 @@ namespace AugmentationsExpanded
             /// <param name="slotIds">Its wound slot ids, the hand slot first.</param>
             /// <param name="weaponId">Id of the limb weapon it puts in the hand slot, or null.</param>
             /// <param name="keyBase">Config key without "_enabled", e.g. "gunarm_pile".</param>
-            /// <param name="locBase">Text key without ".toggle.label", e.g. "ae.cfg.gunarm.pile".</param>
+            /// <param name="locBase">Text key without ".toggle.label", e.g.
+            /// "ae.cfg.gunarm.pile".</param>
             /// <param name="rewards">Faction and tech level of each reward row.</param>
             /// <remarks>
             /// Input: The parameters only.
@@ -98,7 +103,7 @@ namespace AugmentationsExpanded
         internal static readonly Item[] All =
         {
             new Item("pile", "ae_pile_arm", new[] { "AE_PileArm", "AE_PileShoulder" }, "ae_nature_pile_arm",
-                     "gunarm_pile", "ae.cfg.gunarm.pile", R("PlanetBridge", 6), R("CoreWard", 6)),
+                     "gunarm_pile", "ae.cfg.gunarm.pile", R("UnchainedBelt", 6)),
             new Item("gatling", "ae_gatling_arm", new[] { "AE_GatlingArm", "AE_GatlingShoulder" }, "ae_nature_gatling_arm",
                      "gunarm_gatling", "ae.cfg.gunarm.gatling", R("CoreWard", 5), R("Grasshopper", 5)),
             new Item("ecannon", "ae_ecannon_arm", new[] { "AE_ECannonArm", "AE_ECannonShoulder" }, "ae_nature_ecannon_arm",
@@ -108,7 +113,7 @@ namespace AugmentationsExpanded
                      R("PlanetBridge", 4), R("CoreWard", 4), R("Grasshopper", 5)),
             new Item("cargochicken", "ae_cargo_chicken",
                      new[] { "AE_CargoChickenThigh", "AE_CargoChickenKnee", "AE_CargoChickenFeet" }, null,
-                     R("Grasshopper", 4), R("Dilthey", 5)),
+                     R("Grasshopper", 4), R("Dilthey", 5), R("PlanetBridge", 4)),
             new Item("sniperhead", "ae_sniper_head", new[] { "AE_SniperHead" }, null,
                      R("RealWare", 5), R("FrancheComte", 5)),
             new Item("radarhead", "ae_radar_head", new[] { "AE_RadarHead" }, null,

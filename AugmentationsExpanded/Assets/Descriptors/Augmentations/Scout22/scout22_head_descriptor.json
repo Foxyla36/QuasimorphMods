@@ -3,7 +3,7 @@
   "Data": {
     "ItemId": "scout22_head",
     "ImageProperties": {
-      "IconSpriteIdOrPath": "Images/Augmentations/scout22_component_inv.png",
+      "IconSpriteIdOrPath": "Images/Augmentations/scout22_head_inv.png",
       "SmallIconSpriteIdOrPath": "Images/Augmentations/scout22_component_floor.png",
       "ShadowOnFloorSpriteIdOrPath": "Images/Augmentations/scout22_component_shadow.png"
     }
