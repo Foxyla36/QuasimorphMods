@@ -46,6 +46,7 @@
     <Compile Include="SmasherRanks.cs" />
     <Compile Include="SmasherRankLock.cs" />
     <Compile Include="SmasherIcons.cs" />
+    <Compile Include="SmasherEnemyAugs.cs" />
     <Compile Include="ConfigMenu.cs" />
   </ItemGroup>
 

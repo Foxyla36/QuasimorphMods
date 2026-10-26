@@ -237,7 +237,7 @@ namespace AugmentationsExpanded
         /// has its own try/catch, so a failing step does not skip the others. Right after the
         /// settings are loaded it also refreshes the clothing rule of the Visible Augments pieces,
         /// since the optional Visible Augments bridge may receive the config hook before this
-        /// class does.
+        /// class does. The two enemy augmentation sliders are applied last.
         /// </summary>
         /// <param name="context">The context given by the game. Its ModContentPath must be the
         /// folder of this mod. With null, no content is loaded.</param>
@@ -336,6 +336,9 @@ namespace AugmentationsExpanded
 
             try { SmasherWeapons.PatchCritBonus(); }
             catch (Exception e) { Debug.LogError("[AugmentationsExpanded] weapon crit bonus: " + e); }
+
+            try { SmasherEnemyAugs.Apply(); }
+            catch (Exception e) { Debug.LogError("[AugmentationsExpanded] enemy augmentation sliders: " + e); }
         }
 
         /// <summary>
@@ -446,21 +449,26 @@ namespace AugmentationsExpanded
         }
 
         /// <summary>
-        /// Called when the main menu opens. Registers the two Mod Config Menu panels (settings and
-        /// icons), once. When MCM is missing, disabled or incompatible the error is logged and the
-        /// mod keeps running on the values of config.json.
+        /// Called when the main menu opens. Applies the two enemy augmentation sliders again, so
+        /// enemy classes added by mods loaded after this one follow them too, and registers the two
+        /// Mod Config Menu panels (settings and icons), once. When MCM is missing, disabled or
+        /// incompatible the error is logged and the mod keeps running on the values of
+        /// config.json.
         /// </summary>
         /// <param name="context">The context given by the game. Not used.</param>
         /// <remarks>
         /// Input: Reads the settings loaded from config.json or saved in the Mod Config Menu to
         /// fill the panels.
-        /// Output: Nothing is returned. The first call registers the panels in MCM; later calls do
-        /// nothing.
+        /// Output: Nothing is returned. Changes the enemy classes; the first call registers the
+        /// panels in MCM.
         /// AI-generated documentation, written to help external users understand the mod.
         /// </remarks>
         [Hook(ModHookType.MainMenuStarted)]
         public static void MainMenuStarted(IModContext context)
         {
+            try { SmasherEnemyAugs.Apply(); }
+            catch (Exception e) { Debug.LogError("[AugmentationsExpanded] enemy augmentation sliders: " + e); }
+
             if (_registered) return;
             _registered = true;
 
@@ -849,6 +857,7 @@ namespace AugmentationsExpanded
                     SmasherUhmg.ReadConfig(config);
                     SmasherSetless.ReadConfig(config);
                     SmasherMedic.ReadConfig(config);
+                    SmasherEnemyAugs.ReadConfig(config);
                 }
 
                 ConfigMenu.RefreshFields();
@@ -857,6 +866,7 @@ namespace AugmentationsExpanded
                 bool applied = ApplyToChip();
                 ApplySpawnToggle();
                 SmasherCrafting.SetHandFootRequired(_handFootRecipe);
+                SmasherEnemyAugs.Apply();
 
                 SaveSettings();
 
@@ -884,7 +894,9 @@ namespace AugmentationsExpanded
                              + ".   M.E.R.C.: " + (_merc ? "on" : "off")
                              + ".   Gun arms: " + SmasherGunArms.Summary()
                              + ".   UHMG: " + SmasherUhmg.Summary()
-                             + ".   Setless: " + SmasherSetless.Summary() + ".";
+                             + ".   Setless: " + SmasherSetless.Summary()
+                             + ".   Enemy augmentation chance bonus: " + SmasherEnemyAugs.Bonus + "%"
+                             + ", extra rolls: " + SmasherEnemyAugs.ExtraRolls + ".";
                 feedback = (!_enabled
                     ? "Smasher set disabled. Chip and crate settings come back after a restart."
                     : "Chip: " + _faction + " TL" + _techLevel
@@ -965,7 +977,8 @@ namespace AugmentationsExpanded
         /// Reads config.json into the settings. The file sits in
         /// Quasimorph_ModConfigs/Augmentations_Expanded, next to the game's persistent data folder,
         /// and is the one written by SaveSettings. Keys this class does not know are passed to
-        /// SmasherGunArms, then to SmasherUhmg, then to SmasherIcons.
+        /// SmasherGunArms, SmasherUhmg, SmasherSetless, SmasherMedic and SmasherEnemyAugs, then to
+        /// SmasherIcons.
         /// </summary>
         /// <remarks>
         /// Input: No parameters. Reads config.json, one "key": value pair per line. A missing or
@@ -1049,7 +1062,8 @@ namespace AugmentationsExpanded
                     else if (k == KeyNemesisPmc) _nePmc = v.Equals("true", StringComparison.OrdinalIgnoreCase);
                     else if (k == KeyOpiPmc)     _opPmc = v.Equals("true", StringComparison.OrdinalIgnoreCase);
                     else if (!SmasherGunArms.TryLoad(k, v) && !SmasherUhmg.TryLoad(k, v)
-                             && !SmasherSetless.TryLoad(k, v) && !SmasherMedic.TryLoad(k, v))
+                             && !SmasherSetless.TryLoad(k, v) && !SmasherMedic.TryLoad(k, v)
+                             && !SmasherEnemyAugs.TryLoad(k, v))
                         SmasherIcons.TryLoad(k, v);
                 }
             }
@@ -1062,9 +1076,10 @@ namespace AugmentationsExpanded
         /// <summary>
         /// Writes every setting to config.json as flat JSON with one key per line, so LoadSettings
         /// can read it without a JSON parser and without MCM. The gun arm entries, the UHMG entry,
-        /// the other setless entries, the CMEDIC-32 entries and then the icons panel entries
-        /// (adaptive size switch and icon pack choices) come last, from the ConfigJsonTail of
-        /// SmasherGunArms, SmasherUhmg, SmasherSetless, SmasherMedic and SmasherIcons.
+        /// the other setless entries, the CMEDIC-32 entries, the two enemy augmentation sliders
+        /// and then the icons panel entries (adaptive size switch and icon pack choices) come
+        /// last, from the ConfigJsonTail of SmasherGunArms, SmasherUhmg, SmasherSetless,
+        /// SmasherMedic, SmasherEnemyAugs and SmasherIcons.
         /// </summary>
         /// <remarks>
         /// Input: No parameters. Reads the current settings.
@@ -1142,7 +1157,7 @@ namespace AugmentationsExpanded
                   + "  \"" + KeyOpiPmc              + "\": "   + (_opPmc ? "true" : "false")
                   + SmasherGunArms.ConfigJsonTail() + SmasherUhmg.ConfigJsonTail()
                   + SmasherSetless.ConfigJsonTail() + SmasherMedic.ConfigJsonTail()
-                  + SmasherIcons.ConfigJsonTail() + "\n}\n");
+                  + SmasherEnemyAugs.ConfigJsonTail() + SmasherIcons.ConfigJsonTail() + "\n}\n");
             }
             catch (Exception e)
             {

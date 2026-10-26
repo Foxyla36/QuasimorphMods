@@ -1342,7 +1342,7 @@
         "ChineseSimp": ""
       },
       "ae.cfg.gunarm.ecannon.toggle.tip": {
-        "EnglishUS": "ON{D:ON}: the (Arm Energy Cannon) EC E-BLASTAH can spawn from tech level 7 on Military, PMC and Merc enemies and in missions against SBN and Dilthey. These factions give it as a reward and sell it from tech level 7.\nOFF{D:OFF}: it does not spawn and is not given as a reward or sold. Its recipe can still be unlocked from an augmentation chip.",
+        "EnglishUS": "ON{D:ON}: the (Arm Energy Cannon) EP-C BLASTEM can spawn from tech level 7 on Military, PMC and Merc enemies and in missions against SBN and Dilthey. These factions give it as a reward and sell it from tech level 7.\nOFF{D:OFF}: it does not spawn and is not given as a reward or sold. Its recipe can still be unlocked from an augmentation chip.",
         "Russian": "",
         "German": "",
         "French": "",
@@ -1498,7 +1498,7 @@
         "ChineseSimp": ""
       },
       "ae.cfg.gunarm.ecannon.toggle.label": {
-        "EnglishUS": "(Arm Energy Cannon) EC E-BLASTAH spawn",
+        "EnglishUS": "(Arm Energy Cannon) EP-C BLASTEM spawn",
         "Russian": "",
         "German": "",
         "French": "",
@@ -1537,7 +1537,7 @@
         "ChineseSimp": ""
       },
       "ae.cfg.itemname.ae_ecannon_arm": {
-        "EnglishUS": "(Arm Energy Cannon) EC E-BLASTAH",
+        "EnglishUS": "(Arm Energy Cannon) EP-C BLASTEM",
         "Russian": "",
         "German": "",
         "French": "",
@@ -1616,6 +1616,58 @@
       },
       "ae.cfg.chainshotgun.toggle.label": {
         "EnglishUS": "(Arm+Chest) ATLAS-5 spawn",
+        "Russian": "",
+        "German": "",
+        "French": "",
+        "Spanish": "",
+        "Polish": "",
+        "Turkish": "",
+        "BrazilianPortugal": "",
+        "Korean": "",
+        "Japanese": "",
+        "ChineseSimp": ""
+      },
+      "ae.cfg.enemyaugchance.label": {
+        "EnglishUS": "Enemy aug chance (%)",
+        "Russian": "",
+        "German": "",
+        "French": "",
+        "Spanish": "",
+        "Polish": "",
+        "Turkish": "",
+        "BrazilianPortugal": "",
+        "Korean": "",
+        "Japanese": "",
+        "ChineseSimp": ""
+      },
+      "ae.cfg.enemyaugchance.tip": {
+        "EnglishUS": "How often enemies get augmentations.\nEach enemy rolls for augmentations when it spawns, and most rolls fail. This makes more of them succeed. Which augmentation they get is not affected.\n\n0 to 100{D:*}: percentage of failed rolls that succeed instead. 0 is vanilla.\nE.g. a common enemy fails 87% of its rolls: at 50 it fails 43%, at 100 never.\n\nDue to how the game works, an enemy might still spawn without augmentations even with both settings at max.\nToo many augmentations can lower an enemy's max HP a lot.\nApplies to newly spawned enemies.",
+        "Russian": "",
+        "German": "",
+        "French": "",
+        "Spanish": "",
+        "Polish": "",
+        "Turkish": "",
+        "BrazilianPortugal": "",
+        "Korean": "",
+        "Japanese": "",
+        "ChineseSimp": ""
+      },
+      "ae.cfg.enemyaugrolls.label": {
+        "EnglishUS": "Enemy extra aug rolls",
+        "Russian": "",
+        "German": "",
+        "French": "",
+        "Spanish": "",
+        "Polish": "",
+        "Turkish": "",
+        "BrazilianPortugal": "",
+        "Korean": "",
+        "Japanese": "",
+        "ChineseSimp": ""
+      },
+      "ae.cfg.enemyaugrolls.tip": {
+        "EnglishUS": "How many augmentations an enemy can get.\nGives each enemy more rolls, so it can spawn with more augmentations at once (one per body part at most). Each roll still uses Enemy aug chance.\n\n0 to 9{D:*}: rolls added to each enemy. 0 is vanilla.\n\nDue to how the game works, an enemy might still spawn without augmentations even with both settings at max.\nToo many augmentations can lower an enemy's max HP a lot.\nApplies to newly spawned enemies.",
         "Russian": "",
         "German": "",
         "French": "",

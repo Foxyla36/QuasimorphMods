@@ -82,14 +82,14 @@ namespace AugmentationsExpanded
         /// Builds every entry of the settings panel: the MOD CONFIG introduction with the red
         /// restart reminder; the general switches (hand and foot in the recipes, clone rank
         /// restriction, loss of Multi-WoundSlot augmentations on amputation, special weapon arm
-        /// mode); one switch per set, per gun arm, for the UHMG and for each other setless
-        /// augmentation; and for each set the minimum clone rank, the preferred faction, the tech
-        /// level of the pieces, the PMC switch, the crate faction and tech level, and, except for
-        /// ANDRAS which has no chip, the chip crafting switch, the chip faction and the chip tech
-        /// level. OP-I, a single augmentation, has no crate: in its place it has the reward faction
-        /// of the augmentation itself, and its chip crafting switch is off by default. Labels are
-        /// passed as localization keys, which MCM translates; tooltips are translated here because
-        /// MCM does not do it.
+        /// mode, enemy augmentation chance and extra rolls sliders); one switch per set, per gun
+        /// arm, for the UHMG and for each other setless augmentation; and for each set the minimum
+        /// clone rank, the preferred faction, the tech level of the pieces, the PMC switch, the
+        /// crate faction and tech level, and, except for ANDRAS which has no chip, the chip crafting
+        /// switch, the chip faction and the chip tech level. OP-I, a single augmentation, has no
+        /// crate: in its place it has the reward faction of the augmentation itself, and its chip
+        /// crafting switch is off by default. Labels are passed as localization keys, which MCM
+        /// translates; tooltips are translated here because MCM does not do it.
         /// </summary>
         /// <returns>The list that MCM keeps and draws. It holds every entry, so MCM watches all of
         /// them for unsaved changes; RefreshFields then hides the fields of the sets that are off.
@@ -130,6 +130,12 @@ namespace AugmentationsExpanded
                 SmasherGunArms.KeyMode, SmasherGunArms.Mode, Mod.GeneralHeader, SmasherGunArms.ModeVanilla,
                 SpecialArmTooltip(), SmasherGunArms.ModeLabelKey,
                 SmasherGunArms.Modes.Cast<object>().ToList()));
+            _generalFields.Add(new ConfigValue(
+                SmasherEnemyAugs.ConfigKey, SmasherEnemyAugs.Bonus, Mod.GeneralHeader, SmasherEnemyAugs.DefaultBonus,
+                L("ae.cfg.enemyaugchance.tip"), "ae.cfg.enemyaugchance.label", 0f, SmasherEnemyAugs.MaxBonus));
+            _generalFields.Add(new ConfigValue(
+                SmasherEnemyAugs.RollsConfigKey, SmasherEnemyAugs.ExtraRolls, Mod.GeneralHeader, SmasherEnemyAugs.DefaultRolls,
+                L("ae.cfg.enemyaugrolls.tip"), "ae.cfg.enemyaugrolls.label", 0f, SmasherEnemyAugs.MaxRolls));
 
             _setToggle = new ConfigValue(
                 Mod.KeyEnabled, Mod._enabled, Mod.Header, true,
