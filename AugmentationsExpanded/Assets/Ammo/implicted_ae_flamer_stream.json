@@ -3,7 +3,6 @@
   "Data": {
     "Id": "implicted_ae_flamer_stream",
     "CloneFrom": "implicted_flamethrower",
-    "RangeBonus": 3,
-    "ScatterMult": 0.5
+    "RangeBonus": 2
   }
 }

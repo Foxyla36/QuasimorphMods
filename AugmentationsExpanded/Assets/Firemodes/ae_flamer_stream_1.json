@@ -3,6 +3,7 @@
   "Data": {
     "Id": "ae_flamer_stream_1",
     "CloneFrom": "flamethrower_1",
-    "ScatterAngle": 1.0
+    "AmmoPerShot": 20,
+    "WeaponCastsCount": 2
   }
 }
