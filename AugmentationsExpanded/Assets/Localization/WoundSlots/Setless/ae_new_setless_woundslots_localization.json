@@ -13,7 +13,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "CT-4 负重兽腰部"
       },
       "woundslot.AE_CargoTrackKnee.name": {
         "EnglishUS": "CT-4 Mule Bogie",
@@ -26,7 +26,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "CT-4 负重兽转向架"
       },
       "woundslot.AE_CargoTrackFeet.name": {
         "EnglishUS": "CT-4 Mule Track",
@@ -39,7 +39,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "CT-4 负重兽履带"
       },
       "woundslot.AE_CargoChickenThigh.name": {
         "EnglishUS": "CRL-2 Spring Chick Thigh",
@@ -52,7 +52,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "CRL-2 弹簧小鸡大腿"
       },
       "woundslot.AE_CargoChickenKnee.name": {
         "EnglishUS": "CRL-2 Spring Chick Knee",
@@ -65,7 +65,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "CRL-2 弹簧小鸡膝盖"
       },
       "woundslot.AE_CargoChickenFeet.name": {
         "EnglishUS": "CRL-2 Spring Chick Foot",
@@ -78,7 +78,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "CRL-2 弹簧小鸡足部"
       },
       "woundslot.AE_SniperHead.name": {
         "EnglishUS": "SH-7 Longshot",
@@ -91,7 +91,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "SH-7 远射"
       },
       "woundslot.AE_RadarHead.name": {
         "EnglishUS": "R360-P Esper",
@@ -104,7 +104,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "R360-P 超感者"
       },
       "woundslot.AE_FlammenArm.name": {
         "EnglishUS": "LPO-2200 Flamer",
@@ -117,7 +117,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "LPO-2200 喷火者"
       },
       "woundslot.AE_FlammenShoulder.name": {
         "EnglishUS": "LPO-2200 Support Shoulder",
@@ -130,7 +130,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "LPO-2200 支撑肩部"
       },
       "woundslot.AE_FlammenChest.name": {
         "EnglishUS": "LPO-2200 Support Chest",
@@ -143,7 +143,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "LPO-2200 支撑胸部"
       },
       "woundslot.AE_ChainShotgunArm.name": {
         "EnglishUS": "ATLAS-5",
@@ -156,7 +156,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "ATLAS-5"
       },
       "woundslot.AE_ChainShotgunShoulder.name": {
         "EnglishUS": "ATLAS-5 Support Shoulder",
@@ -169,7 +169,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "ATLAS-5 支撑肩部"
       },
       "woundslot.AE_ChainShotgunChest.name": {
         "EnglishUS": "ATLAS-5 Support Chest",
@@ -182,7 +182,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "ATLAS-5 支撑胸部"
       }
     }
   }

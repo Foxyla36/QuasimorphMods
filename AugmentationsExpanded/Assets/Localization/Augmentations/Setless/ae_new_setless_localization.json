@@ -13,7 +13,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（腿部+膝盖）CT-4 负重兽"
       },
       "item.ae_cargo_track.shortdesc": {
         "EnglishUS": "Cargo Drone Tracks",
@@ -26,7 +26,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "货运无人机履带"
       },
       "item.ae_cargo_chicken.name": {
         "EnglishUS": "(Leg+Knee) CRL-2 Spring Chick",
@@ -39,7 +39,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（腿部+膝盖）CRL-2 弹簧小鸡"
       },
       "item.ae_cargo_chicken.shortdesc": {
         "EnglishUS": "Reverse Joint Cargo Walker Legs",
@@ -52,7 +52,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "反关节货运步行腿"
       },
       "item.ae_sniper_head.name": {
         "EnglishUS": "(Head) SH-7 Longshot",
@@ -65,7 +65,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（头部）SH-7 远射"
       },
       "item.ae_sniper_head.shortdesc": {
         "EnglishUS": "Marksman Cybernetic Head",
@@ -78,7 +78,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "精确射手机械头部"
       },
       "item.ae_radar_head.name": {
         "EnglishUS": "(Head) R360-P Esper",
@@ -91,7 +91,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（头部）R360-P 超感者"
       },
       "item.ae_radar_head.shortdesc": {
         "EnglishUS": "Radar Cybernetic Head",
@@ -104,7 +104,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "雷达机械头部"
       },
       "item.ae_flammen.name": {
         "EnglishUS": "(Arm+Chest) LPO-2200 Flamer",
@@ -117,7 +117,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（手臂+胸部）LPO-2200 喷火者"
       },
       "item.ae_flammen.shortdesc": {
         "EnglishUS": "Cybernetic Flamethrower Augmentation",
@@ -130,7 +130,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "机械喷火器增强体"
       },
       "item.ae_chainshotgun.name": {
         "EnglishUS": "(Arm+Chest) ATLAS-5",
@@ -143,7 +143,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（手臂+胸部）ATLAS-5"
       },
       "item.ae_chainshotgun.shortdesc": {
         "EnglishUS": "Belt-fed Shotgun Augmentation",
@@ -156,7 +156,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "弹链供弹霰弹枪增强体"
       }
     }
   }

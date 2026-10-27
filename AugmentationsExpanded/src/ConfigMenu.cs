@@ -80,9 +80,9 @@ namespace AugmentationsExpanded
 
         /// <summary>
         /// Builds every entry of the settings panel: the MOD CONFIG introduction with the red
-        /// restart reminder; the general switches (hand and foot in the recipes, clone rank
-        /// restriction, loss of Multi-WoundSlot augmentations on amputation, special weapon arm
-        /// mode, enemy augmentation chance and extra rolls sliders); one switch per set, per gun
+        /// restart reminder; the general switches (VA armor mode, hand and foot in the recipes,
+        /// clone rank restriction, loss of Multi-WoundSlot augmentations on amputation, special
+        /// weapon arm mode, enemy augmentation chance and extra rolls sliders); one switch per set, per gun
         /// arm, for the UHMG and for each other setless augmentation; and for each set the minimum
         /// clone rank, the preferred faction, the tech level of the pieces, the PMC switch, the
         /// crate faction and tech level, and, except for ANDRAS which has no chip, the chip crafting
@@ -115,8 +115,10 @@ namespace AugmentationsExpanded
             _restartNote = new ConfigValue("__ae_restart_note", RestartNote(), Mod.ConfigHeader);
 
             _generalFields.Clear();
-            _generalFields.Add(new ConfigValue(Mod.KeyVAClipping, Mod._vaClipping, Mod.GeneralHeader, false,
-                L("ae.cfg.vaclipping.tip"), "ae.cfg.vaclipping.label"));
+            _generalFields.Add(new DropdownConfig(
+                Mod.KeyVAMode, Mod._vaMode, Mod.GeneralHeader, VisibleAugments.VisibleAugmentMode.Clip,
+                L("ae.cfg.vamode.tip"), "ae.cfg.vamode.label",
+                VisibleAugments.VisibleAugmentMode.All.Cast<object>().ToList()));
             _generalFields.Add(new ConfigValue(
                 Mod.KeyHandFootRecipe, Mod._handFootRecipe, Mod.GeneralHeader, true,
                 L("ae.cfg.handfootrecipe.tip"), "ae.cfg.handfootrecipe.label"));

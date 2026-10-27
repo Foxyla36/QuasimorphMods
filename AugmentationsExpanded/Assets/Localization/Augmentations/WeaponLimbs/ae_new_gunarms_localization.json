@@ -13,7 +13,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（整臂）PB-033M ASHMEAD"
       },
       "item.ae_pile_arm.shortdesc": {
         "EnglishUS": "PB-033M ASHMEAD PILEBUNKER",
@@ -26,7 +26,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "PB-033M ASHMEAD 打桩机"
       },
       "item.ae_gatling_arm.name": {
         "EnglishUS": "(Full Arm) GAU-9/100 BADBOY",
@@ -39,7 +39,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（整臂）GAU-9/100 BADBOY"
       },
       "item.ae_gatling_arm.shortdesc": {
         "EnglishUS": "Cybernetic Arm 9mm Gatling",
@@ -52,7 +52,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "机械臂 9mm 加特林机枪"
       },
       "item.ae_ecannon_arm.name": {
         "EnglishUS": "(Full Arm) EP-C BLASTEM",
@@ -65,7 +65,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（整臂）EP-C BLASTEM"
       },
       "item.ae_ecannon_arm.shortdesc": {
         "EnglishUS": "Cybernetic Arm Energy Cannon",
@@ -78,7 +78,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "机械臂能量炮"
       }
     }
   }

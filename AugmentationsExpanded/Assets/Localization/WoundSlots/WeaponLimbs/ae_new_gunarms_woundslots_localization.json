@@ -13,7 +13,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "PB-033M ASHMEAD"
       },
       "woundslot.AE_PileShoulder.name": {
         "EnglishUS": "PB-033M Support Shoulder",
@@ -26,7 +26,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "PB-033M 支撑肩部"
       },
       "woundslot.AE_GatlingArm.name": {
         "EnglishUS": "GAU-9/100 BADBOY",
@@ -39,7 +39,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "GAU-9/100 BADBOY"
       },
       "woundslot.AE_GatlingShoulder.name": {
         "EnglishUS": "GAU-9/100 Support Shoulder",
@@ -52,7 +52,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "GAU-9/100 支撑肩部"
       },
       "woundslot.AE_ECannonArm.name": {
         "EnglishUS": "EP-C BLASTEM",
@@ -65,7 +65,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "EP-C BLASTEM"
       },
       "woundslot.AE_ECannonShoulder.name": {
         "EnglishUS": "EC Support Shoulder",
@@ -78,7 +78,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "EC 支撑肩部"
       }
     }
   }

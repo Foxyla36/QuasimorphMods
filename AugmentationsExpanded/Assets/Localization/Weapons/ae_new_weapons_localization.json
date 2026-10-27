@@ -13,7 +13,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（手臂·打桩机）PB-033M ASHMEAD"
       },
       "item.ae_nature_pile_arm.shortdesc": {
         "EnglishUS": "Limb Weapon",
@@ -26,7 +26,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "肢体武器"
       },
       "item.ae_nature_gatling_arm.name": {
         "EnglishUS": "(Arm Gatling) GAU-9/100 BADBOY",
@@ -39,7 +39,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（手臂·加特林）GAU-9/100 BADBOY"
       },
       "item.ae_nature_gatling_arm.shortdesc": {
         "EnglishUS": "Limb Weapon",
@@ -52,7 +52,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "肢体武器"
       },
       "item.ae_nature_ecannon_arm.name": {
         "EnglishUS": "(Arm Energy Cannon) EP-C BLASTEM",
@@ -65,7 +65,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（手臂·能量炮）EP-C BLASTEM"
       },
       "item.ae_nature_ecannon_arm.shortdesc": {
         "EnglishUS": "Limb Weapon",
@@ -78,7 +78,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "肢体武器"
       },
       "item.ae_nature_flammen_arm.name": {
         "EnglishUS": "LPO-2200 Flamer",
@@ -91,7 +91,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "LPO-2200 喷火者"
       },
       "item.ae_nature_flammen_arm.shortdesc": {
         "EnglishUS": "Limb Weapon",
@@ -104,7 +104,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "肢体武器"
       },
       "item.ae_nature_chainshotgun.name": {
         "EnglishUS": "ATLAS-5",
@@ -117,7 +117,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "ATLAS-5"
       },
       "item.ae_nature_chainshotgun.shortdesc": {
         "EnglishUS": "Limb Weapon",
@@ -130,7 +130,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "肢体武器"
       },
       "item.ae_nature_medic_fist.name": {
         "EnglishUS": "CMEDIC-32 Robofist",
@@ -143,7 +143,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "CMEDIC-32 机器人拳头"
       },
       "item.ae_nature_medic_fist.shortdesc": {
         "EnglishUS": "Augmented Limb",
@@ -156,7 +156,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "机械肢体"
       }
     }
   }

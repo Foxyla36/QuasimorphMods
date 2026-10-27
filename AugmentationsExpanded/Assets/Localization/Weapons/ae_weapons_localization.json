@@ -13,7 +13,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "GA-9 集成枪管"
       },
       "item.ae_nature_dummy_vanilla_gun_arm.shortdesc": {
         "EnglishUS": "Limb Weapon",
@@ -26,7 +26,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "肢体武器"
       },
       "item.ae_nature_dummy_special_gun_arm.name": {
         "EnglishUS": "MA-8 Integrated Barrel",
@@ -39,7 +39,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "MA-8 集成枪管"
       },
       "item.ae_nature_dummy_special_gun_arm.shortdesc": {
         "EnglishUS": "Limb Weapon",
@@ -52,7 +52,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "肢体武器"
       },
       "item.ae_nature_smasher_fist.name": {
         "EnglishUS": "Mk.5 Robofist",
@@ -65,7 +65,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "Mk.5 机器人拳头"
       },
       "item.ae_nature_smasher_fist.shortdesc": {
         "EnglishUS": "Augmented Limb",
@@ -78,7 +78,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "机械肢体"
       },
       "item.ae_nature_nacht_fist.name": {
         "EnglishUS": "NACHTREIHER Robofist",
@@ -91,7 +91,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "NACHTREIHER 机器人拳头"
       },
       "item.ae_nature_nacht_fist.shortdesc": {
         "EnglishUS": "Augmented Limb",
@@ -104,7 +104,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "机械肢体"
       },
       "item.ae_nature_scout22_fist.name": {
         "EnglishUS": "SCOUT-22 Robofist",
@@ -117,7 +117,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "SCOUT-22 机器人拳头"
       },
       "item.ae_nature_scout22_fist.shortdesc": {
         "EnglishUS": "Augmented Limb",
@@ -130,7 +130,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "机械肢体"
       },
       "item.ae_nature_andras_fist.name": {
         "EnglishUS": "Andras's Claw",
@@ -143,7 +143,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "安德拉斯的利爪"
       },
       "item.ae_nature_andras_fist.shortdesc": {
         "EnglishUS": "Quasimorphic Limb",
@@ -156,7 +156,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "异变体肢体"
       },
       "item.ae_nature_nemesis_fist.name": {
         "EnglishUS": "pT-02 Hand",
@@ -169,7 +169,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "pT-02 手部"
       },
       "item.ae_nature_nemesis_fist.shortdesc": {
         "EnglishUS": "Engineered Limb",
@@ -182,7 +182,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "工程化肢体"
       },
       "item.ae_nature_gl_arm.name": {
         "EnglishUS": "(Arm Grenade Launcher) RGL-40 Reprisal",
@@ -195,7 +195,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（手臂·榴弹发射器）RGL-40 报复"
       },
       "item.ae_nature_gl_arm.shortdesc": {
         "EnglishUS": "Limb Weapon",
@@ -208,7 +208,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "肢体武器"
       },
       "item.ae_nature_mantis_arm.name": {
         "EnglishUS": "(Arm Blade) AB-60 Mantis Blade",
@@ -221,7 +221,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（手臂·刀刃）AB-60 螳螂刀"
       },
       "item.ae_nature_mantis_arm.shortdesc": {
         "EnglishUS": "Limb Weapon",
@@ -234,7 +234,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "肢体武器"
       },
       "item.ae_nature_disc_arm.name": {
         "EnglishUS": "(Arm Discthrower) RT-30D Sawmill",
@@ -247,7 +247,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（手臂·圆锯发射器）RT-30D 锯木厂"
       },
       "item.ae_nature_disc_arm.shortdesc": {
         "EnglishUS": "Limb Weapon",
@@ -260,7 +260,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "肢体武器"
       },
       "item.ae_nature_shotgun_arm.name": {
         "EnglishUS": "(Arm Shotgun) Dual-12G Sommation",
@@ -273,7 +273,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（手臂·霰弹枪）Dual-12G 通牒"
       },
       "item.ae_nature_shotgun_arm.shortdesc": {
         "EnglishUS": "Limb Weapon",
@@ -286,7 +286,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "肢体武器"
       },
       "item.ae_nature_taser_arm.name": {
         "EnglishUS": "(Arm Taser) D-50KV S.T.I.N.G.",
@@ -299,7 +299,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（手臂·电击枪）D-50KV S.T.I.N.G."
       },
       "item.ae_nature_taser_arm.shortdesc": {
         "EnglishUS": "Limb Weapon",
@@ -312,7 +312,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "肢体武器"
       },
       "item.ae_nature_opi_fist.name": {
         "EnglishUS": "Augmented Human Fist",
@@ -325,7 +325,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "增强人类拳头"
       },
       "item.ae_nature_opi_fist.shortdesc": {
         "EnglishUS": "Enhanced Limb",
@@ -338,7 +338,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "强化肢体"
       },
       "item.ae_nature_uhmg.name": {
         "EnglishUS": "UHMG Odin's Dakka",
@@ -351,7 +351,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "UHMG 奥丁弹雨"
       },
       "item.ae_nature_uhmg.shortdesc": {
         "EnglishUS": "Limb Weapon",
@@ -364,7 +364,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "肢体武器"
       }
     }
   }

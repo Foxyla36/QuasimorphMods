@@ -83,7 +83,7 @@ namespace AugmentationsExpanded
         internal const string KeyHandRecipeOld    = "craft_hand_required";
         internal const string KeyRankRestriction  = "rank_restriction";
         internal const string KeyMultiSlotLoss    = "multislot_amputation_loss";
-        internal const string KeyVAClipping      = "enable_va_clipping";
+        internal const string KeyVAMode           = "va_armor_mode";
         internal const string KeyMinRank          = "smasher_min_rank";
         internal const string KeyNachtMinRank     = "nacht_min_rank";
         internal const string KeyScoutMinRank     = "scout22_min_rank";
@@ -200,7 +200,7 @@ namespace AugmentationsExpanded
         internal static bool   _handFootRecipe  = true;
         internal static bool   _rankRestriction = false;
         internal static bool   _multiSlotLoss   = false;
-        internal static bool   _vaClipping      = false;
+        internal static string _vaMode          = VisibleAugments.VisibleAugmentMode.Clip;
         internal static int    _minRank         = DefaultMinRank;
         internal static int    _nMinRank        = NachtDefaultMinRank;
         internal static int    _scMinRank       = Scout22DefaultMinRank;
@@ -235,7 +235,7 @@ namespace AugmentationsExpanded
         /// (ae_lose_augmentation_on_amputate), the tooltip line of the Special Weapon Arms
         /// (ae_special_weapon_arm) and the weapon crit bonus (ae_crit_chance_bonus). Every step
         /// has its own try/catch, so a failing step does not skip the others. Right after the
-        /// settings are loaded it also refreshes the clothing rule of the Visible Augments pieces,
+        /// settings are loaded it also applies the VA armor mode to the Visible Augments pieces,
         /// since the optional Visible Augments bridge may receive the config hook before this
         /// class does. The two enemy augmentation sliders are applied last.
         /// </summary>
@@ -256,7 +256,7 @@ namespace AugmentationsExpanded
         {
             try { LoadSettings(); }
             catch (Exception e) { Debug.LogError("[AugmentationsExpanded] LoadSettings: " + e); }
-            VisibleAugments.ModMain.RefreshClippingPolicy();
+            VisibleAugments.ModMain.RefreshArmorMode();
 
             string path = context == null ? null : context.ModContentPath;
 
@@ -713,8 +713,8 @@ namespace AugmentationsExpanded
             {
                 if (config != null)
                 {
-                    if (config.TryGetValue(KeyVAClipping, out var clipping) && clipping != null)
-                        _vaClipping = Convert.ToBoolean(clipping);
+                    if (config.TryGetValue(KeyVAMode, out var vaMode) && vaMode != null)
+                        _vaMode = VisibleAugments.VisibleAugmentMode.Valid(vaMode.ToString());
                     object f;
                     if (config.TryGetValue(KeyFaction, out f) && f != null)
                         _faction = f.ToString();
@@ -864,7 +864,7 @@ namespace AugmentationsExpanded
                 }
 
                 ConfigMenu.RefreshFields();
-                VisibleAugments.ModMain.RefreshClippingPolicy();
+                VisibleAugments.ModMain.RefreshArmorMode();
 
                 bool applied = ApplyToChip();
                 ApplySpawnToggle();
@@ -1003,7 +1003,7 @@ namespace AugmentationsExpanded
                     var k = line.Substring(0, i).Trim().Trim('"');
                     var v = line.Substring(i + 1).Trim().Trim('"');
                     if (k == KeyFaction && v.Length > 0) _faction = v;
-                    else if (k == KeyVAClipping) _vaClipping = v.Equals("true", StringComparison.OrdinalIgnoreCase);
+                    else if (k == KeyVAMode) _vaMode = VisibleAugments.VisibleAugmentMode.Valid(v);
                     else if (k == KeyTech && int.TryParse(v, out var n)) _techLevel = n;
                     else if (k == KeyBoxFaction && v.Length > 0) _boxFaction = v;
                     else if (k == KeyBoxTech && int.TryParse(v, out var bn)) _boxTech = bn;
@@ -1097,7 +1097,7 @@ namespace AugmentationsExpanded
                 Directory.CreateDirectory(ConfigDir);
                 File.WriteAllText(ConfigFile,
                     "{\n"
-                  + "  \"" + KeyVAClipping + "\": " + (_vaClipping ? "true" : "false") + ",\n"
+                  + "  \"" + KeyVAMode     + "\": \"" + _vaMode     + "\",\n"
                   + "  \"" + KeyFaction    + "\": \"" + _faction    + "\",\n"
                   + "  \"" + KeyTech       + "\": "   + _techLevel  + ",\n"
                   + "  \"" + KeyBoxFaction + "\": \"" + _boxFaction + "\",\n"

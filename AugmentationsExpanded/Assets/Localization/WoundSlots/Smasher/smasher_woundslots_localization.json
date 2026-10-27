@@ -13,7 +13,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "Mk.5 颅骨护壳"
       },
       "woundslot.SmasherChest.name": {
         "EnglishUS": "Mk.5 Thoracic Plate",
@@ -26,7 +26,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "Mk.5 胸甲板"
       },
       "woundslot.SmasherBody.name": {
         "EnglishUS": "Mk.5 Torso Frame",
@@ -39,7 +39,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "Mk.5 躯干框架"
       },
       "woundslot.SmasherStomach.name": {
         "EnglishUS": "Mk.5 Viscera Pod",
@@ -52,7 +52,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "Mk.5 内脏舱"
       },
       "woundslot.SmasherShoulder.name": {
         "EnglishUS": "Mk.5 Shoulder Actuator",
@@ -65,7 +65,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "Mk.5 肩部执行器"
       },
       "woundslot.SmasherArm.name": {
         "EnglishUS": "Mk.5 Forearm",
@@ -78,7 +78,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "Mk.5 前臂"
       },
       "woundslot.SmasherThigh.name": {
         "EnglishUS": "Mk.5 Femoral Strut",
@@ -91,7 +91,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "Mk.5 股骨支柱"
       },
       "woundslot.SmasherKnee.name": {
         "EnglishUS": "Mk.5 Knee Servo",
@@ -104,7 +104,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "Mk.5 膝关节伺服器"
       },
       "woundslot.SmasherFeet.name": {
         "EnglishUS": "Mk.5 Pedipulator",
@@ -117,7 +117,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "Mk.5 步行器"
       }
     }
   }

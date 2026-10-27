@@ -13,7 +13,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "ADAM SMASHER"
       },
       "ae.cfg.header.nacht": {
         "EnglishUS": "NACHTREIHER",
@@ -26,7 +26,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "NACHTREIHER"
       },
       "ae.cfg.header.scout22": {
         "EnglishUS": "SCOUT-22",
@@ -39,7 +39,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "SCOUT-22"
       },
       "ae.cfg.header.setless": {
         "EnglishUS": "SETLESS AUGMENTS",
@@ -52,7 +52,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": "无套装义体"
+        "ChineseSimp": "无套装增强体"
       },
       "ae.cfg.setname.smasher": {
         "EnglishUS": "Adam Smasher",
@@ -65,7 +65,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "Adam Smasher"
       },
       "ae.cfg.setname.nacht": {
         "EnglishUS": "Nachtreiher",
@@ -78,7 +78,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "Nachtreiher"
       },
       "ae.cfg.setname.scout22": {
         "EnglishUS": "SCOUT-22",
@@ -91,7 +91,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "SCOUT-22"
       },
       "ae.cfg.smasher.toggle.label": {
         "EnglishUS": "Adam Smasher set toggle",
@@ -143,7 +143,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": "开启：{SET} 套装（义体、芯片、箱子）可以在此存档中生成。关闭：该套装不再在此存档中生成。\n\n此选项只影响切换之后生成的任务。关闭套装不会移除存档中已有的物品，只会阻止它们生成。关闭后，下次重启游戏时该套装的设置会隐藏；重新开启并重启后会恢复。"
+        "ChineseSimp": "开启{D:ON}：{SET} 套装（增强体、芯片和箱子）可以在你的存档中生成。\n关闭{D:OFF}：该套装不再生成。你已拥有的物品会保留在存档中。套装关闭期间，下次重启后其设置会被隐藏。重新开启并重启游戏即可恢复。\n\n地图上已有任务的奖励不会改变。重启后进入的每个任务中，敌人和战利品都会遵循此设置。"
       },
       "ae.cfg.set.toggle.nochip.tip": {
         "EnglishUS": "ON{D:ON}: the {SET} set (augmentations and crate) can spawn in your save.\nOFF{D:OFF}: the set no longer spawns. Items you already have stay in your save. While the set is OFF, its settings are hidden after the next restart. Turn it ON and restart the game to get them back.\n\nRewards of missions already on the map do not change. Enemies and loot follow this setting in every mission you enter after the restart.",
@@ -156,7 +156,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": "开启：{SET} 套装（义体、箱子）可以在此存档中生成。关闭：该套装不再在此存档中生成。\n\n此选项只影响切换之后生成的任务。关闭套装不会移除存档中已有的物品，只会阻止它们生成。关闭后，下次重启游戏时该套装的设置会隐藏；重新开启并重启后会恢复。"
+        "ChineseSimp": "开启{D:ON}：{SET} 套装（增强体和箱子）可以在你的存档中生成。\n关闭{D:OFF}：该套装不再生成。你已拥有的物品会保留在存档中。套装关闭期间，下次重启后其设置会被隐藏。重新开启并重启游戏即可恢复。\n\n地图上已有任务的奖励不会改变。重启后进入的每个任务中，敌人和战利品都会遵循此设置。"
       },
       "ae.cfg.merc.toggle.label": {
         "EnglishUS": "M.E.R.C. spawn",
@@ -182,7 +182,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": "开启：Metabolic Energy Replacement Core（M.E.R.C.）会在 Dilthey 科技等级 3 生成"
+        "ChineseSimp": "开启{D:ON}：从科技等级 3 起，代谢能量替代核心（M.E.R.C.）可能出现在普通、工人、矿工、保安和看守敌人身上，也可能作为战利品出现。迪尔泰从科技等级 3 起将其作为奖励发放并出售。\n关闭{D:OFF}：它不会生成，也不会作为奖励发放或出售。仍可通过义体芯片解锁其蓝图。"
       },
       "ae.cfg.augtech.label": {
         "EnglishUS": "Augmentation tech level",
@@ -195,7 +195,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": "义体科技等级"
+        "ChineseSimp": "增强体科技等级"
       },
       "ae.cfg.augtech.tip": {
         "EnglishUS": "1 to 10{D:*}: the higher the level, the later the pieces start to show up in missions, on enemies, in containers and on the ground.",
@@ -208,7 +208,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": "该套装九件义体的科技等级。它决定这些部件何时开始在任务中出现：敌人身上、容器中以及地上的战利品。它与芯片分开设置，因此即使芯片阵营为 none，部件仍会继续生成。"
+        "ChineseSimp": "1 到 10{D:*}：等级越高，这些部件在任务中（敌人身上、容器中和地面上）出现得越晚。"
       },
       "ae.cfg.augtech.nochip.tip": {
         "EnglishUS": "1 to 10{D:*}: the higher the level, the later the pieces start to show up in missions, on enemies, in containers and on the ground.",
@@ -221,7 +221,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": "该套装九件义体的科技等级。它决定这些部件何时开始在任务中出现：敌人身上、容器中以及地上的战利品。"
+        "ChineseSimp": "1 到 10{D:*}：等级越高，这些部件在任务中（敌人身上、容器中和地面上）出现得越晚。"
       },
       "ae.cfg.cratefaction.label": {
         "EnglishUS": "Crate faction",
@@ -247,7 +247,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": "作为任务奖励发放箱子的阵营。选择 none 可将其移除。箱子是一个容器：拆解后会得到该套装的部件。它不会出现在地上，也不会在空间站出售，只能通过任务奖励获得。"
+        "ChineseSimp": "任意阵营{D:*}：该阵营会将此套装的箱子作为任务奖励发放。\nnone{D:none}：箱子永远不会作为奖励发放。\n\n拆解箱子可获得此套装的部件。箱子不会出现在地面上，也不会在空间站出售，只能通过任务奖励获得。"
       },
       "ae.cfg.cratetech.label": {
         "EnglishUS": "Crate tech level",
@@ -273,7 +273,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": "箱子的科技等级。数值越高，箱子作为奖励出现在所选科技树中的时间越晚。如果所选阵营为 none，任务结束后不会奖励箱子。"
+        "ChineseSimp": "1 到 10{D:*}：等级越高，箱子在箱子阵营的科技树中作为奖励出现得越晚。\n\n如果箱子阵营为 none，箱子永远不会作为奖励发放。"
       },
       "ae.cfg.craftchip.label": {
         "EnglishUS": "Can craft chip",
@@ -299,7 +299,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": "开启：可以在 HIS Magnum 中制作 {SET} 的芯片。关闭：该芯片无法制作，只能作为奖励或在任务中获得。"
+        "ChineseSimp": "开启{D:ON}：你可以在 HIS马格南号上制作 {SET} 芯片。\n关闭{D:OFF}：你无法制作该芯片。你仍可从其阵营获得（任务奖励或其空间站），或在任务中找到。"
       },
       "ae.cfg.chipfaction.label": {
         "EnglishUS": "Chip faction",
@@ -325,7 +325,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": "作为任务奖励发放芯片的阵营。选择 none 可将其排除在奖励表之外。"
+        "ChineseSimp": "任意阵营{D:*}：该阵营会将此套装的芯片作为任务奖励发放，并在其空间站出售。芯片也可在任务中作为战利品找到。\nnone{D:none}：芯片永远不会作为奖励发放，也完全不会生成。"
       },
       "ae.cfg.chiptech.label": {
         "EnglishUS": "Chip tech level",
@@ -351,7 +351,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": "芯片的科技等级。数值越高，芯片作为奖励出现在所选科技树中的时间越晚。如果所选阵营为 none，任务结束后不会奖励芯片，芯片也完全不会生成。"
+        "ChineseSimp": "1 到 10{D:*}：等级越高，芯片作为奖励、在芯片阵营的空间站中以及在任务中作为战利品出现得越晚。\n\n如果芯片阵营为 none，芯片永远不会作为奖励发放，也完全不会生成。"
       },
       "ae.cfg.piecefaction.label": {
         "EnglishUS": "Preferred faction",
@@ -377,7 +377,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": "该阵营的敌人会更频繁地装备此套装的九件部件，这是在套装已有标签之外的额外加成。只能修改偏好阵营：基础标签始终保留。选择 none 则只使用套装自身的标签，不设偏好阵营。此套装专属的标签为："
+        "ChineseSimp": "任意阵营{D:*}：在对抗该阵营的任务中，其敌人可能携带此套装的部件，部件也可能作为战利品找到。这是在基础标签之外的额外加成。\nnone{D:none}：没有偏好阵营。套装只使用其基础标签。\n\n基础标签无法更改。此套装的基础标签为"
       },
       "ae.cfg.piecefaction.notags": {
         "EnglishUS": "none",
@@ -403,7 +403,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "ANDRAS"
       },
       "ae.cfg.header.nemesis": {
         "EnglishUS": "NEMESIS",
@@ -416,7 +416,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "NEMESIS"
       },
       "ae.cfg.setname.andras": {
         "EnglishUS": "ANDRAS",
@@ -429,7 +429,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "ANDRAS"
       },
       "ae.cfg.setname.nemesis": {
         "EnglishUS": "NEMESIS",
@@ -442,7 +442,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "NEMESIS"
       },
       "ae.cfg.andras.toggle.label": {
         "EnglishUS": "ANDRAS set toggle",
@@ -481,7 +481,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": "(Arm Grenade Launcher) RGL-40 Reprisal 生成"
+        "ChineseSimp": "（手臂·榴弹发射器）RGL-40 报复 生成"
       },
       "ae.cfg.gunarm.gl.toggle.tip": {
         "EnglishUS": "ON{D:ON}: the (Arm Grenade Launcher) RGL-40 Reprisal can spawn from tech level 4 on PMC enemies and in missions against RealWare. RealWare gives it as a reward and sells it from tech level 4.\nOFF{D:OFF}: it does not spawn and is not given as a reward or sold. Its recipe can still be unlocked from an augmentation chip.",
@@ -494,7 +494,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": "开启：(Arm Grenade Launcher) RGL-40 Reprisal 会在 PMC 敌人身上以及 RealWare 科技等级 4 生成"
+        "ChineseSimp": "开启{D:ON}：从科技等级 4 起，（手臂·榴弹发射器）RGL-40 报复可能出现在 PMC 敌人身上以及对抗真金的任务中。真金从科技等级 4 起将其作为奖励发放并出售。\n关闭{D:OFF}：它不会生成，也不会作为奖励发放或出售。仍可通过义体芯片解锁其蓝图。"
       },
       "ae.cfg.gunarm.mantis.toggle.label": {
         "EnglishUS": "(Arm Blade) AB-60 Mantis Blade spawn",
@@ -507,7 +507,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": "(Arm Blade) AB-60 Mantis Blade 生成"
+        "ChineseSimp": "（手臂·刀刃）AB-60 螳螂刀 生成"
       },
       "ae.cfg.gunarm.mantis.toggle.tip": {
         "EnglishUS": "ON{D:ON}: the (Arm Blade) AB-60 Mantis Blade can spawn from tech level 2 on PMC enemies and in missions against Tianming. Tianming gives it as a reward and sells it from tech level 2.\nOFF{D:OFF}: it does not spawn and is not given as a reward or sold. Its recipe can still be unlocked from an augmentation chip.",
@@ -520,7 +520,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": "开启：(Arm Blade) AB-60 Mantis Blade 会在 PMC 敌人身上以及 Tianming 科技等级 2 生成"
+        "ChineseSimp": "开启{D:ON}：从科技等级 2 起，（手臂·刀刃）AB-60 螳螂刀可能出现在 PMC 敌人身上以及对抗天命的任务中。天命从科技等级 2 起将其作为奖励发放并出售。\n关闭{D:OFF}：它不会生成，也不会作为奖励发放或出售。仍可通过义体芯片解锁其蓝图。"
       },
       "ae.cfg.gunarm.disc.toggle.label": {
         "EnglishUS": "(Arm Discthrower) RT-30D Sawmill spawn",
@@ -533,7 +533,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": "(Arm Discthrower) RT-30D Sawmill 生成"
+        "ChineseSimp": "（手臂·圆锯发射器）RT-30D 锯木厂 生成"
       },
       "ae.cfg.gunarm.disc.toggle.tip": {
         "EnglishUS": "ON{D:ON}: the (Arm Discthrower) RT-30D Sawmill can spawn from tech level 3 on PMC enemies and in missions against Tianming, CoreWard and CResistance. These factions give it as a reward and sell it from tech level 3.\nOFF{D:OFF}: it does not spawn and is not given as a reward or sold. Its recipe can still be unlocked from an augmentation chip.",
@@ -546,7 +546,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": "开启：(Arm Discthrower) RT-30D Sawmill 会在 PMC 敌人身上以及 Tianming、Coreward MG 和 Civil Resistance 科技等级 3 生成"
+        "ChineseSimp": "开启{D:ON}：从科技等级 3 起，（手臂·圆锯发射器）RT-30D 锯木厂可能出现在 PMC 敌人身上以及对抗天命、星核矿业和人民义军的任务中。这些阵营从科技等级 3 起将其作为奖励发放并出售。\n关闭{D:OFF}：它不会生成，也不会作为奖励发放或出售。仍可通过义体芯片解锁其蓝图。"
       },
       "ae.cfg.gunarm.shotgun.toggle.label": {
         "EnglishUS": "(Arm Shotgun) Dual-12G Sommation spawn",
@@ -559,7 +559,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": "(Arm Shotgun) Dual-12G Sommation 生成"
+        "ChineseSimp": "（手臂·霰弹枪）Dual-12G 通牒 生成"
       },
       "ae.cfg.gunarm.shotgun.toggle.tip": {
         "EnglishUS": "ON{D:ON}: the (Arm Shotgun) Dual-12G Sommation can spawn from tech level 3 on PMC enemies and in missions against RealWare and FrancheComte. These factions give it as a reward and sell it from tech level 3.\nOFF{D:OFF}: it does not spawn and is not given as a reward or sold. Its recipe can still be unlocked from an augmentation chip.",
@@ -572,7 +572,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": "开启：(Arm Shotgun) Dual-12G Sommation 会在 PMC 敌人身上以及 RealWare 和 Franche-Comte PS 科技等级 3 生成"
+        "ChineseSimp": "开启{D:ON}：从科技等级 3 起，（手臂·霰弹枪）Dual-12G 通牒可能出现在 PMC 敌人身上以及对抗真金和弗兰基-康提PS的任务中。这些阵营从科技等级 3 起将其作为奖励发放并出售。\n关闭{D:OFF}：它不会生成，也不会作为奖励发放或出售。仍可通过义体芯片解锁其蓝图。"
       },
       "ae.cfg.gunarm.taser.toggle.label": {
         "EnglishUS": "(Arm Taser) D-50KV S.T.I.N.G. spawn",
@@ -585,7 +585,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": "(Arm Taser) D-50KV S.T.I.N.G. 生成"
+        "ChineseSimp": "（手臂·电击枪）D-50KV S.T.I.N.G. 生成"
       },
       "ae.cfg.gunarm.taser.toggle.tip": {
         "EnglishUS": "ON{D:ON}: the (Arm Taser) D-50KV S.T.I.N.G. can spawn from tech level 3 on PMC enemies and in missions against Dilthey and FrancheComte. These factions give it as a reward and sell it from tech level 3.\nOFF{D:OFF}: it does not spawn and is not given as a reward or sold. Its recipe can still be unlocked from an augmentation chip.",
@@ -598,7 +598,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": "开启：(Arm Taser) D-50KV S.T.I.N.G. 会在 PMC 敌人身上以及 Dilthey 和 Franche-Comte PS 科技等级 3 生成"
+        "ChineseSimp": "开启{D:ON}：从科技等级 3 起，（手臂·电击枪）D-50KV S.T.I.N.G. 可能出现在 PMC 敌人身上以及对抗迪尔泰和弗兰基-康提PS的任务中。这些阵营从科技等级 3 起将其作为奖励发放并出售。\n关闭{D:OFF}：它不会生成，也不会作为奖励发放或出售。仍可通过义体芯片解锁其蓝图。"
       },
       "ae.cfg.itemname.ae_gl_arm": {
         "EnglishUS": "(Arm Grenade Launcher) RGL-40 Reprisal",
@@ -611,7 +611,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（手臂·榴弹发射器）RGL-40 报复"
       },
       "ae.cfg.itemname.ae_mantis_arm": {
         "EnglishUS": "(Arm Blade) AB-60 Mantis Blade",
@@ -624,7 +624,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（手臂·刀刃）AB-60 螳螂刀"
       },
       "ae.cfg.itemname.ae_disc_arm": {
         "EnglishUS": "(Arm Discthrower) RT-30D Sawmill",
@@ -637,7 +637,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（手臂·圆锯发射器）RT-30D 锯木厂"
       },
       "ae.cfg.itemname.ae_shotgun_arm": {
         "EnglishUS": "(Arm Shotgun) Dual-12G Sommation",
@@ -650,7 +650,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（手臂·霰弹枪）Dual-12G 通牒"
       },
       "ae.cfg.itemname.ae_taser_arm": {
         "EnglishUS": "(Arm Taser) D-50KV S.T.I.N.G.",
@@ -663,7 +663,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（手臂·电击枪）D-50KV S.T.I.N.G."
       },
       "ae.cfg.uhmg.toggle.label": {
         "EnglishUS": "(Arm+Chest) UHMG O'Dakka spawn",
@@ -676,7 +676,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（手臂+胸部）UHMG 奥丁弹雨 生成"
       },
       "ae.cfg.uhmg.toggle.tip": {
         "EnglishUS": "ON{D:ON}: the (Arm+Chest) UHMG O'Dakka can spawn from tech level 6 on Military, PMC and Merc enemies and in missions against PlanetBridge, Tianming and RealWare. PlanetBridge and Tianming give it as a reward and sell it from tech level 6, RealWare from tech level 7.\nOFF{D:OFF}: it does not spawn and is not given as a reward or sold. Its recipe can still be unlocked from an augmentation chip.",
@@ -689,7 +689,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "开启{D:ON}：从科技等级 6 起，（手臂+胸部）UHMG 奥丁弹雨可能出现在军方、PMC 和佣兵敌人身上，以及对抗星桥、天命和真金的任务中。星桥和天命从科技等级 6 起将其作为奖励发放并出售，真金从科技等级 7 起。\n关闭{D:OFF}：它不会生成，也不会作为奖励发放或出售。仍可通过义体芯片解锁其蓝图。"
       },
       "ae.cfg.gunarm.mode.label": {
         "EnglishUS": "Special weapon arm mode",
@@ -702,7 +702,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": "枪械手臂模式"
+        "ChineseSimp": "特殊武器手臂模式"
       },
       "ae.cfg.gunarm.mode.tip": {
         "EnglishUS": "Vanilla{D:Vanilla}: the arm blocks the primary weapon slot, like the vanilla weapon arms.\nExtra slot{D:Extra slot}: the arm blocks the primary weapon slot and opens the third weapon slot.\nBare hands only{D:Bare hands only}: no slot is blocked or added. The arm only replaces your bare hands weapon.\n\nArms already installed switch mode when the save is loaded. If the primary slot gets blocked, or the third slot closes, its weapon moves to the backpack or vest. If they are full, it goes to the ship cargo, or to the ground during a mission.\n\nAffected items (tagged as Special Weapon Arm)",
@@ -715,7 +715,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": "本模组枪械手臂的工作方式。Vanilla：手臂会占用主武器栏，与原版武器手臂相同。Extra slot：手臂占用主武器栏，并开启第三武器栏。Bare hands only：不占用也不增加任何武器栏，手臂只替换你的徒手武器。\n\n已安装的手臂会在读取存档时切换模式。主武器栏被占用时，其中的武器会被移到背包或背心；如果没有空间，切换会等到有空间为止。"
+        "ChineseSimp": "Vanilla{D:Vanilla}：手臂会封锁主武器栏位，与原版武器手臂相同。\nExtra slot{D:Extra slot}：手臂会封锁主武器栏位，并开启第三武器栏位。\nBare hands only{D:Bare hands only}：不封锁也不增加任何栏位。手臂只替换你的徒手武器。\n\n已安装的手臂会在读取存档时切换模式。如果主武器栏位被封锁，或第三武器栏位关闭，其中的武器会移到背包或背心。如果它们已满，武器会移到货舱，任务中则掉落在地面上。\n\n受影响的物品（带有“特殊武器手臂”标记）"
       },
       "ae.cfg.header.modconfig": {
         "EnglishUS": "MOD CONFIG",
@@ -728,7 +728,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "模组设置"
       },
       "ae.cfg.modconfig.note": {
         "EnglishUS": "FROM HERE YOU CAN CHANGE THE MOD CONFIG FOR EACH SET AND SETLESS ITEM ADDED BY AUGMENTATIONS EXPANDED.",
@@ -741,7 +741,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "你可以在这里修改 AUGMENTATIONS EXPANDED 添加的每个套装和无套装物品的模组设置。"
       },
       "ae.cfg.restart.note": {
         "EnglishUS": "REMEMBER TO RESTART THE GAME FOR ANY CHANGE MADE IN THIS MENU TO TAKE EFFECT",
@@ -754,10 +754,10 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "请记得重启游戏，本菜单中的更改才会生效"
       },
-      "ae.cfg.vaclipping.label": {
-        "EnglishUS": "Enable VA clipping",
+      "ae.cfg.vamode.label": {
+        "EnglishUS": "VA armor mode",
         "Russian": "",
         "German": "",
         "French": "",
@@ -767,10 +767,10 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "VA 护甲模式"
       },
-      "ae.cfg.vaclipping.tip": {
-        "EnglishUS": "Requires Visible Augments.\n\nON{D:ON}: the original Visible Augments rules. Some augment visuals stay visible over the armour you wear and can clip through it.\nOFF{D:OFF}: augment visuals on the body, arms, legs and feet are hidden while you wear the body armour, leggings or boots that cover them.\n\nApplies to both vanilla and AE visible augments. Head visuals are not affected.",
+      "ae.cfg.vamode.tip": {
+        "EnglishUS": "Requires Visible Augments. This changes how augment 3D models interact with the armor you wear.\n\nClip{D:Clip}: both are shown and can clip, as in Visible Augments.\nHide armor{D:Hide armor}: augments hide the armor on the same body part.\nHidden by armor{D:Hidden by armor}: armor hides the augments under it.\nOff{D:Off}: no Augmentations Expanded models are shown.\n\nAs in vanilla Visible Augments, the Head augments always hide the worn helmet regardless of the chosen config.",
         "Russian": "",
         "German": "",
         "French": "",
@@ -780,7 +780,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "需要 Visible Augments。此设置会改变增强体 3D 模型与你所穿护甲的互动方式。\n\nClip{D:Clip}：两者都会显示，可能互相穿模，与 Visible Augments 相同。\nHide armor{D:Hide armor}：增强体会隐藏同一身体部位上的护甲。\nHidden by armor{D:Hidden by armor}：护甲会隐藏其下方的增强体。\nOff{D:Off}：不显示任何 Augmentations Expanded 模型。\n\n与原版 Visible Augments 相同，无论选择哪种设置，头部增强体始终会隐藏所戴的头盔。"
       },
       "ae.cfg.header.general": {
         "EnglishUS": "GENERAL MOD SETTINGS",
@@ -793,7 +793,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "通用模组设置"
       },
       "ae.cfg.handfootrecipe.label": {
         "EnglishUS": "Hand and foot required in recipes",
@@ -806,7 +806,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "蓝图需要手部和足部"
       },
       "ae.cfg.handfootrecipe.tip": {
         "EnglishUS": "ON{D:ON}: the crafting recipe of the full arm of a set (shoulder and arm in one piece) needs the hand of the same set, and the crafting recipe of the full leg (thigh and foot in one piece) needs the foot of the same set, like the vanilla limbs.\nOFF{D:OFF}: the hand and the foot are removed from those crafting recipes. The arm and the leg are crafted from parts only.",
@@ -819,7 +819,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "开启{D:ON}：套装整臂（肩部和手臂为一体）的制作蓝图需要同一套装的手部，整腿（大腿和足部为一体）的制作蓝图需要同一套装的足部，与原版肢体相同。\n关闭{D:OFF}：这些制作蓝图不再需要手部和足部。手臂和腿部只用零件制作。"
       },
       "ae.cfg.rankrestriction.label": {
         "EnglishUS": "Clone rank restriction",
@@ -832,7 +832,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "克隆体等级限制"
       },
       "ae.cfg.rankrestriction.tip": {
         "EnglishUS": "ON{D:ON}: a clone can install the pieces of a set only after it reaches the Minimum clone rank chosen in that set's section. Until then the Augment command is greyed out, and the tooltip of the piece shows the rank it needs.\nOFF{D:OFF}: any clone can install any piece. The Minimum clone rank of the sets is ignored.\n\nOnly your clones are affected. Enemies still spawn with the pieces. Pieces already installed are not removed.",
@@ -845,7 +845,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "开启{D:ON}：克隆体只有达到该套装设置中选择的“最低克隆体等级”后，才能安装该套装的部件。在此之前，“安装增强体”命令会变灰，部件的提示框会显示所需等级。\n关闭{D:OFF}：任何克隆体都可以安装任何部件。各套装的“最低克隆体等级”将被忽略。\n\n只影响你的克隆体。敌人仍会携带这些部件生成。已安装的部件不会被移除。"
       },
       "ae.cfg.multislotloss.label": {
         "EnglishUS": "Multi-woundslot aug destroyed amputation",
@@ -858,7 +858,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "多部位增强体截肢后销毁"
       },
       "ae.cfg.multislotloss.tip": {
         "EnglishUS": "What happens at the end of a mission when a clone loses one wound slot of a Multi-WoundSlot augmentation to an amputation.\n\nON{D:ON}: vanilla behaviour. The whole augmentation is destroyed, and the implants on its other wound slots go back to the cargo.\nOFF{D:OFF}: the amputated wound slot grows back and the augmentation stays installed. The implants on the amputated wound slot are lost. The implants on the other wound slots stay installed. The clone still needs the usual healing time for the amputation.\n\nAffected items (tagged as Multi-WoundSlot)",
@@ -871,7 +871,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "当克隆体的多部位增强体有一个身体部位被截肢时，任务结束后会发生什么。\n\n开启{D:ON}：原版行为。整个增强体被销毁，其他身体部位上的植入物回到货舱。\n关闭{D:OFF}：被截肢的身体部位会重新长出，增强体保持安装。被截肢部位上的植入物会丢失，其他部位上的植入物保持安装。克隆体仍需要截肢的正常恢复时间。\n\n受影响的物品（带有“多部位”标记）"
       },
       "ae.cfg.multislotloss.none": {
         "EnglishUS": "- none",
@@ -884,7 +884,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "- 无"
       },
       "ae.cfg.minrank.label": {
         "EnglishUS": "Minimum clone rank",
@@ -897,7 +897,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "最低克隆体等级"
       },
       "ae.cfg.default": {
         "EnglishUS": "default",
@@ -910,7 +910,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "默认"
       },
       "ae.cfg.minrank.tip": {
         "EnglishUS": "Any rank{D:*}: clones of this rank or higher can install the pieces of the {SET} set.\n\nWorks only when Clone rank restriction is ON in GENERAL MOD SETTINGS.",
@@ -923,7 +923,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "任意等级{D:*}：达到此等级或更高等级的克隆体可以安装 {SET} 套装的部件。\n\n仅在“通用模组设置”中开启“克隆体等级限制”时生效。"
       },
       "ae.cfg.pmc.label": {
         "EnglishUS": "PMC spawn",
@@ -936,7 +936,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "PMC 生成"
       },
       "ae.cfg.pmc.tip": {
         "EnglishUS": "ON{D:ON}: the {SET} pieces can also spawn on enemies that use the PMC tag, such as PMC soldiers, assassins and bounty hunters. This is on top of the tags and the preferred faction of the set.\nOFF{D:OFF}: these enemies only carry the pieces if another tag of the set matches them.",
@@ -949,7 +949,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "开启{D:ON}：{SET} 部件也可能出现在使用 PMC 标签的敌人身上，例如 PMC 士兵、刺客和赏金猎人。这是在套装标签和偏好阵营之外的额外加成。\n关闭{D:OFF}：只有当套装的其他标签与这些敌人匹配时，他们才会携带这些部件。"
       },
       "ae.tooltip.minrank": {
         "EnglishUS": "Minimum clone rank",
@@ -962,7 +962,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "最低克隆体等级"
       },
       "ae.tooltip.longstats": {
         "EnglishUS": "This Augment's effect list is too long to be displayed correctly, install it on your clone to see the effects for each woundslot!\n\n -Augmentations Expanded",
@@ -975,7 +975,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "此增强体的效果列表太长，无法正确显示，请将其安装到你的克隆体上，查看每个身体部位的效果！\n\n -Augmentations Expanded"
       },
       "ae.tooltip.multislot": {
         "EnglishUS": "This item is tagged as Multi-WoundSlot",
@@ -988,7 +988,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "此物品带有“多部位”标记"
       },
       "ae.icons.header.info": {
         "EnglishUS": "ICON PACKS",
@@ -1001,7 +1001,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "图标包"
       },
       "ae.icons.info.note": {
         "EnglishUS": "FROM HERE YOU CAN CHANGE THE PIXEL ARTS OF THE SETS AND SETLESS ITEMS ADDED BY AUGMENTATIONS EXPANDED. THE DEFAULT SPRITES ARE NAMED \"DEFAULT - FOXYLA36\", ALL THE OTHERS ARE FROM KIND SOULS AND COOL ARTISTS WHO DECIDED TO IMPROVE THE MOD WITH THEIR WORK! IF YOU WANT TO MAKE SPRITES FOR ITEMS IN THE MOD, JUST ADD @FOXYLA36 AS A FRIEND ON DISCORD/STEAM AND SEND ME THE SPRITES! THE ONLY LIMITATION IS THAT THE IMAGES MUST FIT THE VANILLA AESTHETIC AND BE = OR LESS 24X24 / 48X24 PIXELS",
@@ -1014,7 +1014,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "你可以在这里更改 AUGMENTATIONS EXPANDED 添加的套装和无套装物品的像素画。默认图片名为“DEFAULT - FOXYLA36”，其他所有图片都来自决定用自己的作品改进本模组的热心人和出色的画师！如果你想为本模组的物品制作图片，只需在 DISCORD/STEAM 上添加 FOXYLA36 为好友并把图片发给我！唯一的要求是图片必须符合原版美术风格，且尺寸不超过 24X24 / 48X24 像素"
       },
       "ae.icons.adaptive.label": {
         "EnglishUS": "Adaptive inventory size",
@@ -1027,7 +1027,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "自适应物品栏尺寸"
       },
       "ae.icons.adaptive.tip": {
         "EnglishUS": "ON{D:ON}: the inventory size of items drawn with an icon pack follows the art. An icon up to 24 pixels wide takes 1 cell, a wider one takes 2 cells.\nOFF{D:OFF}: every item keeps its standard size, 1x1 for M.E.R.C. and the chips and 2x1 for every other augmentation and the crates.\n\nItems with the default art always keep their standard size. Items already in your save keep their old size. An augment takes the new size only after you install it on a clone and remove it again, and crates and chips you already own never change. New drops, crafts and rewards use the new size. Restart the game to apply this option.",
@@ -1040,7 +1040,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "开启{D:ON}：使用图标包绘制的物品，其物品栏尺寸会跟随图片。宽度不超过 24 像素的图标占 1 格，更宽的占 2 格。\n关闭{D:OFF}：每个物品保持标准尺寸：M.E.R.C. 和芯片为 1x1，其他增强体和箱子为 2x1。\n\n使用默认图片的物品始终保持标准尺寸。存档中已有的物品保持旧尺寸。增强体只有在安装到克隆体上再移除后才会采用新尺寸，你已拥有的箱子和芯片永远不会改变。新的掉落、制作和奖励会使用新尺寸。重启游戏以应用此选项。"
       },
       "ae.icons.setphrase": {
         "EnglishUS": "the {SET} set",
@@ -1053,7 +1053,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "{SET} 套装"
       },
       "ae.icons.items.label": {
         "EnglishUS": "Item icons (inventory + ground)",
@@ -1066,7 +1066,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "物品图标（物品栏 + 地面）"
       },
       "ae.icons.items.set.tip": {
         "EnglishUS": "Inventory icon, ground icon and ground shadow of the nine pieces and the crate of {NAME}. With Adaptive inventory size ON, the inventory size follows the art.",
@@ -1079,7 +1079,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "{NAME}的九个部件和箱子的物品栏图标、地面图标和地面阴影。开启“自适应物品栏尺寸”时，物品栏尺寸会跟随图片。"
       },
       "ae.icons.items.item.tip": {
         "EnglishUS": "Inventory icon, ground icon and ground shadow of {NAME}. With Adaptive inventory size ON, the inventory size follows the art.",
@@ -1092,7 +1092,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "{NAME}的物品栏图标、地面图标和地面阴影。开启“自适应物品栏尺寸”时，物品栏尺寸会跟随图片。"
       },
       "ae.icons.woundslots.label": {
         "EnglishUS": "Wound slot icons",
@@ -1105,7 +1105,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "身体部位图标"
       },
       "ae.icons.woundslots.tip": {
         "EnglishUS": "Body part images of {NAME} on the augmentation and health screens, in all four states (normal, wounded, fixated and amputated).",
@@ -1118,7 +1118,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "{NAME}在增强体和健康界面中的身体部位图片，包括全部四种状态（正常、受伤、已稳定和已截肢）。"
       },
       "ae.icons.chip.label": {
         "EnglishUS": "Chip icons (inventory + ground)",
@@ -1131,7 +1131,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "芯片图标（物品栏 + 地面）"
       },
       "ae.icons.chip.tip": {
         "EnglishUS": "Inventory icon, ground icon and ground shadow of the chip of {NAME}. With Adaptive inventory size ON, the inventory size follows the art.",
@@ -1144,7 +1144,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "{NAME}芯片的物品栏图标、地面图标和地面阴影。开启“自适应物品栏尺寸”时，物品栏尺寸会跟随图片。"
       },
       "ae.icons.weapon.label": {
         "EnglishUS": "Weapon icon (hand slot)",
@@ -1157,7 +1157,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "武器图标（手部栏位）"
       },
       "ae.icons.weapon.set.tip": {
         "EnglishUS": "Inventory icon of the fist that the arm and the hand of {NAME} put in the hand slot. It shows there and in the current weapon panel.",
@@ -1170,7 +1170,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "{NAME}的手臂和手部放入手部栏位的拳头的物品栏图标。它会显示在该栏位和当前武器面板中。"
       },
       "ae.icons.weapon.item.tip": {
         "EnglishUS": "Inventory icon of the weapon that {NAME} puts in the hand slot. It shows there and in the current weapon panel.",
@@ -1183,7 +1183,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "{NAME}放入手部栏位的武器的物品栏图标。它会显示在该栏位和当前武器面板中。"
       },
       "ae.icons.common.tip": {
         "EnglishUS": "Default - Foxyla36 is, in fact, the default of the mod. Icons missing from the chosen pack fall back to the default ones. The new icons are applied after a restart.",
@@ -1196,7 +1196,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "Default - Foxyla36 就是本模组的默认图标。所选图标包中缺少的图标会使用默认图标。新图标在重启后生效。"
       },
       "ae.cfg.header.opi": {
         "EnglishUS": "OP-Intensify",
@@ -1209,7 +1209,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "OP-Intensify"
       },
       "ae.cfg.setname.opi": {
         "EnglishUS": "OP-I",
@@ -1222,7 +1222,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "OP-I"
       },
       "ae.cfg.opi.toggle.label": {
         "EnglishUS": "OP-I toggle",
@@ -1235,7 +1235,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "OP-I 开关"
       },
       "ae.cfg.set.toggle.nocrate.tip": {
         "EnglishUS": "ON{D:ON}: the {SET} set (augmentation and chip) can spawn in your save.\nOFF{D:OFF}: the set no longer spawns. Items you already have stay in your save. While the set is OFF, its settings are hidden after the next restart. Turn it ON and restart the game to get them back.\n\nRewards of missions already on the map do not change. Enemies and loot follow this setting in every mission you enter after the restart.",
@@ -1248,7 +1248,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "开启{D:ON}：{SET} 套装（增强体和芯片）可以在你的存档中生成。\n关闭{D:OFF}：该套装不再生成。你已拥有的物品会保留在存档中。套装关闭期间，下次重启后其设置会被隐藏。重新开启并重启游戏即可恢复。\n\n地图上已有任务的奖励不会改变。重启后进入的每个任务中，敌人和战利品都会遵循此设置。"
       },
       "ae.cfg.augtech.single.tip": {
         "EnglishUS": "1 to 10{D:*}: the higher the level, the later the augmentation starts to show up in missions (on enemies, in containers and on the ground) and as a reward from its reward faction.",
@@ -1261,7 +1261,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "1 到 10{D:*}：等级越高，该增强体在任务中（敌人身上、容器中和地面上）出现得越晚，其奖励阵营将其作为奖励发放的时间也越晚。"
       },
       "ae.cfg.rewardfaction.label": {
         "EnglishUS": "Augmentation reward faction",
@@ -1274,7 +1274,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "增强体奖励阵营"
       },
       "ae.cfg.rewardfaction.tip": {
         "EnglishUS": "Any faction{D:*}: that faction gives the augmentation as a mission reward, starting from the tech level of the augmentation.\nnone{D:none}: the augmentation is never given as a reward.\n\nThis set has no crate, so this takes its place.",
@@ -1287,7 +1287,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "任意阵营{D:*}：该阵营会从该增强体的科技等级起，将其作为任务奖励发放。\nnone{D:none}：该增强体永远不会作为奖励发放。\n\n此套装没有箱子，因此由此选项代替。"
       },
       "ae.tooltip.specialweaponarm": {
         "EnglishUS": "This item is tagged as Special Weapon Arm",
@@ -1300,7 +1300,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "此物品带有“特殊武器手臂”标记"
       },
       "ae.cfg.opi.chip.note": {
         "EnglishUS": "The OP-I chip is the Pirated Augmentation Disk. Its pool holds the crafting recipes of every augmentation of the mod that can be crafted. Each disk unlocks one of them at random.",
@@ -1313,7 +1313,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "OP-I 芯片就是盗版增强体磁盘。它的蓝图池包含本模组所有可制作增强体的制作蓝图。每张磁盘会随机解锁其中一个。"
       },
       "ae.cfg.gunarm.pile.toggle.tip": {
         "EnglishUS": "ON{D:ON}: the (Arm Pile Bunker) PB-033M ASHMEAD can spawn from tech level 6 on Military, PMC and Merc enemies and in missions against UnchainedBelt. UnchainedBelt gives it as a reward and sells it from tech level 6.\nOFF{D:OFF}: it does not spawn and is not given as a reward or sold. Its recipe can still be unlocked from an augmentation chip.",
@@ -1326,7 +1326,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "开启{D:ON}：从科技等级 6 起，（手臂·打桩机）PB-033M ASHMEAD 可能出现在军方、PMC 和佣兵敌人身上，以及对抗不羁星环的任务中。不羁星环从科技等级 6 起将其作为奖励发放并出售。\n关闭{D:OFF}：它不会生成，也不会作为奖励发放或出售。仍可通过义体芯片解锁其蓝图。"
       },
       "ae.cfg.gunarm.gatling.toggle.tip": {
         "EnglishUS": "ON{D:ON}: the (Arm Gatling) GAU-9/100 BADBOY can spawn from tech level 5 on Military, PMC and Merc enemies and in missions against CoreWard and Grasshopper. These factions give it as a reward and sell it from tech level 5.\nOFF{D:OFF}: it does not spawn and is not given as a reward or sold. Its recipe can still be unlocked from an augmentation chip.",
@@ -1339,7 +1339,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "开启{D:ON}：从科技等级 5 起，（手臂·加特林）GAU-9/100 BADBOY 可能出现在军方、PMC 和佣兵敌人身上，以及对抗星核矿业和蚱蜢科技的任务中。这些阵营从科技等级 5 起将其作为奖励发放并出售。\n关闭{D:OFF}：它不会生成，也不会作为奖励发放或出售。仍可通过义体芯片解锁其蓝图。"
       },
       "ae.cfg.gunarm.ecannon.toggle.tip": {
         "EnglishUS": "ON{D:ON}: the (Arm Energy Cannon) EP-C BLASTEM can spawn from tech level 7 on Military, PMC and Merc enemies and in missions against SBN and Dilthey. These factions give it as a reward and sell it from tech level 7.\nOFF{D:OFF}: it does not spawn and is not given as a reward or sold. Its recipe can still be unlocked from an augmentation chip.",
@@ -1352,7 +1352,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "开启{D:ON}：从科技等级 7 起，（手臂·能量炮）EP-C BLASTEM 可能出现在军方、PMC 和佣兵敌人身上，以及对抗 SBN 和迪尔泰的任务中。这些阵营从科技等级 7 起将其作为奖励发放并出售。\n关闭{D:OFF}：它不会生成，也不会作为奖励发放或出售。仍可通过义体芯片解锁其蓝图。"
       },
       "ae.cfg.cargotrack.toggle.tip": {
         "EnglishUS": "ON{D:ON}: the (Leg+Knee) CT-4 Mule can spawn from tech level 4 on Worker, Miner and Merc enemies and in missions against PlanetBridge, CoreWard and Grasshopper. PlanetBridge and CoreWard give it as a reward and sell it from tech level 4, Grasshopper from tech level 5.\nOFF{D:OFF}: it does not spawn and is not given as a reward or sold. Its recipe can still be unlocked from an augmentation chip.",
@@ -1365,7 +1365,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "开启{D:ON}：从科技等级 4 起，（腿部+膝盖）CT-4 负重兽可能出现在工人、矿工和佣兵敌人身上，以及对抗星桥、星核矿业和蚱蜢科技的任务中。星桥和星核矿业从科技等级 4 起将其作为奖励发放并出售，蚱蜢科技从科技等级 5 起。\n关闭{D:OFF}：它不会生成，也不会作为奖励发放或出售。仍可通过义体芯片解锁其蓝图。"
       },
       "ae.cfg.cargochicken.toggle.tip": {
         "EnglishUS": "ON{D:ON}: the (Leg+Knee) CRL-2 Spring Chick can spawn from tech level 4 on Worker and Security enemies and in missions against Grasshopper, Dilthey and PlanetBridge. Grasshopper and PlanetBridge give it as a reward and sell it from tech level 4, Dilthey from tech level 5.\nOFF{D:OFF}: it does not spawn and is not given as a reward or sold. Its recipe can still be unlocked from an augmentation chip.",
@@ -1378,7 +1378,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "开启{D:ON}：从科技等级 4 起，（腿部+膝盖）CRL-2 弹簧小鸡可能出现在工人和保安敌人身上，以及对抗蚱蜢科技、迪尔泰和星桥的任务中。蚱蜢科技和星桥从科技等级 4 起将其作为奖励发放并出售，迪尔泰从科技等级 5 起。\n关闭{D:OFF}：它不会生成，也不会作为奖励发放或出售。仍可通过义体芯片解锁其蓝图。"
       },
       "ae.cfg.sniperhead.toggle.tip": {
         "EnglishUS": "ON{D:ON}: the (Head) SH-7 Longshot can spawn from tech level 5 on Agent, Specops and Merc enemies and in missions against RealWare and FrancheComte. These factions give it as a reward and sell it from tech level 5.\nOFF{D:OFF}: it does not spawn and is not given as a reward or sold. Its recipe can still be unlocked from an augmentation chip.",
@@ -1391,7 +1391,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "开启{D:ON}：从科技等级 5 起，（头部）SH-7 远射可能出现在特工、特种部队和佣兵敌人身上，以及对抗真金和弗兰基-康提PS的任务中。这些阵营从科技等级 5 起将其作为奖励发放并出售。\n关闭{D:OFF}：它不会生成，也不会作为奖励发放或出售。仍可通过义体芯片解锁其蓝图。"
       },
       "ae.cfg.radarhead.toggle.tip": {
         "EnglishUS": "ON{D:ON}: the (Head) R360-P Esper can spawn from tech level 4 on Military, Security and Merc enemies and in missions against SBN and Dilthey. These factions give it as a reward and sell it from tech level 4.\nOFF{D:OFF}: it does not spawn and is not given as a reward or sold. Its recipe can still be unlocked from an augmentation chip.",
@@ -1404,7 +1404,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "开启{D:ON}：从科技等级 4 起，（头部）R360-P 超感者可能出现在军方、保安和佣兵敌人身上，以及对抗 SBN 和迪尔泰的任务中。这些阵营从科技等级 4 起将其作为奖励发放并出售。\n关闭{D:OFF}：它不会生成，也不会作为奖励发放或出售。仍可通过义体芯片解锁其蓝图。"
       },
       "ae.cfg.flammen.toggle.tip": {
         "EnglishUS": "ON{D:ON}: the (Arm+Chest) LPO-2200 Flamer can spawn from tech level 4 on Miner enemies and in missions against CoreWard and CResistance. These factions give it as a reward and sell it from tech level 4.\nOFF{D:OFF}: it does not spawn and is not given as a reward or sold. Its recipe can still be unlocked from an augmentation chip.",
@@ -1417,7 +1417,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "开启{D:ON}：从科技等级 4 起，（手臂+胸部）LPO-2200 喷火者可能出现在矿工敌人身上，以及对抗星核矿业和人民义军的任务中。这些阵营从科技等级 4 起将其作为奖励发放并出售。\n关闭{D:OFF}：它不会生成，也不会作为奖励发放或出售。仍可通过义体芯片解锁其蓝图。"
       },
       "ae.cfg.chainshotgun.toggle.tip": {
         "EnglishUS": "ON{D:ON}: the (Arm+Chest) ATLAS-5 can spawn from tech level 7 on Security, SWAT and Merc enemies and in missions against FrancheComte and ChurchRevelation. These factions give it as a reward and sell it from tech level 7.\nOFF{D:OFF}: it does not spawn and is not given as a reward or sold. Its recipe can still be unlocked from an augmentation chip.",
@@ -1430,7 +1430,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "开启{D:ON}：从科技等级 7 起，（手臂+胸部）ATLAS-5 可能出现在保安、特警和佣兵敌人身上，以及对抗弗兰基-康提PS和天启教堂的任务中。这些阵营从科技等级 7 起将其作为奖励发放并出售。\n关闭{D:OFF}：它不会生成，也不会作为奖励发放或出售。仍可通过义体芯片解锁其蓝图。"
       },
       "ae.cfg.header.medic": {
         "EnglishUS": "CMEDIC-32",
@@ -1443,7 +1443,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "CMEDIC-32"
       },
       "ae.cfg.setname.medic": {
         "EnglishUS": "CMEDIC-32",
@@ -1456,7 +1456,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "CMEDIC-32"
       },
       "ae.cfg.medic.toggle.label": {
         "EnglishUS": "CMEDIC-32 set toggle",
@@ -1469,7 +1469,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "CMEDIC-32 套装开关"
       },
       "ae.cfg.gunarm.pile.toggle.label": {
         "EnglishUS": "(Arm Pile Bunker) PB-033M ASHMEAD spawn",
@@ -1482,7 +1482,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（手臂·打桩机）PB-033M ASHMEAD 生成"
       },
       "ae.cfg.gunarm.gatling.toggle.label": {
         "EnglishUS": "(Arm Gatling) GAU-9/100 BADBOY spawn",
@@ -1495,7 +1495,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（手臂·加特林）GAU-9/100 BADBOY 生成"
       },
       "ae.cfg.gunarm.ecannon.toggle.label": {
         "EnglishUS": "(Arm Energy Cannon) EP-C BLASTEM spawn",
@@ -1508,7 +1508,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（手臂·能量炮）EP-C BLASTEM 生成"
       },
       "ae.cfg.itemname.ae_pile_arm": {
         "EnglishUS": "(Arm Pile Bunker) PB-033M ASHMEAD",
@@ -1521,7 +1521,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（手臂·打桩机）PB-033M ASHMEAD"
       },
       "ae.cfg.itemname.ae_gatling_arm": {
         "EnglishUS": "(Arm Gatling) GAU-9/100 BADBOY",
@@ -1534,7 +1534,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（手臂·加特林）GAU-9/100 BADBOY"
       },
       "ae.cfg.itemname.ae_ecannon_arm": {
         "EnglishUS": "(Arm Energy Cannon) EP-C BLASTEM",
@@ -1547,7 +1547,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（手臂·能量炮）EP-C BLASTEM"
       },
       "ae.cfg.cargotrack.toggle.label": {
         "EnglishUS": "(Leg+Knee) CT-4 Mule spawn",
@@ -1560,7 +1560,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（腿部+膝盖）CT-4 负重兽 生成"
       },
       "ae.cfg.cargochicken.toggle.label": {
         "EnglishUS": "(Leg+Knee) CRL-2 Spring Chick spawn",
@@ -1573,7 +1573,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（腿部+膝盖）CRL-2 弹簧小鸡 生成"
       },
       "ae.cfg.sniperhead.toggle.label": {
         "EnglishUS": "(Head) SH-7 Longshot spawn",
@@ -1586,7 +1586,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（头部）SH-7 远射 生成"
       },
       "ae.cfg.radarhead.toggle.label": {
         "EnglishUS": "(Head) R360-P Esper spawn",
@@ -1599,7 +1599,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（头部）R360-P 超感者 生成"
       },
       "ae.cfg.flammen.toggle.label": {
         "EnglishUS": "(Arm+Chest) LPO-2200 Flamer spawn",
@@ -1612,7 +1612,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（手臂+胸部）LPO-2200 喷火者 生成"
       },
       "ae.cfg.chainshotgun.toggle.label": {
         "EnglishUS": "(Arm+Chest) ATLAS-5 spawn",
@@ -1625,7 +1625,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（手臂+胸部）ATLAS-5 生成"
       },
       "ae.cfg.enemyaugchance.label": {
         "EnglishUS": "Enemy aug chance (%)",
@@ -1638,7 +1638,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "敌人增强体概率（%）"
       },
       "ae.cfg.enemyaugchance.tip": {
         "EnglishUS": "How often enemies get augmentations.\nEach enemy rolls for augmentations when it spawns, and most rolls fail. This makes more of them succeed. Which augmentation they get is not affected.\n\n0 to 100{D:*}: percentage of failed rolls that succeed instead. 0 is vanilla.\nE.g. a common enemy fails 87% of its rolls: at 50 it fails 43%, at 100 never.\n\nDue to how the game works, an enemy might still spawn without augmentations even with both settings at max.\nToo many augmentations can lower an enemy's max HP a lot.\nApplies to newly spawned enemies.",
@@ -1651,7 +1651,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "敌人获得增强体的频率。\n每个敌人生成时都会为增强体进行判定，而大多数判定会失败。此选项让更多判定成功，不影响获得哪种增强体。\n\n0 到 100{D:*}：原本失败的判定中改为成功的百分比。0 为原版。\n例如：普通敌人有 87% 的判定会失败；设为 50 时失败率为 43%，设为 100 时永不失败。\n\n由于游戏机制，即使两项设置都调到最大，敌人仍可能不带增强体生成。\n过多的增强体可能大幅降低敌人的最大生命值。\n仅对新生成的敌人生效。"
       },
       "ae.cfg.enemyaugrolls.label": {
         "EnglishUS": "Enemy extra aug rolls",
@@ -1664,7 +1664,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "敌人额外增强体判定"
       },
       "ae.cfg.enemyaugrolls.tip": {
         "EnglishUS": "How many augmentations an enemy can get.\nGives each enemy more rolls, so it can spawn with more augmentations at once (one per body part at most). Each roll still uses Enemy aug chance.\n\n0 to 9{D:*}: rolls added to each enemy. 0 is vanilla.\n\nDue to how the game works, an enemy might still spawn without augmentations even with both settings at max.\nToo many augmentations can lower an enemy's max HP a lot.\nApplies to newly spawned enemies.",
@@ -1677,7 +1677,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "敌人可以获得多少个增强体。\n为每个敌人增加判定次数，使其能同时带着更多增强体生成（每个身体部位最多一个）。每次判定仍使用“敌人增强体概率”。\n\n0 到 9{D:*}：为每个敌人增加的判定次数。0 为原版。\n\n由于游戏机制，即使两项设置都调到最大，敌人仍可能不带增强体生成。\n过多的增强体可能大幅降低敌人的最大生命值。\n仅对新生成的敌人生效。"
       }
     }
   }

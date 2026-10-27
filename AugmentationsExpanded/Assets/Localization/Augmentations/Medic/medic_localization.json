@@ -13,7 +13,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（头部）CMEDIC-32/A"
       },
       "item.medic_head.shortdesc": {
         "EnglishUS": "Medical Cybernetic Head",
@@ -26,7 +26,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "医疗机械头部"
       },
       "item.medic_chest.name": {
         "EnglishUS": "(Chest) CMEDIC-32/C",
@@ -39,7 +39,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（胸部）CMEDIC-32/C"
       },
       "item.medic_chest.shortdesc": {
         "EnglishUS": "Medical Cybernetic Chest",
@@ -52,7 +52,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "医疗机械胸部"
       },
       "item.medic_guts.name": {
         "EnglishUS": "(Body) CMEDIC-32/B",
@@ -65,7 +65,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（身体）CMEDIC-32/B"
       },
       "item.medic_guts.shortdesc": {
         "EnglishUS": "Medical Cybernetic Body",
@@ -78,7 +78,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "医疗机械身体"
       },
       "item.medic_stomach.name": {
         "EnglishUS": "(Stomach) CMEDIC-32/D",
@@ -91,7 +91,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（胃部）CMEDIC-32/D"
       },
       "item.medic_stomach.shortdesc": {
         "EnglishUS": "Medical Cybernetic Stomach",
@@ -104,7 +104,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "医疗机械胃部"
       },
       "item.medic_hand.name": {
         "EnglishUS": "(Full Arm) CMEDIC-32/E1",
@@ -117,7 +117,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（整臂）CMEDIC-32/E1"
       },
       "item.medic_hand.shortdesc": {
         "EnglishUS": "Medical Cybernetic Arm",
@@ -130,7 +130,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "医疗机械手臂"
       },
       "item.medic_wrist.name": {
         "EnglishUS": "(Hand) CMEDIC-32/E2",
@@ -143,7 +143,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（手部）CMEDIC-32/E2"
       },
       "item.medic_wrist.shortdesc": {
         "EnglishUS": "Medical Cybernetic Hand",
@@ -156,7 +156,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "医疗机械手部"
       },
       "item.medic_leg.name": {
         "EnglishUS": "(Full Leg) CMEDIC-32/F1",
@@ -169,7 +169,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（整腿）CMEDIC-32/F1"
       },
       "item.medic_leg.shortdesc": {
         "EnglishUS": "Medical Cybernetic Leg",
@@ -182,7 +182,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "医疗机械腿部"
       },
       "item.medic_knee.name": {
         "EnglishUS": "(Knee) CMEDIC-32/F3",
@@ -195,7 +195,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（膝盖）CMEDIC-32/F3"
       },
       "item.medic_knee.shortdesc": {
         "EnglishUS": "Medical Cybernetic Knee",
@@ -208,7 +208,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "医疗机械膝盖"
       },
       "item.medic_feet.name": {
         "EnglishUS": "(Feet) CMEDIC-32/F2",
@@ -221,7 +221,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（足部）CMEDIC-32/F2"
       },
       "item.medic_feet.shortdesc": {
         "EnglishUS": "Medical Cybernetic Foot",
@@ -234,7 +234,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "医疗机械足部"
       }
     }
   }

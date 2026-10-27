@@ -13,7 +13,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "SCOUT-22/A"
       },
       "woundslot.Scout22Body.name": {
         "EnglishUS": "SCOUT-22/B",
@@ -26,7 +26,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "SCOUT-22/B"
       },
       "woundslot.Scout22Chest.name": {
         "EnglishUS": "SCOUT-22/C",
@@ -39,7 +39,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "SCOUT-22/C"
       },
       "woundslot.Scout22Stomach.name": {
         "EnglishUS": "SCOUT-22/D",
@@ -52,7 +52,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "SCOUT-22/D"
       },
       "woundslot.Scout22Shoulder.name": {
         "EnglishUS": "SCOUT-22/E1",
@@ -65,7 +65,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "SCOUT-22/E1"
       },
       "woundslot.Scout22Arm.name": {
         "EnglishUS": "SCOUT-22/E2",
@@ -78,7 +78,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "SCOUT-22/E2"
       },
       "woundslot.Scout22Thigh.name": {
         "EnglishUS": "SCOUT-22/F1",
@@ -91,7 +91,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "SCOUT-22/F1"
       },
       "woundslot.Scout22Knee.name": {
         "EnglishUS": "SCOUT-22/F3",
@@ -104,7 +104,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "SCOUT-22/F3"
       },
       "woundslot.Scout22Feet.name": {
         "EnglishUS": "SCOUT-22/F2",
@@ -117,7 +117,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "SCOUT-22/F2"
       }
     }
   }

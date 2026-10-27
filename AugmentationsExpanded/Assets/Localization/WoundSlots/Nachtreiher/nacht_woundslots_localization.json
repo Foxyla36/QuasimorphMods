@@ -13,7 +13,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "NACHTREIHER/44E"
       },
       "woundslot.NachtChest.name": {
         "EnglishUS": "NACHTREIHER/46E",
@@ -26,7 +26,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "NACHTREIHER/46E"
       },
       "woundslot.NachtBody.name": {
         "EnglishUS": "NACHTREIHER/45E",
@@ -39,7 +39,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "NACHTREIHER/45E"
       },
       "woundslot.NachtStomach.name": {
         "EnglishUS": "NACHTREIHER/43E",
@@ -52,7 +52,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "NACHTREIHER/43E"
       },
       "woundslot.NachtShoulder.name": {
         "EnglishUS": "NACHTREIHER/47E",
@@ -65,7 +65,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "NACHTREIHER/47E"
       },
       "woundslot.NachtArm.name": {
         "EnglishUS": "NACHTREIHER/48E",
@@ -78,7 +78,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "NACHTREIHER/48E"
       },
       "woundslot.NachtThigh.name": {
         "EnglishUS": "NACHTREIHER/49E",
@@ -91,7 +91,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "NACHTREIHER/49E"
       },
       "woundslot.NachtKnee.name": {
         "EnglishUS": "NACHTREIHER/50E",
@@ -104,7 +104,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "NACHTREIHER/50E"
       },
       "woundslot.NachtFeet.name": {
         "EnglishUS": "NACHTREIHER/51E",
@@ -117,7 +117,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "NACHTREIHER/51E"
       }
     }
   }

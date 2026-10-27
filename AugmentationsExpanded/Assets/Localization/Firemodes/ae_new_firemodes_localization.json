@@ -13,7 +13,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "快速打击"
       },
       "firemode.ae_pile_charged_1.name": {
         "EnglishUS": "charged strike",
@@ -26,7 +26,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "蓄力打击"
       },
       "firemode.ae_gatling_5.name": {
         "EnglishUS": "burst fire",
@@ -39,7 +39,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "连射"
       },
       "firemode.ae_gatling_8.name": {
         "EnglishUS": "sustained fire",
@@ -52,7 +52,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "持续射击"
       },
       "firemode.ae_ecannon_lance_1.name": {
         "EnglishUS": "lance shot",
@@ -65,7 +65,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "光矛射击"
       },
       "firemode.ae_ecannon_burst_1.name": {
         "EnglishUS": "plasma burst",
@@ -78,7 +78,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "等离子连射"
       },
       "firemode.ae_chain_3.name": {
         "EnglishUS": "burst",
@@ -91,7 +91,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "连射"
       },
       "firemode.ae_chain_5.name": {
         "EnglishUS": "long burst",
@@ -104,7 +104,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "长连射"
       },
       "firemode.ae_flamer_stream_1.name": {
         "EnglishUS": "focused stream",
@@ -117,7 +117,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "集中喷射"
       }
     }
   }

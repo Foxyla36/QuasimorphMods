@@ -13,7 +13,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "GA-9 枪臂"
       },
       "woundslot.AE_DummySpecialGunArm.name": {
         "EnglishUS": "MA-8 Auxiliary Limb",
@@ -26,7 +26,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "MA-8 辅助肢"
       },
       "woundslot.AE_GLArm.name": {
         "EnglishUS": "(Grenade Launcher) RGL-40 Reprisal",
@@ -39,7 +39,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（榴弹发射器）RGL-40 报复"
       },
       "woundslot.AE_GLShoulder.name": {
         "EnglishUS": "Support Shoulder",
@@ -52,7 +52,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "支撑肩部"
       },
       "woundslot.AE_MantisArm.name": {
         "EnglishUS": "(Blade) AB-60 Mantis Blade",
@@ -65,7 +65,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（刀刃）AB-60 螳螂刀"
       },
       "woundslot.AE_MantisShoulder.name": {
         "EnglishUS": "Support Shoulder",
@@ -78,7 +78,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "支撑肩部"
       },
       "woundslot.AE_DiscArm.name": {
         "EnglishUS": "(Discthrower) RT-30D Sawmill",
@@ -91,7 +91,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（圆锯发射器）RT-30D 锯木厂"
       },
       "woundslot.AE_DiscShoulder.name": {
         "EnglishUS": "Support Shoulder",
@@ -104,7 +104,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "支撑肩部"
       },
       "woundslot.AE_ShotgunArm.name": {
         "EnglishUS": "(Shotgun) Dual-12G Sommation",
@@ -117,7 +117,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（霰弹枪）Dual-12G 通牒"
       },
       "woundslot.AE_ShotgunShoulder.name": {
         "EnglishUS": "Support Shoulder",
@@ -130,7 +130,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "支撑肩部"
       },
       "woundslot.AE_TaserArm.name": {
         "EnglishUS": "(Taser) D-50KV S.T.I.N.G.",
@@ -143,7 +143,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "（电击枪）D-50KV S.T.I.N.G."
       },
       "woundslot.AE_TaserShoulder.name": {
         "EnglishUS": "Support Shoulder",
@@ -156,7 +156,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "支撑肩部"
       }
     }
   }

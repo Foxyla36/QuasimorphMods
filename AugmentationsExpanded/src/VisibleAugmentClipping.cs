@@ -6,13 +6,14 @@ using System.Reflection;
 namespace AugmentationsExpanded.VisibleAugments;
 
 /// <summary>
-/// The clothing rule of the mod's Visible Augments pieces: with clipping off, a piece is hidden
-/// when the armor, leggings or boots that cover its bone are worn, so the 3D augment does not poke
-/// through the clothes; with clipping on, the pieces keep the rules Visible Augments gave them.
-/// Visible Augments keeps these rules (HideIfArmorEquipped, HideIfLeggingsEquipped,
-/// HideIfBootsEquipped) both on its groups, where they also drive the skin masks, and on the single
-/// pieces, so both are changed. The values found the first time are kept, so turning clipping on
-/// again restores Visible Augments' own exceptions as well.
+/// The clothing rule of the Visible Augments pieces, the mod's and Visible Augments' own: a piece
+/// keeps the rules Visible Augments gave it (Original), or is hidden when the armor, leggings or
+/// boots that cover its bone are worn, so the 3D augment does not poke through the clothes
+/// (HiddenByClothing), or is never hidden by clothing (AlwaysShown, used when the pieces hide the
+/// worn armor instead). Visible Augments keeps these rules (HideIfArmorEquipped,
+/// HideIfLeggingsEquipped, HideIfBootsEquipped) both on its groups, where they also drive the skin
+/// masks, and on the single pieces, so both are changed. The values found the first time are kept,
+/// so going back to Original restores Visible Augments' own exceptions as well.
 /// </summary>
 /// <remarks>
 /// AI-generated documentation, written to help external users understand the mod.
@@ -21,6 +22,8 @@ internal sealed class VisibleAugmentClipping
 {
     [Flags]
     internal enum Clothing { None = 0, Armor = 1, Leggings = 2, Boots = 4 }
+
+    internal enum Policy { Original, HiddenByClothing, AlwaysShown }
 
     private readonly Dictionary<object, Clothing> _original = new Dictionary<object, Clothing>();
     private static readonly string[] Fields = { "HideIfArmorEquipped", "HideIfLeggingsEquipped", "HideIfBootsEquipped" };
@@ -74,15 +77,15 @@ internal sealed class VisibleAugmentClipping
     /// <param name="groups">The Visible Augments groups of the mod's augments; each has a
     /// "Prefabs" list of pieces with a "Name".</param>
     /// <param name="pieceBone">Gives the bone id of a piece from its name.</param>
-    /// <param name="allowClipping">True to keep Visible Augments' own rules, false to hide the
-    /// pieces under the clothing as well.</param>
+    /// <param name="policy">Original to keep Visible Augments' own rules, HiddenByClothing to
+    /// hide the pieces under the clothing as well, AlwaysShown to never hide them.</param>
     /// <remarks>
     /// Input: The parameters and the rules found the first time.
     /// Output: Nothing is returned. Sets the Hide fields of the groups and pieces and remembers
     /// their original values.
     /// AI-generated documentation, written to help external users understand the mod.
     /// </remarks>
-    internal void Apply(IEnumerable groups, Func<string, string> pieceBone, bool allowClipping)
+    internal void Apply(IEnumerable groups, Func<string, string> pieceBone, Policy policy)
     {
         var current = new HashSet<object>();
         foreach (object group in groups)
@@ -95,11 +98,11 @@ internal sealed class VisibleAugmentClipping
                 hasHead |= IsHead(bone);
                 Clothing partCoverage = Coverage(bone);
                 coverage |= partCoverage;
-                Set(prefab, partCoverage, allowClipping, current);
+                Set(prefab, partCoverage, policy, current);
             }
 
             if ((coverage & Clothing.Leggings) != 0) coverage &= ~Clothing.Boots;
-            Set(group, hasHead ? Clothing.None : coverage, allowClipping, current);
+            Set(group, hasHead ? Clothing.None : coverage, policy, current);
         }
         var stale = new List<object>();
         foreach (object item in _original.Keys) if (!current.Contains(item)) stale.Add(item);
@@ -107,12 +110,13 @@ internal sealed class VisibleAugmentClipping
     }
 
     /// <summary>
-    /// Writes the rule of one group or piece: its original rule, plus the given clothing when
-    /// clipping is off. The original rule is read and kept the first time the object is seen.
+    /// Writes the rule of one group or piece: its original rule, plus the given clothing with
+    /// HiddenByClothing, or no clothing at all with AlwaysShown. The original rule is read and
+    /// kept the first time the object is seen.
     /// </summary>
     /// <param name="target">A Visible Augments group or piece.</param>
-    /// <param name="coverage">The clothing that should hide it with clipping off.</param>
-    /// <param name="allowClipping">True to write the original rule only.</param>
+    /// <param name="coverage">The clothing that should hide it with HiddenByClothing.</param>
+    /// <param name="policy">Which rule to write.</param>
     /// <param name="current">The objects written by this Apply; target is added to it.</param>
     /// <remarks>
     /// Input: The parameters and the kept original rules.
@@ -120,7 +124,7 @@ internal sealed class VisibleAugmentClipping
     /// original rule.
     /// AI-generated documentation, written to help external users understand the mod.
     /// </remarks>
-    private void Set(object target, Clothing coverage, bool allowClipping, HashSet<object> current)
+    private void Set(object target, Clothing coverage, Policy policy, HashSet<object> current)
     {
         current.Add(target);
         if (!_original.TryGetValue(target, out Clothing original))
@@ -130,7 +134,9 @@ internal sealed class VisibleAugmentClipping
                 if ((bool)Field(target, Fields[i]).GetValue(target)) original |= (Clothing)(1 << i);
             _original.Add(target, original);
         }
-        Write(target, allowClipping ? original : original | coverage);
+        Write(target, policy == Policy.HiddenByClothing ? original | coverage
+                    : policy == Policy.AlwaysShown ? Clothing.None
+                    : original);
     }
 
     /// <summary>
@@ -177,4 +183,43 @@ internal sealed class VisibleAugmentClipping
     /// </remarks>
     private static FieldInfo Field(object target, string name) => target.GetType().GetField(name)
         ?? throw new MissingFieldException(target.GetType().FullName, name);
+}
+
+/// <summary>
+/// The choices of the "VA armor mode" dropdown of the Mod Config Menu, how the Visible Augments
+/// pieces meet the armor, leggings and boots worn: Clip keeps Visible Augments' own rules, so both
+/// are drawn and can clip; Hide armor always shows the pieces and hides the worn part on the same
+/// bone; Hidden by armor hides the pieces under the clothing that covers them; Off removes every
+/// piece of Augmentations Expanded from Visible Augments. The texts are both the saved values and
+/// the dropdown entries.
+/// </summary>
+/// <remarks>
+/// AI-generated documentation, written to help external users understand the mod.
+/// </remarks>
+internal static class VisibleAugmentMode
+{
+    internal const string Clip          = "Clip";
+    internal const string HideArmor     = "Hide armor";
+    internal const string HiddenByArmor = "Hidden by armor";
+    internal const string Off           = "Off";
+
+    internal static readonly string[] All = { Clip, HideArmor, HiddenByArmor, Off };
+
+    /// <summary>
+    /// Checks a mode read from the settings.
+    /// </summary>
+    /// <param name="value">The saved text, e.g. "Hide armor". Case is ignored; null or anything
+    /// else is accepted.</param>
+    /// <returns>The mode as written in All, or Clip, the default, for an unknown value.</returns>
+    /// <remarks>
+    /// Input: The parameter only.
+    /// Output: Only the return value.
+    /// AI-generated documentation, written to help external users understand the mod.
+    /// </remarks>
+    internal static string Valid(string value)
+    {
+        foreach (string mode in All)
+            if (string.Equals(mode, value == null ? null : value.Trim(), StringComparison.OrdinalIgnoreCase)) return mode;
+        return Clip;
+    }
 }

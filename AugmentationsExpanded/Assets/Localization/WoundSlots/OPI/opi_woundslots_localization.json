@@ -13,7 +13,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "增强人类头部"
       },
       "woundslot.OPIShoulder.name": {
         "EnglishUS": "Augmented Human Shoulder",
@@ -26,7 +26,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "增强人类肩部"
       },
       "woundslot.OPIArm.name": {
         "EnglishUS": "Augmented Human Arm",
@@ -39,7 +39,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "增强人类手臂"
       },
       "woundslot.OPIThigh.name": {
         "EnglishUS": "Augmented Human Thigh",
@@ -52,7 +52,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "增强人类大腿"
       },
       "woundslot.OPIFeet.name": {
         "EnglishUS": "Augmented Human Foot",
@@ -65,7 +65,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "增强人类足部"
       },
       "woundslot.OPIChest.name": {
         "EnglishUS": "Augmented Human Chest",
@@ -78,7 +78,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "增强人类胸部"
       },
       "woundslot.OPIBody.name": {
         "EnglishUS": "Augmented Human Body",
@@ -91,7 +91,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "增强人类身体"
       },
       "woundslot.OPIStomach.name": {
         "EnglishUS": "Augmented Human Stomach",
@@ -104,7 +104,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "增强人类胃部"
       },
       "woundslot.OPIKnee.name": {
         "EnglishUS": "Augmented Human Knee",
@@ -117,7 +117,7 @@
         "BrazilianPortugal": "",
         "Korean": "",
         "Japanese": "",
-        "ChineseSimp": ""
+        "ChineseSimp": "增强人类膝盖"
       }
     }
   }

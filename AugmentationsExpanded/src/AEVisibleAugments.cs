@@ -27,6 +27,7 @@ public static class ModMain
     private static readonly List<GroupSpec> Specs = new List<GroupSpec>();
     private static readonly Dictionary<string, List<Candidate>> Dispatch = new Dictionary<string, List<Candidate>>(); // Dispatcher piece name -> candidate (augment ids, real piece name, texture) in priority order
     private static readonly Dictionary<string, List<string>> SuppressByPiece = new Dictionary<string, List<string>>(); // Piece name -> bones whose worn equipment is hidden while that piece is shown
+    private static readonly Dictionary<string, List<string>> ArmorByPiece = new Dictionary<string, List<string>>(); // "Hide armor" mode: piece name (VA's own pieces too) -> bones whose worn armor part it hides
     private static readonly HashSet<Creature3dView> SuppressedViews = new HashSet<Creature3dView>();
     private static readonly Dictionary<string, List<string>> HideByPiece = new Dictionary<string, List<string>>(); // Piece name -> body-mesh regions (e.g. "rightarm") whose triangles are dropped while that piece is shown
     private static readonly FieldInfo BodyMeshFilterField = typeof(Creature3dView).GetField("_meshFilter", Any);
@@ -46,7 +47,8 @@ public static class ModMain
     private static IDictionary _vaAugIdToGroup, _vaPrefabs, _vaGeneratedSkins;
     private static readonly Dictionary<int, long> SkinFlags = new Dictionary<int, long>();
     private static readonly VisibleAugmentClipping Clipping = new VisibleAugmentClipping();
-    private static bool? _appliedClipping;
+    private static string _appliedMode; // VA armor mode last applied; null = apply again
+    private static string Mode => VisibleAugmentMode.Valid(AugmentationsExpandedMod._vaMode);
     private static CreatureUIIcon _previewIcon;
     private static Mercenary _previewMercenary;
 
@@ -114,9 +116,11 @@ public static class ModMain
     private static void Activate(string when)
     {
         if (!VisibleAugmentsEnabled || _failed || !_patchedVa || _vaGroups == null || _vaGroups.Count == 0) return;
+        string mode = Mode;
+        if (mode == VisibleAugmentMode.Off) { Shutdown(); return; }   // switched off in MCM: register nothing, load nothing
         LoadOwnContent();
         if (Injected.Count == 0 || !Injected.All(g => _vaGroups.Contains(g))) Inject(when);
-        RefreshClippingPolicy();
+        ApplyMode(mode);
     }
 
     private static void DisableAfterFailure(Exception ex)
@@ -393,22 +397,56 @@ public static class ModMain
         _previewMercenary = __1;
     }
 
-    internal static void RefreshClippingPolicy()
+    // Called when the AE settings are loaded or saved: applies the VA armor mode, also turning the bridge off or back on
+    internal static void RefreshArmorMode()
     {
-        if (!VisibleAugmentsEnabled || !_loaded || _vaGroups == null || Injected.Count == 0) return;
-        bool allowClipping = AugmentationsExpandedMod._vaClipping;
-        if (_appliedClipping == allowClipping) return;
+        try { Activate("armor mode changed"); }
+        catch (Exception ex) { DisableAfterFailure(ex); }
+    }
+
+    private static void ApplyMode(string mode)
+    {
+        if (!_loaded || _vaGroups == null || Injected.Count == 0 || _appliedMode == mode) return;
         try
         {
-            Clipping.Apply(_vaGroups, PieceBone, allowClipping);
-            _appliedClipping = allowClipping;
-            // VA compares these hashes each update. Clearing them also refreshes pieces when
-            // only a per-prefab clothing rule changes and the group's skin-mask flag is unchanged.
-            (_vaPlugin.GetField("_equipmentHash", Any)?.GetValue(null) as IDictionary)?.Clear();
-            if (_previewIcon != null && _previewIcon.isActiveAndEnabled && _previewMercenary != null)
-                _previewIcon.Initialize(_previewMercenary);
+            Clipping.Apply(_vaGroups, PieceBone, mode == VisibleAugmentMode.HiddenByArmor ? VisibleAugmentClipping.Policy.HiddenByClothing
+                                               : mode == VisibleAugmentMode.HideArmor ? VisibleAugmentClipping.Policy.AlwaysShown
+                                               : VisibleAugmentClipping.Policy.Original);
+            _appliedMode = mode;
+            RefreshViews();
+            Log("VA armor mode: " + mode + ".");
         }
-        catch (Exception ex) { Err("Could not refresh VA clothing visibility: " + ex); }
+        catch (Exception ex) { Err("Could not apply the VA armor mode: " + ex); }
+    }
+
+    // "Off": AE takes no part in Visible Augments: its groups and pieces go away and VA's own rules come back
+    private static void Shutdown()
+    {
+        if (_appliedMode == VisibleAugmentMode.Off) return;
+        try
+        {
+            Clipping.Restore();
+            RemoveInjectedGroups();
+            if (_vaPrefabs != null)
+                foreach (var kv in Templates) if (ReferenceEquals(_vaPrefabs[kv.Key], kv.Value)) _vaPrefabs.Remove(kv.Key);
+            Dispatch.Clear();
+            SuppressByPiece.Clear();
+            ArmorByPiece.Clear();
+            HideByPiece.Clear();
+            _appliedMode = VisibleAugmentMode.Off;
+            RefreshViews();   // VA respawns every creature's pieces; the gear AE hid comes back in AfterDestroyAugments
+            Log("VA armor mode Off: no AE pieces are registered with Visible Augments.");
+        }
+        catch (Exception ex) { Err("Could not turn the AE visuals off: " + ex); }
+    }
+
+    private static void RefreshViews()
+    {
+        // VA compares these hashes each update. Clearing them also refreshes pieces when
+        // only a per-prefab clothing rule changes and the group's skin-mask flag is unchanged.
+        (_vaPlugin?.GetField("_equipmentHash", Any)?.GetValue(null) as IDictionary)?.Clear();
+        if (_previewIcon != null && _previewIcon.isActiveAndEnabled && _previewMercenary != null)
+            _previewIcon.Initialize(_previewMercenary);
     }
 
     public static void AfterEquipmentHash(Creature creature, ref int __result)
@@ -462,6 +500,8 @@ public static class ModMain
             }
 
             if (SuppressByPiece.TryGetValue(prefab.name, out var bones)) SuppressEquipment(view ?? __result.GetComponentInParent<Creature3dView>(), bones);
+            if (_appliedMode == VisibleAugmentMode.HideArmor && ArmorByPiece.TryGetValue(prefab.name, out var armor))
+                SuppressEquipment(view ?? __result.GetComponentInParent<Creature3dView>(), armor);
             if (HideByPiece.TryGetValue(prefab.name, out var regions)) HideBody(view ?? __result.GetComponentInParent<Creature3dView>(), regions);
 
             if (Skins.TryGetValue(piece, out SkinData skin))
@@ -492,15 +532,21 @@ public static class ModMain
     {
         try
         {
-            if (__instance == null || SuppressByPiece.Count == 0 || __instance == _restoring) return;
+            bool hideArmor = _appliedMode == VisibleAugmentMode.HideArmor && ArmorByPiece.Count > 0;
+            if (__instance == null || (SuppressByPiece.Count == 0 && !hideArmor) || __instance == _restoring) return;
             foreach (Transform child in __instance.GetComponentsInChildren<Transform>(true))
             {
                 string n = child.name;
                 string piece = n.StartsWith("AugUI_") ? n.Substring(6) : n.StartsWith("Aug_") ? n.Substring(4) : null;
-                if (piece == null || !SuppressByPiece.TryGetValue(piece, out var bones)) continue;
+                if (piece == null) continue;
+                SuppressByPiece.TryGetValue(piece, out var bones);
+                List<string> armor = null;
+                if (hideArmor) ArmorByPiece.TryGetValue(piece, out armor);
+                if (bones == null && armor == null) continue;
                 var mf = child.GetComponent<MeshFilter>();
                 if (mf != null && (mf.sharedMesh == null || mf.sharedMesh.vertexCount == 0)) continue;   // empty dispatcher
-                SuppressEquipment(__instance, bones);
+                if (bones != null) SuppressEquipment(__instance, bones);
+                if (armor != null) SuppressEquipment(__instance, armor);
             }
         }
         catch (Exception ex) { Err("Equipment suppression failed: " + ex.Message); }
@@ -537,9 +583,9 @@ public static class ModMain
         {
             GameObject item = items[i];
             if (item == null || item.name.StartsWith("Aug")) continue;
-            // Body equipment stays visible in both modes: it either covers the augment or
-            // overlaps it. Only the established replacement-head/headgear behavior suppresses gear.
-            if (!item.GetComponentsInChildren<ItemBone>(true).Any(b => VisibleAugmentClipping.IsHead(b.TargetBoneId) && bones.Contains(b.TargetBoneId))) continue;
+            // Every worn part is its own object on one bone (armor "LArm", leggings "LThigh", boots "LFeet", helmet "Head").
+            // Callers pass the head bones always and the body bones only in "Hide armor"; weapons hang from "Weapon" and never match.
+            if (!item.GetComponentsInChildren<ItemBone>(true).Any(b => bones.Contains(b.TargetBoneId))) continue;
             foreach (Renderer r in item.GetComponentsInChildren<Renderer>(true))
                 if (r.sharedMaterial != null) { materials?.Remove(r.sharedMaterial); UnityEngine.Object.Destroy(r.sharedMaterial); }
             foreach (MeshRenderer r in item.GetComponentsInChildren<MeshRenderer>(true)) renderers?.Remove(r);
@@ -563,7 +609,7 @@ public static class ModMain
         if (!ResolveVa()) { Log("Visible Augments not loaded yet (" + when + "); will retry."); return; }
 
         RemoveInjectedGroups();
-        _appliedClipping = null;
+        _appliedMode = null;
         if (_vaGroups.Count == 0) { Log("Visible Augments has no groups yet (" + when + "); will retry."); return; }
 
         // Allocate actual free bits, including bit 63 (negative when stored in VA's signed long)
@@ -590,7 +636,23 @@ public static class ModMain
             foreach (string id in (List<string>)_groupType.GetField("AugmentIds").GetValue(group)) _vaAugIdToGroup[id] = group;
             added++;
         }
+        BuildArmorMap();
         Log($"Registered {added} groups ({Specs.Count} augments) with Visible Augments ({when}).");
+    }
+
+    // "Hide armor": every piece of every group, VA's own included, hides the worn part on its own bone.
+    // Head pieces are left to the helmet rules (VA's SuppressHelmet, AE's suppressEquipmentBones).
+    private static void BuildArmorMap()
+    {
+        ArmorByPiece.Clear();
+        foreach (object g in _vaGroups)
+            foreach (object p in (IEnumerable)_groupType.GetField("Prefabs").GetValue(g))
+            {
+                string name = _prefabType.GetField("Name").GetValue(p) as string;
+                string bone = name == null ? null : PieceBone(name);
+                if (VisibleAugmentClipping.Coverage(bone) == VisibleAugmentClipping.Clothing.None) continue;
+                ArmorByPiece[name] = bone == "Hip" ? new List<string> { "Hip", "Hip_2" } : new List<string> { bone };   // the game also has worn parts on a second hip bone
+            }
     }
 
     internal static List<long> AllocateFlags(ulong usedFlags, int count)
@@ -864,3 +926,5 @@ public sealed class MeshHider : MonoBehaviour
         return v;
     }
 }
+// Ligma balls
+// ^^^ Look at this guy, soooo unprofessional! 
