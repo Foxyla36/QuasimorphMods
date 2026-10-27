@@ -24,10 +24,12 @@ namespace AugmentationsExpanded
             internal readonly string ConfigKey;
             internal readonly string LabelKey;
             internal readonly string TipKey;
+            internal readonly string McmNameKey;
             internal bool Enabled = true;
 
             /// <summary>
-            /// Describes one setless augmentation.
+            /// Describes one setless augmentation. It shows in the Mod Config Menu under its
+            /// in-game name.
             /// </summary>
             /// <param name="name">Short name used in the config keys, e.g. "cargotrack".</param>
             /// <param name="augId">Augmentation id, e.g. "ae_cargo_track".</param>
@@ -45,11 +47,15 @@ namespace AugmentationsExpanded
                           params KeyValuePair<string, int>[] rewards)
                 : this(name, augId, slotIds, weaponId, name, "ae.cfg." + name, rewards)
             {
+                McmNameKey = "item." + augId + ".name";
             }
 
             /// <summary>
             /// Describes one setless augmentation whose config key and texts do not follow its
-            /// name, e.g. the weapon arms that kept the keys they had as gun arms.
+            /// name, e.g. the weapon arms that kept the keys they had as gun arms. Those also keep
+            /// the long name they had as gun arms in the Mod Config Menu, "(Arm Pile Bunker)
+            /// PB-033M ASHMEAD" instead of the in-game "(Full Arm) PB-033M ASHMEAD", which tells
+            /// them apart in a list of switches.
             /// </summary>
             /// <param name="name">Short name used in the icons panel, e.g. "pile".</param>
             /// <param name="augId">Augmentation id, e.g. "ae_pile_arm".</param>
@@ -75,6 +81,7 @@ namespace AugmentationsExpanded
                 ConfigKey = keyBase + "_enabled";
                 LabelKey  = locBase + ".toggle.label";
                 TipKey    = locBase + ".toggle.tip";
+                McmNameKey = "ae.cfg.itemname." + augId;
             }
         }
 

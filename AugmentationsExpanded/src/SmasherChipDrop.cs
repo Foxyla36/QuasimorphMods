@@ -268,8 +268,10 @@ namespace AugmentationsExpanded
         /// <param name="mine">The item's row list, from RowsOf.</param>
         /// <remarks>
         /// Input: The parameter and the game's faction reward tables.
-        /// Output: Nothing is returned. Removes the rows from every table and empties mine, also on
-        /// error.
+        /// Output: Nothing is returned. Removes the rows from every table and empties mine. When
+        /// the tables cannot be read the rows are kept in mine instead of being forgotten, so the
+        /// next call can still take them out; forgetting them would leave them in the reward
+        /// tables for good and add a copy at every save.
         /// AI-generated documentation, written to help external users understand the mod.
         /// </remarks>
         private static void RemovePrevious(List<ContentDropRecord> mine)
@@ -289,7 +291,12 @@ namespace AugmentationsExpanded
 
                 var map = f.GetValue(Data.FactionDrop)
                           as Dictionary<string, Dictionary<int, List<ContentDropRecord>>>;
-                if (map == null) return;
+                if (map == null)
+                {
+                    Debug.LogWarning("[AugmentationsExpanded] the reward tables could not be read: "
+                                   + "the previous rows stay where they are.");
+                    return;
+                }
 
                 int removed = 0;
                 foreach (var byTech in map.Values)
@@ -297,15 +304,12 @@ namespace AugmentationsExpanded
                         foreach (var rec in mine)
                             while (list.Remove(rec)) removed++;
 
+                mine.Clear();
                 Debug.Log("[AugmentationsExpanded] removed " + removed + " reward rows from the previous pass.");
             }
             catch (System.Exception e)
             {
                 Debug.LogError("[AugmentationsExpanded] removing drop rows: " + e);
-            }
-            finally
-            {
-                mine.Clear();
             }
         }
     }

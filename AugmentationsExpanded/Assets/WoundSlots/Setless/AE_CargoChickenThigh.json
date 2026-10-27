@@ -25,6 +25,7 @@
     "ImplicitPenaltyEffects": {
       "max_health": -5,
       "resist_shock": -8,
+      "resist_cold": -7,
       "wound_chance_mult": 0.05,
       "food_calories": 0.05
     },

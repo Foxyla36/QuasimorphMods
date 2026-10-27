@@ -17,12 +17,12 @@
       "resist_pierce": 6,
       "resist_lacer": 4,
       "dodge_reduce": 0.05,
-      "items_weight": -0.1,
-      "melee_stun_chance": 0.15
+      "items_weight": -0.1
     },
     "ImplicitPenaltyEffects": {
       "max_health": -5,
       "resist_shock": -9,
+      "resist_cold": -7,
       "wound_chance_mult": 0.05,
       "no_stealth": 1
     },

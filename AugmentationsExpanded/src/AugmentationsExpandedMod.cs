@@ -426,20 +426,23 @@ namespace AugmentationsExpanded
         }
 
         /// <summary>
-        /// Called when the ship view starts. Applies the chip conversion recipes to the campaign in
-        /// progress, so a save started before the mod was installed gets them too, following the
-        /// set and chip crafting switches.
+        /// Called every time the ship view starts: when a save is loaded and when the squad comes
+        /// back from a mission. Applies the chip conversion recipes to the campaign in progress, so
+        /// a save started before the mod was installed gets them too, following the set and chip
+        /// crafting switches, and resets what the weapon limb check remembered (see
+        /// SmasherExtraSlot.Reset).
         /// </summary>
         /// <param name="context">The context given by the game. Not used.</param>
         /// <remarks>
         /// Input: Reads the settings loaded from config.json or saved in the Mod Config Menu.
         /// Output: Nothing is returned. Adds or removes the six conversion recipes in the starting
-        /// recipes and in the campaign in progress.
+        /// recipes and in the campaign in progress, and resets the weapon limb check.
         /// AI-generated documentation, written to help external users understand the mod.
         /// </remarks>
         [Hook(ModHookType.SpaceStarted)]
         public static void SpaceStarted(IModContext context)
         {
+            SmasherExtraSlot.Reset();
             SmasherCrafting.SetEnabled(SmasherCrafting.SmasherChipOutput, _enabled && _craftChip);
             SmasherCrafting.SetEnabled(SmasherCrafting.NachtChipOutput,   _nacht   && _nCraftChip);
             SmasherCrafting.SetEnabled(SmasherCrafting.Scout22ChipOutput, _scout   && _scCraftChip);

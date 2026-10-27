@@ -78,12 +78,14 @@ namespace AugmentationsExpanded
         /// Localization key of the name an augmentation shows in the Mod Config Menu. The gun
         /// arms keep there the long name with the weapon type, e.g. "(Arm Grenade Launcher)
         /// RGL-40 Reprisal", easier to recognise than the in-game "(Full Arm) RGL-40 Reprisal".
+        /// The setless weapon arms that used to be gun arms (pile bunker, gatling, energy cannon)
+        /// keep the same long name, which is why the setless list is searched as well.
         /// </summary>
         /// <param name="augId">Augmentation id, e.g. "ae_gl_arm" or "smasher_hand".</param>
-        /// <returns>"ae.cfg.itemname.{id}" for a gun arm, otherwise the in-game name key
-        /// "item.{id}.name".</returns>
+        /// <returns>"ae.cfg.itemname.{id}" for a gun arm or a setless weapon arm that has such a
+        /// name, otherwise the in-game name key "item.{id}.name".</returns>
         /// <remarks>
-        /// Input: The parameter and the gun arm list.
+        /// Input: The parameter, the gun arm list and the setless list.
         /// Output: Only the return value.
         /// AI-generated documentation, written to help external users understand the mod.
         /// </remarks>
@@ -91,6 +93,8 @@ namespace AugmentationsExpanded
         {
             foreach (GunArm arm in All)
                 if (arm.AugId == augId) return arm.McmNameKey;
+            foreach (SmasherSetless.Item it in SmasherSetless.All)
+                if (it.AugId == augId) return it.McmNameKey;
             return "item." + augId + ".name";
         }
 

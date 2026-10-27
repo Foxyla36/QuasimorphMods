@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using MGSC;
 using UnityEngine;
 
@@ -14,11 +15,49 @@ namespace AugmentationsExpanded
 
         private const string MiniArmAugId = "ae_dummy_special_gun_arm";
 
-        private static bool _complained;
+        private const int MaxComplaints = 10;
+
+        private static readonly HashSet<string> _complaints = new HashSet<string>();
+
+        private static readonly Dictionary<CreatureData, string> _blockRebuilt =
+            new Dictionary<CreatureData, string>(ByReference.Instance);
 
         private static ItemStorage _cargo;
         private static ItemsOnFloor _floor;
         private static MapGrid _grid;
+
+        /// <summary>
+        /// Compares creatures by identity. Their UniqueId cannot tell clones apart: the game only
+        /// numbers the creatures it spawns in a mission and gives 0 to the player's creature, so
+        /// every clone on the ship has the same id.
+        /// </summary>
+        /// <remarks>
+        /// AI-generated documentation, written to help external users understand the mod.
+        /// </remarks>
+        private sealed class ByReference : IEqualityComparer<CreatureData>
+        {
+            internal static readonly ByReference Instance = new ByReference();
+            public bool Equals(CreatureData x, CreatureData y) { return ReferenceEquals(x, y); }
+            public int GetHashCode(CreatureData obj) { return RuntimeHelpers.GetHashCode(obj); }
+        }
+
+        /// <summary>
+        /// Forgets what the per frame checks remembered: which clones already had their gun arm
+        /// effects rebuilt, and which errors were already logged. Called every time the ship view
+        /// starts (a save is loaded or the squad comes back from a mission), so each visit to the
+        /// ship gives a clone whose gun arm block did not take one more try, errors can be
+        /// reported again, and no creature of a closed campaign or mission stays referenced.
+        /// </summary>
+        /// <remarks>
+        /// Input: No parameters.
+        /// Output: Nothing is returned. Empties the two lists kept between frames.
+        /// AI-generated documentation, written to help external users understand the mod.
+        /// </remarks>
+        internal static void Reset()
+        {
+            _blockRebuilt.Clear();
+            _complaints.Clear();
+        }
 
         /// <summary>
         /// Runs every frame on the ship and checks every mercenary. The weapon limbs are checked
@@ -32,8 +71,8 @@ namespace AugmentationsExpanded
         /// mercenaries; null does nothing.</param>
         /// <remarks>
         /// Input: The context, the ship cargo and the gun arm settings.
-        /// Output: Nothing is returned. Updates the mercenaries through Reconcile; the first error
-        /// is logged.
+        /// Output: Nothing is returned. Updates the mercenaries through Reconcile; errors are
+        /// logged. Each clone is checked on its own, so one that fails does not stop the others.
         /// AI-generated documentation, written to help external users understand the mod.
         /// </remarks>
         [Hook(ModHookType.SpaceUpdateBeforeGameLoop)]
@@ -50,7 +89,9 @@ namespace AugmentationsExpanded
                 for (int i = 0; i < mercs.Values.Count; i++)
                 {
                     Mercenary m = mercs.Values[i];
-                    if (m != null) Reconcile(m.CreatureData);
+                    if (m == null) continue;
+                    try { Reconcile(m.CreatureData); }
+                    catch (Exception e) { Complain(e); }
                 }
             }
             catch (Exception e) { Complain(e); }
@@ -66,8 +107,8 @@ namespace AugmentationsExpanded
         /// null does nothing.</param>
         /// <remarks>
         /// Input: The context, the map and the items on the floor, and the gun arm settings.
-        /// Output: Nothing is returned. Updates the player's creature through Reconcile; the first
-        /// error is logged.
+        /// Output: Nothing is returned. Updates the player's creature through Reconcile; errors
+        /// are logged, once per distinct error.
         /// AI-generated documentation, written to help external users understand the mod.
         /// </remarks>
         [Hook(ModHookType.DungeonUpdateBeforeGameLoop)]
@@ -147,11 +188,15 @@ namespace AugmentationsExpanded
         /// moved to the backpack or vest, or else to the ship cargo, because the game would drop
         /// it on the floor and the ship has none. An amputated gun arm is skipped: its slot is
         /// already blocked by the amputation, in every mode.
+        /// The rebuild is tried once per clone and per mode: if the block still does not match
+        /// afterwards, nothing is retried until the mode changes or the block matches again, so a
+        /// block the game refuses to apply cannot turn this per frame check into a rebuild (and a
+        /// log line) on every frame.
         /// </summary>
         /// <param name="cd">The creature's data, not null.</param>
         /// <param name="inv">The creature's inventory, not null.</param>
         /// <remarks>
-        /// Input: The parameters and the gun arm mode.
+        /// Input: The parameters, the gun arm mode and the mode of the last rebuild of this clone.
         /// Output: Nothing is returned. May move the primary weapon, rebuild the augmentation
         /// effects and the bare hands slot, and write a line in the log.
         /// AI-generated documentation, written to help external users understand the mod.
@@ -159,17 +204,24 @@ namespace AugmentationsExpanded
         private static void ReconcileGunArmBlock(CreatureData cd, Inventory inv)
         {
             bool want = SmasherGunArms.BlocksPrimary;
+            bool mismatch = false;
             foreach (SmasherGunArms.GunArm arm in SmasherGunArms.All)
-            {
-                if (!HasLimb(cd, arm.ArmSlotId, arm.AugId)) continue;
-                if (HasArmBlock(cd, arm.ArmSlotId) == want) continue;
-                if (want && !inv.PrimarySlot.Empty && !Stow(cd, inv, inv.PrimarySlot)) return;
+                if (HasLimb(cd, arm.ArmSlotId, arm.AugId) && HasArmBlock(cd, arm.ArmSlotId) != want)
+                {
+                    mismatch = true;
+                    break;
+                }
 
-                AugmentationSystem.ConfigureImplicitEffects(cd, preserveCurrentHp: true);
-                CreatureSystem.SetBareHandSlot(cd);
-                Debug.Log("[AugmentationsExpanded] gun arm effects rebuilt for mode " + SmasherGunArms.Mode);
-                return;
-            }
+            if (!mismatch) { _blockRebuilt.Remove(cd); return; }
+
+            string done;
+            if (_blockRebuilt.TryGetValue(cd, out done) && done == SmasherGunArms.Mode) return;
+            if (want && !inv.PrimarySlot.Empty && !Stow(cd, inv, inv.PrimarySlot)) return;
+
+            _blockRebuilt[cd] = SmasherGunArms.Mode;
+            AugmentationSystem.ConfigureImplicitEffects(cd, preserveCurrentHp: true);
+            CreatureSystem.SetBareHandSlot(cd);
+            Debug.Log("[AugmentationsExpanded] gun arm effects rebuilt for mode " + SmasherGunArms.Mode);
         }
 
         /// <summary>
@@ -210,7 +262,10 @@ namespace AugmentationsExpanded
         /// the item left in place, only when no destination is available.</returns>
         /// <remarks>
         /// Input: The parameters and the cargo or floor set by the current tick.
-        /// Output: The return value. Moves the item.
+        /// Output: The return value. Moves the item. The ship cargo always takes it, even when
+        /// full: AddItemAndReshuffleOptional returns nothing, but when no cell is free it falls
+        /// back to AddItemAndReshuffle, which adds the item unconditionally and enlarges the
+        /// cargo.
         /// AI-generated documentation, written to help external users understand the mod.
         /// </remarks>
         private static bool Stow(CreatureData cd, Inventory inv, ItemStorage slot)
@@ -356,20 +411,23 @@ namespace AugmentationsExpanded
         }
 
         /// <summary>
-        /// Logs the first error of the per frame checks and ignores the following ones, so the log
-        /// is not flooded every frame.
+        /// Logs an error of the per frame checks once per distinct error (same type and message),
+        /// so the log is not flooded every frame while an error of another kind is still
+        /// reported. At most MaxComplaints different errors are kept, so an error whose text
+        /// changes every frame cannot flood the log either.
         /// </summary>
-        /// <param name="e">The caught exception.</param>
+        /// <param name="e">The caught exception. Null is accepted.</param>
         /// <remarks>
-        /// Input: The parameter and whether an error was already logged.
-        /// Output: Nothing is returned. The first call writes the error in the log; later calls do
-        /// nothing.
+        /// Input: The parameter and the errors already logged.
+        /// Output: Nothing is returned. Writes the error in the log the first time that kind of
+        /// error happens; a repeat of the same one does nothing.
         /// AI-generated documentation, written to help external users understand the mod.
         /// </remarks>
         private static void Complain(Exception e)
         {
-            if (_complained) return;
-            _complained = true;
+            if (_complaints.Count >= MaxComplaints) return;
+            string key = e == null ? "?" : e.GetType().Name + ": " + e.Message;
+            if (!_complaints.Add(key)) return;
             Debug.LogError("[AugmentationsExpanded] extra slot: " + e);
         }
     }

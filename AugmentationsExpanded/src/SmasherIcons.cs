@@ -124,7 +124,7 @@ namespace AugmentationsExpanded
                                  new[] { SmasherUhmg.ArmSlotId, SmasherUhmg.ShoulderSlotId, SmasherUhmg.ChestSlotId },
                                  new[] { SmasherUhmg.WeaponId }));
             foreach (SmasherSetless.Item it in SmasherSetless.All)
-                list.Add(new Section(it.Name, "item." + it.AugId + ".name", "item." + it.AugId + ".name", null,
+                list.Add(new Section(it.Name, it.McmNameKey, it.McmNameKey, null,
                                      new[] { it.AugId }, it.SlotIds,
                                      it.WeaponId == null ? new string[0] : new[] { it.WeaponId }));
             _sections = list;

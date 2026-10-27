@@ -864,5 +864,3 @@ public sealed class MeshHider : MonoBehaviour
         return v;
     }
 }
-// Ligma balls
-// ^^^ Look at this guy, soooo unprofessional! 
