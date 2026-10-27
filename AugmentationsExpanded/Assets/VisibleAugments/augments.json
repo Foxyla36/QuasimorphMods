@@ -214,6 +214,219 @@
   },
   {
     "augmentIds": [
+      "medic_head"
+    ],
+    "texture": "AEVA_Medic",
+    "prefabs": [
+      "AEVA_Medic_head_Head",
+      "AEVA_Medic_head_Neck"
+    ],
+    "uvRegionsMale": [],
+    "uvRegionsFemale": [],
+    "masksMale": [
+      "aeva_mask_male_head.png"
+    ],
+    "masksFemale": [
+      "aeva_mask_female_head.png"
+    ],
+    "suppressHair": true,
+    "suppressHelmet": false,
+    "hideIfLeggingsEquipped": false,
+    "hideIfBootsEquipped": false,
+    "hideIfArmorEquipped": false,
+    "hideIfHelmetEquipped": false,
+    "suppressEquipmentBones": [
+      "Head",
+      "Neck"
+    ],
+    "slot": "head"
+  },
+  {
+    "augmentIds": [
+      "medic_chest"
+    ],
+    "texture": "AEVA_Medic",
+    "prefabs": [
+      "AEVA_Medic_chest_Torso"
+    ],
+    "uvRegionsMale": [],
+    "uvRegionsFemale": [],
+    "masksMale": [
+      "aeva_mask_male_chest.png"
+    ],
+    "masksFemale": [
+      "aeva_mask_female_chest.png"
+    ],
+    "suppressHair": false,
+    "suppressHelmet": false,
+    "hideIfLeggingsEquipped": false,
+    "hideIfBootsEquipped": false,
+    "hideIfArmorEquipped": false,
+    "hideIfHelmetEquipped": false,
+    "suppressEquipmentBones": [
+      "Body"
+    ],
+    "slot": "chest"
+  },
+  {
+    "augmentIds": [
+      "medic_guts"
+    ],
+    "texture": "AEVA_Medic",
+    "prefabs": [
+      "AEVA_Medic_guts_Torso",
+      "AEVA_Medic_guts_Pelvis"
+    ],
+    "uvRegionsMale": [],
+    "uvRegionsFemale": [],
+    "masksMale": [
+      "aeva_mask_male_guts.png"
+    ],
+    "masksFemale": [
+      "aeva_mask_female_guts.png"
+    ],
+    "suppressHair": false,
+    "suppressHelmet": false,
+    "hideIfLeggingsEquipped": false,
+    "hideIfBootsEquipped": false,
+    "hideIfArmorEquipped": false,
+    "hideIfHelmetEquipped": false,
+    "suppressEquipmentBones": [
+      "Body",
+      "Hip"
+    ],
+    "slot": "guts"
+  },
+  {
+    "augmentIds": [
+      "medic_hand"
+    ],
+    "texture": "AEVA_Medic",
+    "prefabs": [
+      "AEVA_Medic_upperarm_LeftUpperArm",
+      "AEVA_Medic_upperarm_RightUpperArm",
+      "AEVA_Medic_forearm_LeftForeArm",
+      "AEVA_Medic_forearm_RightForeArm"
+    ],
+    "uvRegionsMale": [],
+    "uvRegionsFemale": [],
+    "masksMale": [
+      "aeva_mask_male_arm.png"
+    ],
+    "masksFemale": [
+      "aeva_mask_female_arm.png"
+    ],
+    "suppressHair": false,
+    "suppressHelmet": false,
+    "hideIfLeggingsEquipped": false,
+    "hideIfBootsEquipped": false,
+    "hideIfArmorEquipped": false,
+    "hideIfHelmetEquipped": false,
+    "suppressEquipmentBones": [
+      "LShoulder",
+      "RShoulder",
+      "LArm",
+      "RArm"
+    ],
+    "slot": "arm"
+  },
+  {
+    "augmentIds": [
+      "medic_wrist"
+    ],
+    "texture": "AEVA_Medic",
+    "prefabs": [
+      "AEVA_Medic_forearm_LeftForeArm",
+      "AEVA_Medic_forearm_RightForeArm"
+    ],
+    "uvRegionsMale": [],
+    "uvRegionsFemale": [],
+    "masksMale": [
+      "aeva_mask_male_forearm.png"
+    ],
+    "masksFemale": [
+      "aeva_mask_female_forearm.png"
+    ],
+    "suppressHair": false,
+    "suppressHelmet": false,
+    "hideIfLeggingsEquipped": false,
+    "hideIfBootsEquipped": false,
+    "hideIfArmorEquipped": false,
+    "hideIfHelmetEquipped": false,
+    "suppressEquipmentBones": [
+      "LArm",
+      "RArm"
+    ],
+    "slot": "wrist"
+  },
+  {
+    "augmentIds": [
+      "medic_leg"
+    ],
+    "texture": "AEVA_Medic",
+    "prefabs": [
+      "AEVA_Medic_thigh_LeftThigh",
+      "AEVA_Medic_thigh_RightThigh",
+      "AEVA_Medic_shin_LeftShin",
+      "AEVA_Medic_shin_RightShin",
+      "AEVA_Medic_foot_LeftFoot",
+      "AEVA_Medic_foot_RightFoot"
+    ],
+    "uvRegionsMale": [],
+    "uvRegionsFemale": [],
+    "masksMale": [
+      "aeva_mask_male_leg.png"
+    ],
+    "masksFemale": [
+      "aeva_mask_female_leg.png"
+    ],
+    "suppressHair": false,
+    "suppressHelmet": false,
+    "hideIfLeggingsEquipped": false,
+    "hideIfBootsEquipped": false,
+    "hideIfArmorEquipped": false,
+    "hideIfHelmetEquipped": false,
+    "suppressEquipmentBones": [
+      "LThigh",
+      "RThigh",
+      "LLeg",
+      "RLeg",
+      "LFeet",
+      "RFeet"
+    ],
+    "slot": "leg"
+  },
+  {
+    "augmentIds": [
+      "medic_feet"
+    ],
+    "texture": "AEVA_Medic",
+    "prefabs": [
+      "AEVA_Medic_foot_LeftFoot",
+      "AEVA_Medic_foot_RightFoot"
+    ],
+    "uvRegionsMale": [],
+    "uvRegionsFemale": [],
+    "masksMale": [
+      "aeva_mask_male_feet.png"
+    ],
+    "masksFemale": [
+      "aeva_mask_female_feet.png"
+    ],
+    "suppressHair": false,
+    "suppressHelmet": false,
+    "hideIfLeggingsEquipped": false,
+    "hideIfBootsEquipped": false,
+    "hideIfArmorEquipped": false,
+    "hideIfHelmetEquipped": false,
+    "suppressEquipmentBones": [
+      "LFeet",
+      "RFeet"
+    ],
+    "slot": "feet"
+  },
+  {
+    "augmentIds": [
       "nemesis_head"
     ],
     "texture": "AEVA_Nemesis",
@@ -1092,6 +1305,277 @@
     "hideMeshRegions": [
       "rightarm"
     ]
+  },
+  {
+    "augmentIds": [
+      "ae_radar_head"
+    ],
+    "texture": "AEVA_RadarHead",
+    "prefabs": [
+      "AEVA_RadarHead_head_Head"
+    ],
+    "uvRegionsMale": [],
+    "uvRegionsFemale": [],
+    "masksMale": [
+      "aeva_mask_male_head.png"
+    ],
+    "masksFemale": [
+      "aeva_mask_female_head.png"
+    ],
+    "suppressHair": true,
+    "suppressHelmet": false,
+    "hideIfLeggingsEquipped": false,
+    "hideIfBootsEquipped": false,
+    "hideIfArmorEquipped": false,
+    "hideIfHelmetEquipped": false,
+    "suppressEquipmentBones": [
+      "Head",
+      "Neck"
+    ],
+    "slot": "head"
+  },
+  {
+    "augmentIds": [
+      "ae_sniper_head"
+    ],
+    "texture": "AEVA_SniperHead",
+    "prefabs": [
+      "AEVA_SniperHead_head_Head"
+    ],
+    "uvRegionsMale": [],
+    "uvRegionsFemale": [],
+    "masksMale": [
+      "aeva_mask_male_head.png"
+    ],
+    "masksFemale": [
+      "aeva_mask_female_head.png"
+    ],
+    "suppressHair": true,
+    "suppressHelmet": false,
+    "hideIfLeggingsEquipped": false,
+    "hideIfBootsEquipped": false,
+    "hideIfArmorEquipped": false,
+    "hideIfHelmetEquipped": false,
+    "suppressEquipmentBones": [
+      "Head",
+      "Neck"
+    ],
+    "slot": "head"
+  },
+  {
+    "augmentIds": [
+      "ae_cargo_chicken"
+    ],
+    "texture": "AEVA_Chicken",
+    "prefabs": [
+      "AEVA_Chicken_foot_LeftFoot",
+      "AEVA_Chicken_foot_RightFoot",
+      "AEVA_Chicken_shin_LeftShin",
+      "AEVA_Chicken_shin_RightShin",
+      "AEVA_Chicken_thigh_LeftThigh",
+      "AEVA_Chicken_thigh_RightThigh"
+    ],
+    "uvRegionsMale": [],
+    "uvRegionsFemale": [],
+    "masksMale": [
+      "aeva_mask_male_leg.png"
+    ],
+    "masksFemale": [
+      "aeva_mask_female_leg.png"
+    ],
+    "suppressHair": false,
+    "suppressHelmet": false,
+    "hideIfLeggingsEquipped": false,
+    "hideIfBootsEquipped": false,
+    "hideIfArmorEquipped": false,
+    "hideIfHelmetEquipped": false,
+    "suppressEquipmentBones": [
+      "LThigh",
+      "RThigh",
+      "LLeg",
+      "RLeg",
+      "LFeet",
+      "RFeet"
+    ],
+    "slot": "leg"
+  },
+  {
+    "augmentIds": [
+      "ae_cargo_track"
+    ],
+    "texture": "AEVA_Tracks",
+    "prefabs": [
+      "AEVA_Tracks_tracks_Pelvis"
+    ],
+    "uvRegionsMale": [],
+    "uvRegionsFemale": [],
+    "masksMale": [
+      "aeva_mask_male_leg.png"
+    ],
+    "masksFemale": [
+      "aeva_mask_female_leg.png"
+    ],
+    "suppressHair": false,
+    "suppressHelmet": false,
+    "hideIfLeggingsEquipped": false,
+    "hideIfBootsEquipped": false,
+    "hideIfArmorEquipped": false,
+    "hideIfHelmetEquipped": false,
+    "suppressEquipmentBones": [
+      "LThigh",
+      "RThigh",
+      "LLeg",
+      "RLeg",
+      "LFeet",
+      "RFeet"
+    ],
+    "slot": "leg"
+  },
+  {
+    "augmentIds": [
+      "ae_chainshotgun"
+    ],
+    "texture": "AEVA_ChainShotgun",
+    "prefabs": [
+      "AEVA_ChainShotgun_chest_Torso",
+      "AEVA_ChainShotgun_forearm_RightForeArm",
+      "AEVA_ChainShotgun_guts_Torso",
+      "AEVA_ChainShotgun_upperarm_RightUpperArm"
+    ],
+    "uvRegionsMale": [],
+    "uvRegionsFemale": [],
+    "masksMale": [],
+    "masksFemale": [],
+    "suppressHair": false,
+    "suppressHelmet": false,
+    "hideIfLeggingsEquipped": false,
+    "hideIfBootsEquipped": false,
+    "hideIfArmorEquipped": false,
+    "hideIfHelmetEquipped": false,
+    "suppressEquipmentBones": [
+      "RShoulder",
+      "RArm"
+    ],
+    "hideMeshRegions": [
+      "rightarm"
+    ],
+    "slot": "gunarm"
+  },
+  {
+    "augmentIds": [
+      "ae_ecannon_arm"
+    ],
+    "texture": "AEVA_ECannon",
+    "prefabs": [
+      "AEVA_ECannon_forearm_RightForeArm",
+      "AEVA_ECannon_upperarm_RightUpperArm"
+    ],
+    "uvRegionsMale": [],
+    "uvRegionsFemale": [],
+    "masksMale": [],
+    "masksFemale": [],
+    "suppressHair": false,
+    "suppressHelmet": false,
+    "hideIfLeggingsEquipped": false,
+    "hideIfBootsEquipped": false,
+    "hideIfArmorEquipped": false,
+    "hideIfHelmetEquipped": false,
+    "suppressEquipmentBones": [
+      "RShoulder",
+      "RArm"
+    ],
+    "hideMeshRegions": [
+      "rightarm"
+    ],
+    "slot": "gunarm"
+  },
+  {
+    "augmentIds": [
+      "ae_flammen"
+    ],
+    "texture": "AEVA_Flammen",
+    "prefabs": [
+      "AEVA_Flammen_chest_Torso",
+      "AEVA_Flammen_forearm_RightForeArm",
+      "AEVA_Flammen_guts_Torso",
+      "AEVA_Flammen_upperarm_RightUpperArm"
+    ],
+    "uvRegionsMale": [],
+    "uvRegionsFemale": [],
+    "masksMale": [],
+    "masksFemale": [],
+    "suppressHair": false,
+    "suppressHelmet": false,
+    "hideIfLeggingsEquipped": false,
+    "hideIfBootsEquipped": false,
+    "hideIfArmorEquipped": false,
+    "hideIfHelmetEquipped": false,
+    "suppressEquipmentBones": [
+      "RShoulder",
+      "RArm"
+    ],
+    "hideMeshRegions": [
+      "rightarm"
+    ],
+    "slot": "gunarm"
+  },
+  {
+    "augmentIds": [
+      "ae_gatling_arm"
+    ],
+    "texture": "AEVA_Gatling",
+    "prefabs": [
+      "AEVA_Gatling_chest_Torso",
+      "AEVA_Gatling_forearm_RightForeArm",
+      "AEVA_Gatling_guts_Torso",
+      "AEVA_Gatling_upperarm_RightUpperArm"
+    ],
+    "uvRegionsMale": [],
+    "uvRegionsFemale": [],
+    "masksMale": [],
+    "masksFemale": [],
+    "suppressHair": false,
+    "suppressHelmet": false,
+    "hideIfLeggingsEquipped": false,
+    "hideIfBootsEquipped": false,
+    "hideIfArmorEquipped": false,
+    "hideIfHelmetEquipped": false,
+    "suppressEquipmentBones": [
+      "RShoulder",
+      "RArm"
+    ],
+    "hideMeshRegions": [
+      "rightarm"
+    ],
+    "slot": "gunarm"
+  },
+  {
+    "augmentIds": [
+      "ae_pile_arm"
+    ],
+    "texture": "AEVA_Pilebunker",
+    "prefabs": [
+      "AEVA_Pilebunker_forearm_RightForeArm",
+      "AEVA_Pilebunker_upperarm_RightUpperArm"
+    ],
+    "uvRegionsMale": [],
+    "uvRegionsFemale": [],
+    "masksMale": [],
+    "masksFemale": [],
+    "suppressHair": false,
+    "suppressHelmet": false,
+    "hideIfLeggingsEquipped": false,
+    "hideIfBootsEquipped": false,
+    "hideIfArmorEquipped": false,
+    "hideIfHelmetEquipped": false,
+    "suppressEquipmentBones": [
+      "RShoulder",
+      "RArm"
+    ],
+    "hideMeshRegions": [
+      "rightarm"
+    ],
+    "slot": "gunarm"
   },
   {
     "augmentIds": [
