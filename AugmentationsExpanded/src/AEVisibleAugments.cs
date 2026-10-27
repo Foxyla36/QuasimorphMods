@@ -206,6 +206,7 @@ public static class ModMain
         }
         string hidePath = Path.Combine(_modPath, "aeva_hide.json");
         if (File.Exists(hidePath)) MeshHider.Load(JSON.Parse(File.ReadAllText(hidePath)));
+        TrackRoller.Load(Path.Combine(_modPath, "Models", "aeva_tracks.bytes"));   // rolling tracks (optional file)
         _loaded = true;
         Log($"Loaded {Templates.Count} piece templates ({Skins.Count} skinned), {Textures.Count} textures, {Specs.Count} augment entries.");
     }
@@ -503,6 +504,8 @@ public static class ModMain
             if (_appliedMode == VisibleAugmentMode.HideArmor && ArmorByPiece.TryGetValue(prefab.name, out var armor))
                 SuppressEquipment(view ?? __result.GetComponentInParent<Creature3dView>(), armor);
             if (HideByPiece.TryGetValue(prefab.name, out var regions)) HideBody(view ?? __result.GetComponentInParent<Creature3dView>(), regions);
+
+            if (TrackRoller.Has(piece)) __result.AddComponent<TrackRoller>().Init(piece, view ?? __result.GetComponentInParent<Creature3dView>());
 
             if (Skins.TryGetValue(piece, out SkinData skin))
             {
